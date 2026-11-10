@@ -1,0 +1,11 @@
+id,date,description,amount,reference,account,currency
+L001,2026-10-01,Capital contribution,5000.00,OPEN-01,Operating,USD
+L002,2026-10-02,Office supplies,-125.50,INV-101,Operating,USD
+L003,2026-10-04,Client payment,1200.00,RCPT-001,Operating,USD
+L004,2026-10-05,Internet service,-85.00,ISP-202610,Operating,USD
+L005,2026-10-06,Example subscription,-50.00,DUP-001,Operating,USD
+L006,2026-10-09,Unpresented cheque,-220.00,CHQ-001,Operating,USD
+L007,2026-10-08,Invoice 206,700.00,,Operating,USD
+L008,2026-10-08,Invoice 207,700.00,,Operating,USD
+L009,2026-10-09,European client,300.00,,Operating,EUR
+L010,2026-10-10,Receipt posted to operating,300.00,SAV-001,Operating,USD

@@ -1,0 +1,11 @@
+id,date,description,amount,reference,account,currency
+B001,2026-10-01,Capital contribution,5000.00,OPEN-01,Operating,USD
+B002,2026-10-03,Office supplies,-125.50,INV-101,Operating,USD
+B003,2026-10-04,Client payment,1200.00,RCPT-001,Operating,USD
+B004,2026-10-05,Internet service,-80.00,ISP-202610,Operating,USD
+B005,2026-10-06,Example subscription,-50.00,DUP-001,Operating,USD
+B006,2026-10-06,Example subscription,-50.00,DUP-001,Operating,USD
+B007,2026-10-07,Bank fee,-15.00,FEE-001,Operating,USD
+B008,2026-10-08,Incoming transfer,700.00,,Operating,USD
+B009,2026-10-09,European client,300.00,,Operating,EUR
+B010,2026-10-10,Savings receipt,300.00,SAV-001,Savings,USD

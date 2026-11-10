@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'"><title>APEX Reconciliation Toolkit</title><meta name="description" content="Compare bank and ledger CSV files locally. Review suggested matches, duplicates and exceptions."><style>:root{--ink:#162c34;--muted:#66777e;--line:#dbe2e3;--teal:#087d6e;--paper:#f6f7f4;--white:#fff;--soft:#e5f4ed;--amber:#825c15;--radius:18px;font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);font-synthesis:none}*{box-sizing:border-box}body{margin:0}button,input,select{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.45}button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #67b7eb;outline-offset:3px}a{color:var(--teal)}.wrap{max-width:1180px;margin:auto;padding:0 28px}header{background:var(--white);border-bottom:1px solid var(--line)}.head{height:86px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:12px}.mark{display:grid;place-items:center;width:40px;height:42px;border-radius:12px;background:var(--ink);color:#a5e7bf;font-size:24px;font-weight:750}.brand strong{font-size:19px;letter-spacing:.06em}.brand small{display:block;font-size:11px;letter-spacing:.1em;margin-top:3px;color:var(--muted)}.local{font-size:12px;border:1px solid var(--line);padding:8px 12px;border-radius:30px;white-space:nowrap}.local:before{content:"";display:inline-block;width:6px;height:6px;background:var(--teal);border-radius:50%;margin-right:8px}main{padding-top:42px!important;padding-bottom:35px!important}.hero{display:flex;gap:30px;justify-content:space-between;align-items:end;margin-bottom:27px}.eyebrow{color:var(--teal);font-size:11px;text-transform:uppercase;letter-spacing:.13em;font-weight:750;margin:0 0 10px}h1{font-size:clamp(28px,4vw,42px);line-height:1.12;letter-spacing:-1.3px;margin:0 0 12px;font-weight:700}.sub{color:var(--muted);max-width:650px;line-height:1.6;font-size:14px;margin:0}.button{display:inline-flex;gap:8px;justify-content:center;align-items:center;min-height:42px;padding:10px 17px;background:var(--white);border:1px solid #ccd6d7;border-radius:9px;color:var(--ink);font-size:13px;font-weight:650;text-decoration:none;white-space:nowrap}.button:hover:not(:disabled){border-color:var(--teal);background:#f0f7f3}.primary{background:var(--teal);color:#fff;border-color:var(--teal)}.primary:hover:not(:disabled){background:#075f54;color:#fff}.steps{display:flex;gap:25px;margin:24px 0;color:var(--muted);font-size:12px}.steps span{display:inline-flex;align-items:center;gap:8px}.steps b{display:grid;place-items:center;background:#e4ebe6;border-radius:50%;width:23px;height:23px;font-size:11px;color:var(--ink)}.panel{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 2px 3px #17382d03}.inputs{padding:24px}.panel-title{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:19px}.panel-title h2{font-size:16px;margin:0;letter-spacing:-.2px}.tag{font-size:11px;color:var(--muted)}.file-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}.file-card{border:1px dashed #aebfba;border-radius:12px;background:#fafcf9;min-width:0;padding:18px;display:block}.file-head{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:650;margin-bottom:8px}.file-icon{width:30px;height:34px;border:1px solid #c9d9d0;background:#eff6ed;border-radius:7px;display:grid;place-items:center;color:var(--teal);font-size:12px;font-weight:700}.hint{color:var(--muted);font-size:12px;line-height:1.6;margin:5px 0 12px}.file-card input{max-width:100%;font-size:11px}.file-card input::file-selector-button{font:inherit;font-weight:650;background:white;border:1px solid var(--line);padding:7px 10px;border-radius:6px;color:var(--ink);margin-right:10px;cursor:pointer}.file-status{font-size:11px;line-height:1.5;min-height:17px;margin-top:10px;color:var(--teal);overflow-wrap:anywhere}.settings{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-top:20px}.settings label{font-size:12px;display:flex;gap:9px;align-items:center}.settings select{padding:8px;border:1px solid var(--line);border-radius:7px;background:white;color:var(--ink);font-size:12px}.format{margin-top:19px;padding-top:16px;border-top:1px solid #ecf0eb;font-size:12px;color:var(--muted)}.format summary{cursor:pointer;color:var(--ink);font-weight:600}.format p{line-height:1.7;margin:10px 0}.format code{background:#f1f3ef;border:1px solid #e1e7dd;border-radius:4px;padding:2px 5px;font-size:11px;overflow-wrap:anywhere}.error{border:1px solid #f0c1bf;background:#fff1ee;color:#9e2c25;border-radius:10px;padding:14px 17px;font-size:13px;line-height:1.5;margin-top:16px}.notice{background:#edf4ef;color:#416352;font-size:12px;border:1px solid #d5e4d8;border-radius:10px;padding:12px 15px;line-height:1.6;margin:17px 0}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin:24px 0 18px}.metric{background:#fff;border:1px solid var(--line);border-radius:13px;padding:18px}.metric label{display:block;font-size:11px;color:var(--muted);margin-bottom:8px}.metric strong{font-size:30px;font-weight:650;letter-spacing:-.8px}.metric small{display:block;font-size:10px;color:var(--muted);margin-top:6px}.metric:first-child{background:#e8f3ea;border-color:#d4e4d6}.metric:first-child strong{color:var(--teal)}.empty{display:grid;place-items:center;text-align:center;min-height:210px;padding:30px;margin-top:22px;color:var(--muted)}.empty-icon{width:46px;height:46px;border-radius:15px;background:#eaf0e8;display:grid;place-items:center;font-size:22px;margin-bottom:12px;color:#76947f}.empty h3{font-weight:600;font-size:15px;color:var(--ink);margin:0 0 7px}.empty p{font-size:12px;line-height:1.6;margin:0;max-width:430px}.results{overflow:hidden}.toolbar{padding:16px 20px;display:flex;justify-content:space-between;gap:12px;align-items:center;border-bottom:1px solid var(--line);flex-wrap:wrap}.tabs{display:flex;gap:5px;flex-wrap:wrap}.tabs button{border:0;border-radius:7px;background:transparent;color:var(--muted);font-size:12px;padding:10px 12px;font-weight:600}.tabs button[aria-pressed=true]{color:var(--teal);background:var(--soft)}.search{border:1px solid var(--line);border-radius:7px;padding:9px 12px;font-size:12px;width:210px}.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;text-align:left;font-size:12px}th{padding:12px 17px;background:#fafbf8;border-bottom:1px solid var(--line);font-weight:600;color:#63756a;white-space:nowrap;font-size:10px;text-transform:uppercase;letter-spacing:.06em}td{padding:14px 17px;border-bottom:1px solid #edf0e9;vertical-align:top;line-height:1.55;max-width:350px}td small{display:block;color:var(--muted);font-size:10px}td.amount{white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:650}.badge{display:inline-block;border-radius:5px;background:#edf3e9;color:#506549;padding:3px 6px;font-size:10px;white-space:nowrap}.badge.warn{color:var(--amber);background:#fff3d8}.pager{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;font-size:11px;color:var(--muted);gap:10px}.pager div{display:flex;gap:8px}.pager .button{min-height:30px;padding:5px 10px;font-size:11px}.exports{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-top:18px}.exports>span{font-size:12px;margin-right:4px;color:var(--muted)}.exports .button{font-size:11px}.footnote{font-size:11px;color:var(--muted);line-height:1.7;margin:16px 0}.footer{border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:18px;font-size:11px;color:var(--muted);margin-top:30px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}[hidden]{display:none!important}@media(max-width:760px){.wrap{padding:0 17px}.head{height:75px}.brand small{font-size:9px}.local{font-size:10px;padding:7px 9px}.hero{align-items:start;flex-direction:column;gap:18px}main{padding-top:28px!important}.file-grid{grid-template-columns:1fr}.inputs{padding:18px}.metrics{grid-template-columns:repeat(2,1fr)}.metric{padding:14px}.metric strong{font-size:26px}.settings{align-items:start;flex-direction:column}.settings>.button{width:100%}.steps{gap:13px;font-size:10px}.search{width:100%}.toolbar{padding:12px}.tabs button{font-size:11px;padding:9px}.panel-title .tag{font-size:10px}td,th{padding:11px 12px}.exports .button{flex:1}.footer{font-size:10px}}
+</style></head><body><header><div class="wrap head"><div class="brand"><div class="mark" aria-hidden="true">A</div><div><strong>APEX</strong><small>RECONCILIATION TOOLKIT</small></div></div><span class="local">Files stay in this browser tab</span></div></header>
+<main class="wrap">
+  <div class="hero"><div><p class="eyebrow">Accounting, with a clearer trail</p><h1>Find what doesn't tie.</h1><p class="sub">Compare bank transactions with your ledger. Review suggested matches, investigate exceptions, and take a clear report into your close.</p></div><button id="demo" class="button" type="button">Try fictional sample data <span aria-hidden="true">↗</span></button></div>
+  <div class="steps" aria-label="Workflow"><span><b>1</b> Load CSV files</span><span><b>2</b> Review the comparison</span><span><b>3</b> Export your findings</span></div>
+  <section class="panel inputs" aria-labelledby="input-heading">
+    <div class="panel-title"><h2 id="input-heading">Your two sides of the story</h2><span class="tag">CSV · up to 5,000 rows per file</span></div>
+    <div class="file-grid">
+      <label class="file-card" for="bank-file"><span class="file-head"><span class="file-icon" aria-hidden="true">B</span>Bank transactions</span><p class="hint">Transactions for the account and period you want to review.</p><input type="file" id="bank-file" accept=".csv,text/csv" aria-describedby="bank-status"><div class="file-status" id="bank-status">No file loaded</div></label>
+      <label class="file-card" for="ledger-file"><span class="file-head"><span class="file-icon" aria-hidden="true">L</span>Bookkeeping ledger</span><p class="hint">Use the same accounts, currencies, period, and sign convention.</p><input type="file" id="ledger-file" accept=".csv,text/csv" aria-describedby="ledger-status"><div class="file-status" id="ledger-status">No file loaded</div></label>
+    </div>
+    <div class="settings"><label for="days">Date window <select id="days"><option value="0">Same day only</option><option value="1">± 1 day</option><option value="2">± 2 days</option><option value="3" selected>± 3 days</option><option value="5">± 5 days</option><option value="7">± 7 days</option></select></label><button id="run" class="button primary" disabled type="button">Compare transactions <span aria-hidden="true">→</span></button></div>
+    <details class="format"><summary>CSV format &amp; example files</summary><p>Required columns: <code>date,description,amount,account,currency</code>. Optional columns: <code>id,reference</code>. Use <code>YYYY-MM-DD</code> dates, positive amounts for money in, and negative amounts for money out on <strong>both</strong> sides. Amounts support up to two decimal places. Quote amounts containing commas.</p><p>Give the same account the same label in both files. Accounts and currencies are never combined. Debit and credit exports must be converted to signed amounts first. Files must be UTF-8 CSV, no more than 3 MB each.</p><button id="sample-bank" class="button" type="button">Download bank example</button> <button id="sample-ledger" class="button" type="button">Download ledger example</button></details>
+    <div class="error" id="error" role="alert" hidden></div>
+  </section>
+  <div class="notice">Suggested matches need your review. This tool compares the supplied transactions; it does not approve matches, post entries, or verify closing balances.</div>
+  <section class="panel empty" id="empty"><div><div class="empty-icon" style="margin-left:auto;margin-right:auto" aria-hidden="true">≋</div><h3>A clearer comparison starts here</h3><p>Load both files, or try the fictional sample. The sample includes duplicates, an amount difference, and ambiguous matches.</p></div></section>
+  <section id="report" aria-label="Comparison results" hidden>
+    <div class="metrics"><div class="metric"><label>Suggested pairs</label><strong id="count-matches">0</strong><small>Review before accepting</small></div><div class="metric"><label>Bank exceptions</label><strong id="count-bank">0</strong><small>Transactions to investigate</small></div><div class="metric"><label>Ledger exceptions</label><strong id="count-ledger">0</strong><small>Transactions to investigate</small></div><div class="metric"><label>Potential duplicate rows</label><strong id="count-duplicates">0</strong><small>Included in exceptions</small></div></div>
+    <div class="panel results"><div class="toolbar"><div class="tabs" aria-label="Result views"><button type="button" data-view="matches" aria-pressed="true">Suggested matches</button><button type="button" data-view="exceptions" aria-pressed="false">Exceptions</button><button type="button" data-view="balances" aria-pressed="false">Transaction totals</button></div><label class="sr-only" for="search">Search this result view</label><input id="search" class="search" placeholder="Search this view…" type="search"></div><div class="table-wrap"><table><caption class="sr-only" id="table-caption">Suggested matches</caption><thead id="thead"></thead><tbody id="tbody"></tbody></table></div><div class="pager"><span id="page-info" role="status" aria-live="polite"></span><div><button class="button" id="previous" type="button">Previous</button><button class="button" id="next" type="button">Next</button></div></div></div>
+    <div class="exports"><span>Export CSV</span><button class="button" type="button" data-export="matches">Suggested matches ↓</button><button class="button" type="button" data-export="exceptions">Exceptions ↓</button><button class="button" type="button" data-export="summary">Transaction totals ↓</button><button class="button" id="clear" type="button">Clear session</button></div>
+    <p class="footnote" id="provenance"></p>
+    <p class="footnote">A zero difference in transaction totals does not prove reconciliation. Opening balances, cutoff completeness, split payments, fees, and outstanding items require separate review. Possible duplicates are never deleted or netted off.</p>
+  </section>
+  <footer class="footer"><span>APEX Accounting &amp; Solutions · Open-source accounting tools</span><span>v0.1.0 · MIT licence · No server, sign-in, or external scripts</span></footer>
+</main>
+<script id="reconciliation-core">
+/* APEX Reconciliation Toolkit — pure reconciliation engine, MIT licensed. */
+(function (root) {
+  "use strict";
+  const MAX_ROWS = 5000;
+  const required = ["date", "description", "amount", "account", "currency"];
+  const normalize = value => String(value).trim().replace(/\s+/g, " ").toUpperCase();
+  const key = (...parts) => JSON.stringify(parts);
+
+  function parseCSV(text) {
+    text = String(text).replace(/^\uFEFF/, "");
+    const rows = [];
+    let cells = [], value = "", quoted = false, closed = false, line = 1, start = 1;
+    function finishCell() { cells.push(value); value = ""; closed = false; }
+    function finishRow() {
+      finishCell();
+      if (cells.some(cell => cell.trim() !== "")) rows.push({ cells, line: start });
+      cells = [];
+    }
+    for (let i = 0; i < text.length; i++) {
+      const char = text[i];
+      if (quoted) {
+        if (char === '"' && text[i + 1] === '"') { value += '"'; i++; }
+        else if (char === '"') { quoted = false; closed = true; }
+        else { value += char; if (char === "\n") line++; }
+      } else if (char === ",") finishCell();
+      else if (char === "\n" || char === "\r") {
+        if (char === "\r" && text[i + 1] === "\n") i++;
+        finishRow(); line++; start = line;
+      } else if (char === '"') {
+        if (value.length || closed) throw new Error(`Line ${line}: unexpected quote; quote the whole CSV field.`);
+        quoted = true;
+      } else if (closed) {
+        if (!/[ \t]/.test(char)) throw new Error(`Line ${line}: unexpected text after a closing quote.`);
+      } else value += char;
+    }
+    if (quoted) throw new Error(`Line ${start}: unclosed quoted field.`);
+    if (value.length || cells.length || closed) finishRow();
+    return rows;
+  }
+
+  function moneyToCents(raw) {
+    let value = String(raw).trim(), negative = false;
+    if (/^\(.*\)$/.test(value)) {
+      negative = true; value = value.slice(1, -1).trim();
+      if (/^[+-]/.test(value)) throw new Error("Parenthesized amounts cannot also have a sign.");
+    }
+    if (!/^[+-]?(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d{1,2})?$/.test(value))
+      throw new Error(`Invalid amount ${JSON.stringify(raw)}; use at most two decimals and no currency symbol.`);
+    if (value.startsWith("-")) negative = true;
+    value = value.replace(/^[+-]/, "").replace(/,/g, "");
+    const [whole, fraction = ""] = value.split(".");
+    const cents = BigInt(whole) * 100n + BigInt(fraction.padEnd(2, "0"));
+    if (cents > 999999999999999n) throw new Error("Amount exceeds the supported transaction limit.");
+    return negative ? -cents : cents;
+  }
+
+  function formatMoney(cents) {
+    const sign = cents < 0n ? "-" : "", absolute = cents < 0n ? -cents : cents;
+    return `${sign}${absolute / 100n}.${String(absolute % 100n).padStart(2, "0")}`;
+  }
+
+  function dateToDay(value) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) throw new Error("Dates must use YYYY-MM-DD.");
+    const date = new Date(`${value}T00:00:00.000Z`);
+    if (!Number.isFinite(date.getTime()) || date.toISOString().slice(0, 10) !== value)
+      throw new Error(`Invalid calendar date ${value}.`);
+    return date.getTime() / 86400000;
+  }
+
+  function readTransactions(text, source) {
+    if (!["bank", "ledger"].includes(source)) throw new Error("Source must be bank or ledger.");
+    const csv = parseCSV(text);
+    if (!csv.length) throw new Error(`${source}: the file is empty.`);
+    const headers = csv[0].cells.map(header => header.trim().toLowerCase());
+    if (headers.some(header => !header) || new Set(headers).size !== headers.length)
+      throw new Error(`${source}: column names must be nonempty and unique.`);
+    const missing = required.filter(header => !headers.includes(header));
+    if (missing.length) throw new Error(`${source}: missing columns: ${missing.join(", ")}.`);
+    if (csv.length === 1) throw new Error(`${source}: there are no transaction rows.`);
+    if (csv.length - 1 > MAX_ROWS) throw new Error(`${source}: maximum ${MAX_ROWS.toLocaleString()} transactions per file.`);
+    const seen = new Set();
+    return csv.slice(1).map(row => {
+      try {
+        if (row.cells.length !== headers.length) throw new Error(`Expected ${headers.length} columns; found ${row.cells.length}.`);
+        const record = Object.fromEntries(headers.map((header, index) => [header, row.cells[index].trim()]));
+        const id = record.id || `${source}-line-${row.line}`;
+        if (seen.has(id)) throw new Error(`Duplicate row id ${JSON.stringify(id)}; each id must be unique within its file.`);
+        seen.add(id);
+        if (!record.description) throw new Error("Description is required.");
+        if (!record.account) throw new Error("Account is required.");
+        const currency = record.currency.toUpperCase();
+        if (!/^[A-Z]{3}$/.test(currency)) throw new Error("Currency must be a three-letter code, such as USD.");
+        return {
+          id, source, line: row.line, date: record.date, day: dateToDay(record.date),
+          description: record.description, cents: moneyToCents(record.amount),
+          account: record.account, accountKey: normalize(record.account), currency,
+          reference: record.reference || "", referenceKey: normalize(record.reference || "")
+        };
+      } catch (error) { throw new Error(`${source}, line ${row.line}: ${error.message}`); }
+    });
+  }
+
+  function groupBy(rows, makeKey) {
+    const map = new Map();
+    for (const row of rows) {
+      const value = makeKey(row);
+      if (!map.has(value)) map.set(value, []);
+      map.get(value).push(row);
+    }
+    return map;
+  }
+  const rowKey = row => key(row.source, row.id);
+  const partition = row => key(row.accountKey, row.currency);
+  const referenceKey = row => key(partition(row), row.referenceKey);
+  const detailsKey = row => key(partition(row), row.date, row.cents.toString(), normalize(row.description));
+
+  function reconcile(bank, ledger, options = {}) {
+    const days = options.days === undefined ? 3 : options.days;
+    if (!Number.isInteger(days) || days < 0 || days > 7) throw new Error("Date window must be an integer from 0 to 7 days.");
+    const used = new Set(), blocked = new Set(), reasons = new Map(), duplicateRows = new Set(), matches = [];
+    const setReason = (row, message) => {
+      const id = rowKey(row); blocked.add(id);
+      if (!reasons.has(id)) reasons.set(id, message);
+    };
+    for (const rows of [bank, ledger]) {
+      const groups = groupBy(rows, row => key(partition(row), row.date, row.cents.toString(), row.referenceKey || normalize(row.description)));
+      for (const group of groups.values()) if (group.length > 1) {
+        for (const row of group) {
+          duplicateRows.add(rowKey(row));
+          setReason(row, `Potential duplicate: ${group.length} rows share date, amount, account, currency and reference (or description when reference is blank).`);
+        }
+      }
+      for (const row of rows) if (row.cents === 0n) setReason(row, "Zero-amount transaction; review manually.");
+    }
+    const bankRefs = groupBy(bank.filter(row => row.referenceKey), referenceKey);
+    const ledgerRefs = groupBy(ledger.filter(row => row.referenceKey), referenceKey);
+    for (const ref of new Set([...bankRefs.keys(), ...ledgerRefs.keys()])) {
+      const left = bankRefs.get(ref) || [], right = ledgerRefs.get(ref) || [];
+      if (left.length > 1 || right.length > 1) {
+        for (const row of [...left, ...right]) setReason(row, "Repeated reference in this account/currency; review manually.");
+      }
+    }
+    function suggest(left, right, rule) {
+      used.add(rowKey(left)); used.add(rowKey(right));
+      matches.push({ bank: left, ledger: right, rule, dayDifference: Math.abs(left.day - right.day) });
+    }
+    for (const [ref, left] of bankRefs) {
+      const right = ledgerRefs.get(ref);
+      if (left.length !== 1 || !right || right.length !== 1) continue;
+      const b = left[0], l = right[0];
+      if (blocked.has(rowKey(b)) || blocked.has(rowKey(l))) continue;
+      if (b.cents !== l.cents) {
+        const difference = formatMoney(b.cents - l.cents);
+        setReason(b, `Same reference as ledger ${l.id}, but amount differs. Bank minus ledger: ${difference} ${b.currency}.`);
+        setReason(l, `Same reference as bank ${b.id}, but amount differs. Bank minus ledger: ${difference} ${b.currency}.`);
+      } else if (Math.abs(b.day - l.day) > days) {
+        setReason(b, `Same reference/amount as ledger ${l.id}, but outside the ${days}-day window.`);
+        setReason(l, `Same reference/amount as bank ${b.id}, but outside the ${days}-day window.`);
+      } else suggest(b, l, "Unique reference + exact amount");
+    }
+    const available = rows => rows.filter(row => !used.has(rowKey(row)) && !blocked.has(rowKey(row)));
+    const bankDetails = groupBy(available(bank), detailsKey), ledgerDetails = groupBy(available(ledger), detailsKey);
+    for (const [details, left] of bankDetails) {
+      const right = ledgerDetails.get(details);
+      if (left.length !== 1 || !right || right.length !== 1) continue;
+      const b = left[0], l = right[0];
+      if (b.referenceKey && l.referenceKey && b.referenceKey !== l.referenceKey) {
+        setReason(b, `Same date/amount/description as ledger ${l.id}, but references conflict.`);
+        setReason(l, `Same date/amount/description as bank ${b.id}, but references conflict.`);
+      } else suggest(b, l, "Exact date + amount + description");
+    }
+    const unmatchedBank = bank.filter(row => !used.has(rowKey(row)));
+    const unmatchedLedger = ledger.filter(row => !used.has(rowKey(row)));
+    const candidateKey = (row, day = row.day) => key(partition(row), row.cents.toString(), day);
+    const bankCandidates = groupBy(unmatchedBank, candidateKey), ledgerCandidates = groupBy(unmatchedLedger, candidateKey);
+    const exceptions = [...unmatchedBank, ...unmatchedLedger].map(row => {
+      let candidateCount = 0;
+      const candidateIds = [], index = row.source === "bank" ? ledgerCandidates : bankCandidates;
+      for (let day = row.day - days; day <= row.day + days; day++) {
+        const candidates = index.get(candidateKey(row, day)) || [];
+        candidateCount += candidates.length;
+        for (const candidate of candidates.slice(0, Math.max(0, 10 - candidateIds.length))) candidateIds.push(candidate.id);
+      }
+      return { row, candidateIds, candidateCount, potentialDuplicate: duplicateRows.has(rowKey(row)),
+        reason: reasons.get(rowKey(row)) || (candidateCount ? "Same-amount/date candidates exist; insufficient evidence for a suggested match." : "No suggested match in the supplied files.") };
+    });
+    const balances = new Map();
+    for (const row of [...bank, ...ledger]) {
+      const p = partition(row);
+      if (!balances.has(p)) balances.set(p, { account: row.account, currency: row.currency, bankCents: 0n, ledgerCents: 0n, bankCount: 0, ledgerCount: 0 });
+      const balance = balances.get(p);
+      balance[`${row.source}Cents`] += row.cents; balance[`${row.source}Count`]++;
+    }
+    return { days, matches, exceptions, balances: [...balances.values()], bankCount: bank.length, ledgerCount: ledger.length,
+      bankExceptionCount: unmatchedBank.length, ledgerExceptionCount: unmatchedLedger.length, duplicateCount: duplicateRows.size };
+  }
+
+  function csvCell(value, numeric = false) {
+    let text = String(value == null ? "" : value);
+    if (!numeric && /^[\s]*[=+\-@]/.test(text)) text = "'" + text;
+    return '"' + text.replace(/"/g, '""') + '"';
+  }
+  function makeCSV(headers, rows, numericColumns = []) {
+    const numbers = new Set(numericColumns);
+    return [headers.map(header => csvCell(header)).join(","), ...rows.map(row => row.map((value, index) => csvCell(value, numbers.has(index))).join(","))].join("\r\n") + "\r\n";
+  }
+  function exportReport(report, kind) {
+    if (kind === "matches") return makeCSV(
+      ["status", "rule", "account", "currency", "amount", "bank_id", "bank_line", "bank_date", "bank_description", "bank_reference", "ledger_id", "ledger_line", "ledger_date", "ledger_description", "ledger_reference", "date_difference_days"],
+      report.matches.map(m => ["REVIEW_REQUIRED", m.rule, m.bank.account, m.bank.currency, formatMoney(m.bank.cents), m.bank.id, m.bank.line, m.bank.date, m.bank.description, m.bank.reference, m.ledger.id, m.ledger.line, m.ledger.date, m.ledger.description, m.ledger.reference, m.dayDifference]), [4, 6, 11, 15]);
+    if (kind === "exceptions") return makeCSV(
+      ["source", "id", "source_line", "date", "account", "currency", "amount", "description", "reference", "potential_duplicate", "reason", "candidate_ids_first_10", "candidate_count"],
+      report.exceptions.map(e => [e.row.source, e.row.id, e.row.line, e.row.date, e.row.account, e.row.currency, formatMoney(e.row.cents), e.row.description, e.row.reference, e.potentialDuplicate ? "YES" : "NO", e.reason, e.candidateIds.join(" | "), e.candidateCount]), [2, 6, 12]);
+    if (kind === "summary") return makeCSV(
+      ["account", "currency", "bank_rows", "ledger_rows", "bank_transaction_total", "ledger_transaction_total", "bank_minus_ledger", "date_window_days"],
+      report.balances.map(b => [b.account, b.currency, b.bankCount, b.ledgerCount, formatMoney(b.bankCents), formatMoney(b.ledgerCents), formatMoney(b.bankCents - b.ledgerCents), report.days]), [2, 3, 4, 5, 6, 7]);
+    throw new Error("Unknown export type.");
+  }
+  const api = { MAX_ROWS, parseCSV, moneyToCents, formatMoney, dateToDay, readTransactions, reconcile, exportReport };
+  if (typeof module === "object" && module.exports) module.exports = api;
+  else root.ApexReconcile = api;
+})(typeof globalThis !== "undefined" ? globalThis : this);
+
+</script><script id="sample-data">window.APEX_SAMPLES = {"bank": "id,date,description,amount,reference,account,currency\nB001,2026-10-01,Capital contribution,5000.00,OPEN-01,Operating,USD\nB002,2026-10-03,Office supplies,-125.50,INV-101,Operating,USD\nB003,2026-10-04,Client payment,1200.00,RCPT-001,Operating,USD\nB004,2026-10-05,Internet service,-80.00,ISP-202610,Operating,USD\nB005,2026-10-06,Example subscription,-50.00,DUP-001,Operating,USD\nB006,2026-10-06,Example subscription,-50.00,DUP-001,Operating,USD\nB007,2026-10-07,Bank fee,-15.00,FEE-001,Operating,USD\nB008,2026-10-08,Incoming transfer,700.00,,Operating,USD\nB009,2026-10-09,European client,300.00,,Operating,EUR\nB010,2026-10-10,Savings receipt,300.00,SAV-001,Savings,USD\n", "ledger": "id,date,description,amount,reference,account,currency\nL001,2026-10-01,Capital contribution,5000.00,OPEN-01,Operating,USD\nL002,2026-10-02,Office supplies,-125.50,INV-101,Operating,USD\nL003,2026-10-04,Client payment,1200.00,RCPT-001,Operating,USD\nL004,2026-10-05,Internet service,-85.00,ISP-202610,Operating,USD\nL005,2026-10-06,Example subscription,-50.00,DUP-001,Operating,USD\nL006,2026-10-09,Unpresented cheque,-220.00,CHQ-001,Operating,USD\nL007,2026-10-08,Invoice 206,700.00,,Operating,USD\nL008,2026-10-08,Invoice 207,700.00,,Operating,USD\nL009,2026-10-09,European client,300.00,,Operating,EUR\nL010,2026-10-10,Receipt posted to operating,300.00,SAV-001,Operating,USD\n"};</script><script id="application-ui">
+(function () {
+  "use strict";
+  const A = window.ApexReconcile, $ = id => document.getElementById(id);
+  const state = { bank: null, ledger: null, report: null, view: "matches", page: 0, version: { bank: 0, ledger: 0 } };
+  const PAGE = 50;
+  function showError(message) { $("error").textContent = message; $("error").hidden = !message; }
+  function invalidate() {
+    state.report = null; $("report").hidden = true; $("empty").hidden = false;
+    $("run").disabled = !(state.bank && state.ledger); showError("");
+  }
+  function attach(source, text, filename) {
+    const rows = A.readTransactions(text, source);
+    state[source] = { rows, filename };
+    $(`${source}-status`).textContent = `${filename} · ${rows.length.toLocaleString()} transactions ready`;
+  }
+  for (const source of ["bank", "ledger"]) {
+    $(`${source}-file`).addEventListener("change", async event => {
+      const version = ++state.version[source], file = event.target.files[0];
+      state[source] = null; invalidate();
+      $(`${source}-status`).textContent = file ? "Reading file…" : "No file loaded";
+      if (!file) return;
+      try {
+        if (file.size > 3 * 1024 * 1024) throw new Error("File exceeds the 3 MB limit.");
+        const text = await file.text();
+        if (state.version[source] !== version) return;
+        attach(source, text, file.name); invalidate();
+      } catch (error) {
+        if (state.version[source] !== version) return;
+        $(`${source}-status`).textContent = "Could not load this file";
+        showError(error.message);
+      }
+    });
+  }
+  $("days").addEventListener("change", invalidate);
+  $("demo").addEventListener("click", () => {
+    for (const source of ["bank", "ledger"]) {
+      state.version[source]++; $(`${source}-file`).value = "";
+      attach(source, window.APEX_SAMPLES[source], `fictional-${source}.csv`);
+    }
+    invalidate(); run();
+  });
+  function run() {
+    if (!state.bank || !state.ledger) return;
+    showError("");
+    try {
+      state.report = A.reconcile(state.bank.rows, state.ledger.rows, { days: Number($("days").value) });
+      state.page = 0; $("search").value = ""; state.view = "matches";
+      $("report").hidden = false; $("empty").hidden = true;
+      $("count-matches").textContent = state.report.matches.length;
+      $("count-bank").textContent = state.report.bankExceptionCount;
+      $("count-ledger").textContent = state.report.ledgerExceptionCount;
+      $("count-duplicates").textContent = state.report.duplicateCount;
+      $("provenance").textContent = `Compared ${state.bank.filename} (${state.bank.rows.length} rows) with ${state.ledger.filename} (${state.ledger.rows.length} rows). Reference matching and candidate search use a ±${state.report.days}-day window. Description matching requires the same date. Generated ${new Date().toLocaleString()}.`;
+      render();
+    } catch (error) { invalidate(); showError(error.message); }
+  }
+  $("run").addEventListener("click", run);
+  function element(tag, text, className) {
+    const node = document.createElement(tag);
+    if (text !== undefined) node.textContent = text;
+    if (className) node.className = className;
+    return node;
+  }
+  function cell(text, detail, className) {
+    const td = element("td", text, className);
+    if (detail) td.append(element("small", detail));
+    return td;
+  }
+  function dataForView() {
+    const report = state.report;
+    if (state.view === "matches") return { headers: ["Bank transaction", "Ledger transaction", "Account / currency", "Amount", "Why suggested"], label: "Suggested matches", data: report.matches.map(m => ({
+      search: [m.bank.id, m.ledger.id, m.bank.description, m.ledger.description, m.bank.account, m.bank.currency, m.bank.reference, m.ledger.reference, A.formatMoney(m.bank.cents), m.rule].join(" "),
+      cells: () => [cell(m.bank.description, `${m.bank.id} · ${m.bank.date}`), cell(m.ledger.description, `${m.ledger.id} · ${m.ledger.date}`), cell(m.bank.account, m.bank.currency), cell(A.formatMoney(m.bank.cents), undefined, "amount"), cell(m.rule, `${m.dayDifference} day difference · review required`)]
+    })) };
+    if (state.view === "exceptions") return { headers: ["Source / ID", "Transaction", "Account / currency", "Amount", "Review reason"], label: "Exceptions", data: report.exceptions.map(e => ({
+      search: [e.row.source, e.row.id, e.row.description, e.row.account, e.row.currency, e.row.reference, A.formatMoney(e.row.cents), e.reason, e.candidateIds.join(" ")].join(" "),
+      cells: () => {
+        const source = cell(""); source.append(element("span", e.row.source.toUpperCase(), "badge"), element("small", `${e.row.id} · line ${e.row.line}`));
+        const reason = cell(e.reason, e.candidateCount ? `${e.candidateCount} same-amount candidate(s): ${e.candidateIds.join(", ")}${e.candidateCount > 10 ? " (first 10 shown)" : ""}. Candidates may also need review.` : undefined);
+        if (e.potentialDuplicate) reason.prepend(element("span", "POSSIBLE DUPLICATE", "badge warn"), element("br"));
+        return [source, cell(e.row.description, `${e.row.date}${e.row.reference ? " · " + e.row.reference : ""}`), cell(e.row.account, e.row.currency), cell(A.formatMoney(e.row.cents), undefined, "amount"), reason];
+      }
+    })) };
+    return { headers: ["Account / currency", "Bank transaction total", "Ledger transaction total", "Bank minus ledger", "Rows compared"], label: "Transaction totals, not closing balances", data: report.balances.map(b => ({
+      search: [b.account, b.currency, A.formatMoney(b.bankCents), A.formatMoney(b.ledgerCents)].join(" "),
+      cells: () => [cell(b.account, b.currency), cell(A.formatMoney(b.bankCents), undefined, "amount"), cell(A.formatMoney(b.ledgerCents), undefined, "amount"), cell(A.formatMoney(b.bankCents - b.ledgerCents), "Transaction difference only", "amount"), cell(`${b.bankCount} bank / ${b.ledgerCount} ledger`)]
+    })) };
+  }
+  function render() {
+    if (!state.report) return;
+    for (const tab of document.querySelectorAll("[data-view]")) tab.setAttribute("aria-pressed", String(tab.dataset.view === state.view));
+    const view = dataForView(), search = $("search").value.trim().toLowerCase();
+    const rows = view.data.filter(item => item.search.toLowerCase().includes(search));
+    state.page = Math.min(state.page, Math.max(0, Math.ceil(rows.length / PAGE) - 1));
+    const head = element("tr");
+    for (const title of view.headers) { const th = element("th", title); th.scope = "col"; head.append(th); }
+    $("thead").replaceChildren(head); $("tbody").replaceChildren(); $("table-caption").textContent = view.label;
+    for (const item of rows.slice(state.page * PAGE, (state.page + 1) * PAGE)) {
+      const tr = element("tr"); for (const td of item.cells()) tr.append(td); $("tbody").append(tr);
+    }
+    if (!rows.length) { const tr = element("tr"), td = cell("No rows in this view."); td.colSpan = view.headers.length; tr.append(td); $("tbody").append(tr); }
+    $("page-info").textContent = rows.length ? `${state.page * PAGE + 1}–${Math.min((state.page + 1) * PAGE, rows.length)} of ${rows.length} rows` : "0 rows";
+    $("previous").disabled = state.page === 0; $("next").disabled = (state.page + 1) * PAGE >= rows.length;
+  }
+  for (const tab of document.querySelectorAll("[data-view]")) tab.addEventListener("click", () => { state.view = tab.dataset.view; state.page = 0; $("search").value = ""; render(); });
+  $("search").addEventListener("input", () => { state.page = 0; render(); });
+  $("previous").addEventListener("click", () => { state.page--; render(); });
+  $("next").addEventListener("click", () => { state.page++; render(); });
+  function download(text, filename) {
+    const url = URL.createObjectURL(new Blob(["\uFEFF", text], { type: "text/csv;charset=utf-8" }));
+    const a = document.createElement("a"); a.href = url; a.download = filename;
+    document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+  for (const button of document.querySelectorAll("[data-export]")) button.addEventListener("click", () => {
+    if (state.report) download(A.exportReport(state.report, button.dataset.export), `apex-${button.dataset.export}.csv`);
+  });
+  for (const source of ["bank", "ledger"]) $(`sample-${source}`).addEventListener("click", () => download(window.APEX_SAMPLES[source], `${source}-example.csv`));
+  $("clear").addEventListener("click", () => {
+    for (const source of ["bank", "ledger"]) { state.version[source]++; state[source] = null; $(`${source}-file`).value = ""; $(`${source}-status`).textContent = "No file loaded"; }
+    invalidate(); $("bank-file").focus();
+  });
+})();
+
+</script></body></html>
