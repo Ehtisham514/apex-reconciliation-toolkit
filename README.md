@@ -6,7 +6,7 @@
 
 A practical, open-source workspace for accountants, business owners and finance teams, maintained by **Ehtisham Ul Haq / APEX Accounting & Solutions**. It brings the original APEX reconciliation tool together with accounting workbooks, browser utilities, financial models and documented review workflows.
 
-[Start here](docs/START_HERE.md) · [Tool catalog](docs/TOOL_CATALOG.md) · [Templates](templates/README.md) · [Financial models](financial_intelligence/README.md) · [Data engine](docs/DATA_ENGINE.md) · [Worked examples](docs/CASE_STUDIES.md)
+[**Open the live hub**](https://ehtisham514.github.io/apex-reconciliation-toolkit/) · [Start here](docs/START_HERE.md) · [Tool catalog](docs/TOOL_CATALOG.md) · [Templates](templates/README.md) · [Financial models](financial_intelligence/README.md) · [Data engine](docs/DATA_ENGINE.md) · [Worked examples](docs/CASE_STUDIES.md)
 
 **Release: v0.2.0 — public beta.** Tools support preparation, analysis and review. They do not post entries to accounting software or provide an audit opinion. All supplied examples are fictional.
 
@@ -18,27 +18,35 @@ A practical, open-source workspace for accountants, business owners and finance 
 |---|---|---|
 | A business owner | [Cash planning and management reporting](docs/WORKFLOWS.md) | A weekly cash plan, open-invoice review and a consistent management pack |
 | A bookkeeper or accountant | [Month-end workflow](docs/START_HERE.md) | Reconciliation exceptions, close checklists and documented follow-up |
-| A property or multi-entity finance team | [Accounting Workbench](tools/accounting-workbench.html) · [Input guide](docs/WORKBENCH.md) | Receivables/payables aging, intercompany transfer review and trust-balance comparisons |
+| A property or multi-entity finance team | [Accounting Workbench](https://ehtisham514.github.io/apex-reconciliation-toolkit/tools/accounting-workbench.html) · [Input guide](docs/WORKBENCH.md) | Receivables/payables aging, intercompany transfer review and trust-balance comparisons |
 | A construction business | [Construction models](financial_intelligence/README.md) | Quantity-based estimates, target-margin bids and cost-to-complete scenarios |
 | A financial analyst | [Finance Intelligence Lab](financial_intelligence/RUN_ME.md) | Driver-based projections, DCF sensitivities and acquisition screening |
 | A team with large CSV files | [Disk-backed data engine](docs/DATA_ENGINE.md) | Validated ledger imports, duplicate review, control totals and grouped exports |
 
 ## Open the hub
 
+1. [**Open the live Accounting & Finance Hub**](https://ehtisham514.github.io/apex-reconciliation-toolkit/).
+2. Choose the [bank reconciliation tool](https://ehtisham514.github.io/apex-reconciliation-toolkit/apex-reconcile.html) or [accounting workbench](https://ehtisham514.github.io/apex-reconciliation-toolkit/tools/accounting-workbench.html).
+3. Try a built-in fictional example, then follow the input guide for your own review.
+
+The browser tools run their calculations in your browser without installation. The Python dashboard has a separate local setup below.
+
+### Use the browser tools offline
+
 1. Select **Code → Download ZIP** on GitHub and extract the folder.
 2. Open **`index.html`** for the organized tool and template directory.
 3. Open **`apex-reconcile.html`** or **`tools/accounting-workbench.html`** to use the browser tools. Start with their fictional examples.
 
-These HTML files run from your computer without installation. Viewing an HTML file on GitHub shows its source; download it or the repository before opening it in a browser. The Python dashboard has a separate local setup below.
+The downloaded HTML files also run directly from your computer. GitHub's file viewer shows HTML source; use the live links above or open the downloaded files in a browser.
 
 ## Available tools
 
 | Tool | Available now | How to use it |
 |---|---|---|
-| Bank ↔ ledger reconciliation | Exact-cents comparisons, account/currency separation, suggested pairs, duplicates and exceptions | [Open local HTML](apex-reconcile.html) · [Rules and CSV schema](docs/RECONCILIATION.md) |
-| AR/AP aging | Due-date buckets, open balances and separate entity/currency totals | [Accounting Workbench](tools/accounting-workbench.html) · [Input guide](docs/WORKBENCH.md) |
-| Intercompany transfer review | Reciprocal entity/ref/currency checks, exact opposite amounts, exceptions for ambiguity | [Accounting Workbench](tools/accounting-workbench.html) · [Input guide](docs/WORKBENCH.md) |
-| Trust-balance comparison | Adjusted statement, book and client-liability balances with explicit differences | [Accounting Workbench](tools/accounting-workbench.html) · [Input guide](docs/WORKBENCH.md) |
+| Bank ↔ ledger reconciliation | Exact-cents comparisons, account/currency separation, suggested pairs, duplicates and exceptions | [Open reconciliation tool](https://ehtisham514.github.io/apex-reconciliation-toolkit/apex-reconcile.html) · [Rules and CSV schema](docs/RECONCILIATION.md) |
+| AR/AP aging | Due-date buckets, open balances and separate entity/currency totals | [Accounting Workbench](https://ehtisham514.github.io/apex-reconciliation-toolkit/tools/accounting-workbench.html) · [Input guide](docs/WORKBENCH.md) |
+| Intercompany transfer review | Reciprocal entity/ref/currency checks, exact opposite amounts, exceptions for ambiguity | [Accounting Workbench](https://ehtisham514.github.io/apex-reconciliation-toolkit/tools/accounting-workbench.html) · [Input guide](docs/WORKBENCH.md) |
+| Trust-balance comparison | Adjusted statement, book and client-liability balances with explicit differences | [Accounting Workbench](https://ehtisham514.github.io/apex-reconciliation-toolkit/tools/accounting-workbench.html) · [Input guide](docs/WORKBENCH.md) |
 | Construction analysis | Materials/labor/waste estimates, overhead, contingency, gross-margin bids, earned value and cost to complete | [Models and assumptions](financial_intelligence/README.md) |
 | Cash forecasting | Editable weekly receipts/payments and funding-gap estimates | [Local dashboard](financial_intelligence/RUN_ME.md) |
 | Business projection and DCF | Annual driver assumptions, unlevered cash flow and valuation sensitivity | [Finance models](financial_intelligence/README.md) |

@@ -2,11 +2,13 @@
 
 APEX is a collection of accounting tools, financial calculation models and editable working papers maintained by Ehtisham Ul Haq / APEX Accounting & Solutions. Choose a workflow below, then test it with the fictional examples before entering your own data.
 
+[**Open the live Accounting & Finance Hub**](https://ehtisham514.github.io/apex-reconciliation-toolkit/) to browse tools, templates and guides.
+
 ## Choose your role
 
 | I am… | Start with | Useful next step |
 |---|---|---|
-| An accountant or bookkeeper | [Bank-versus-ledger reconciliation](../apex-reconcile.html) and [monthly close checklist](../templates/month_end_close.csv) | Review open items, intercompany transfers and supporting evidence in the [accounting workbench](../tools/accounting-workbench.html). |
+| An accountant or bookkeeper | [Bank-versus-ledger reconciliation](https://ehtisham514.github.io/apex-reconciliation-toolkit/apex-reconcile.html) and [monthly close checklist](../templates/month_end_close.csv) | Review open items, intercompany transfers and supporting evidence in the [accounting workbench](https://ehtisham514.github.io/apex-reconciliation-toolkit/tools/accounting-workbench.html). |
 | A business owner | [Weekly cash plan](../templates/weekly_cash_plan.csv) and [management report](../templates/management_report.md) | Use the [Finance Lab](../financial_intelligence/RUN_ME.md) to examine cash and pricing assumptions. |
 | A property accountant | [Trust balance working paper](../templates/trust_reconciliation.csv) and [beneficiary detail](../templates/trust_client_balances.csv) | Check balances in the workbench and review intercompany funding separately. |
 | A construction company | [Estimate inputs](../templates/construction_estimate.csv) and [change-order register](../templates/change_orders.csv) | Compare pricing, contingency and cost-to-complete assumptions in the Finance Lab. |
@@ -17,7 +19,13 @@ APEX is a collection of accounting tools, financial calculation models and edita
 
 ### Browser tools
 
-Download and extract the repository, then open `index.html` in a modern browser. The hub links to the standalone reconciliation tool and accounting workbench. Their calculations run in the browser. Read each tool's scope and data limits before uploading a file.
+Open the [live hub](https://ehtisham514.github.io/apex-reconciliation-toolkit/), or go directly to [bank reconciliation](https://ehtisham514.github.io/apex-reconciliation-toolkit/apex-reconcile.html) or the [accounting workbench](https://ehtisham514.github.io/apex-reconciliation-toolkit/tools/accounting-workbench.html). Their calculations run in your browser without installation. Read each tool's scope and data limits before selecting a file.
+
+For offline use:
+
+1. Select **Code → Download ZIP** on the [repository page](https://github.com/Ehtisham514/apex-reconciliation-toolkit) and extract the folder.
+2. Open `index.html` in a modern browser.
+3. Choose a tool from the hub, or open `apex-reconcile.html` or `tools/accounting-workbench.html` directly.
 
 ### Python finance models
 
