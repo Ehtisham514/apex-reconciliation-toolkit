@@ -10,6 +10,8 @@ A practical, open-source workspace for accountants, business owners and finance 
 
 **Release: v0.2.0 — public beta.** Tools support preparation, analysis and review. They do not post entries to accounting software or provide an audit opinion. All supplied examples are fictional.
 
+**Rental property owners** · [Try the Excel cash reconciliation workbook](templates/rental-property/README.md). Follow a mortgage payment before rent arrives and trace a missing $300 reserve deposit in the fictional example.
+
 ## Choose your starting point
 
 | You are… | Start with | What you can produce |

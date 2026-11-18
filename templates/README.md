@@ -4,6 +4,10 @@ Editable inputs and working papers for the [APEX Accounting & Finance Hub](../in
 
 These CSV files contain values and headers, not hidden formulas. They can be opened in a spreadsheet editor. Import ID and account-code columns as text so leading zeros are preserved. Dates use `YYYY-MM-DD`, decimal points use `.`, and amount fields omit currency symbols and thousands separators. Keep copies of original source records separately.
 
+## Rental property accounting
+
+[Rental property cash reconciliation in Excel](rental-property/README.md) compares book and bank balances by account and flags unmatched transfers. The workbook includes a worked example and formulas for a monthly close.
+
 ## Choose a template
 
 | Task | File | How to use it |
