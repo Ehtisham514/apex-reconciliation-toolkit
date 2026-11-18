@@ -40,8 +40,9 @@
     let cells = [], value = "", quoted = false, closed = false, line = 1, start = 1;
     function finishCell() { cells.push(value); value = ""; closed = false; }
     function finishRow() {
+      const quotedEmptyRecord = closed;
       finishCell();
-      if (cells.some(cell => cell.trim() !== "")) rows.push({ cells, line: start });
+      if (cells.length > 1 || quotedEmptyRecord || cells.some(cell => cell.trim() !== "")) rows.push({ cells, line: start });
       cells = [];
     }
     for (let i = 0; i < text.length; i++) {

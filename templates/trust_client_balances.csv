@@ -1,0 +1,3 @@
+as_of_date,entity,trust_account,currency,beneficiary_id,property_id,balance,evidence_reference,review_status
+2026-11-19,DEMO_PROPERTY,DEMO_TRUST,USD,DEMO_OWNER_A,DEMO_PROP_A,8000,FICTIONAL_LEDGER_A,DRAFT
+2026-11-19,DEMO_PROPERTY,DEMO_TRUST,USD,DEMO_OWNER_B,DEMO_PROP_B,5000,FICTIONAL_LEDGER_B,DRAFT

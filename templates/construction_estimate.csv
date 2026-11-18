@@ -1,0 +1,4 @@
+line_id,project,cost_code,description,quantity,unit,material_unit_cost,waste_rate,labor_hours,hourly_rate,quote_reference,review_status
+DEMO_L01,Fictional Fitout,MAT-001,Floor finish,100,sqm,25,0.05,60,20,DEMO_QUOTE_01,DRAFT
+DEMO_L02,Fictional Fitout,MAT-002,Paint,80,litre,12,0.03,40,20,DEMO_QUOTE_02,DRAFT
+DEMO_L03,Fictional Fitout,LAB-001,Site preparation,0,n/a,0,0,30,20,DEMO_SCOPE_01,DRAFT

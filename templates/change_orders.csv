@@ -1,0 +1,3 @@
+change_id,project,description,request_date,status,requested_revenue_change,approved_revenue_change,estimated_cost_change,currency,approval_reference,owner,notes
+DEMO_CO01,Fictional Fitout,Additional room finish,2026-11-16,PENDING,1500,,1000,USD,,,Pending amount is not approved contract value
+DEMO_CO02,Fictional Fitout,Approved layout variation,2026-11-12,APPROVED,2000,2000,1200,USD,DEMO_APPROVAL_02,,Fictional approval reference

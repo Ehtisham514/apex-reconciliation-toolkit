@@ -1,0 +1,11 @@
+request_id,workstream,request,period_or_scope,owner,status,evidence_reference,risk_or_finding,follow_up,reviewer
+DD01,Financial,Obtain financial statements general ledgers and reconciliations,Historical periods agreed for transaction,,NOT_STARTED,,,,
+DD02,Financial,Bridge reported EBITDA to proposed normalized EBITDA,Each historical period,,NOT_STARTED,,,,
+DD03,Working capital,Review receivables inventory payables and seasonality,Historical monthly balances and closing estimate,,NOT_STARTED,,,,
+DD04,Debt and cash,Reconcile debt cash restricted cash and debt-like items,Proposed closing date,,NOT_STARTED,,,,
+DD05,Revenue,Review customer concentration contracts and revenue recognition,Material customers and contracts,,NOT_STARTED,,,,
+DD06,Tax,Obtain tax diligence by an appropriately qualified adviser,Jurisdictions and transaction structure,,NOT_STARTED,,,,
+DD07,Legal,Review ownership title contracts litigation and approvals,Scope set by legal advisers,,NOT_STARTED,,,,
+DD08,People,Review payroll employee liabilities and integration costs,Applicable entities and jurisdictions,,NOT_STARTED,,,,
+DD09,Operations,Validate synergies implementation owners costs and timing,First years after closing,,NOT_STARTED,,,,
+DD10,Deal model,Reconcile sources uses financing fees and sensitivity cases,Proposed transaction structure,,NOT_STARTED,,,,

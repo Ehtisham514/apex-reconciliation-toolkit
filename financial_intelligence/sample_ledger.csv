@@ -1,0 +1,5 @@
+transaction_id,date,entity,project,account,amount,currency
+DEMO-001,2026-01-01,Example Construction Ltd,Project Cedar,Operating,100000.00,USD
+DEMO-002,2026-01-02,Example Construction Ltd,Project Cedar,Operating,-25000.00,USD
+DEMO-003,2026-01-03,Example Construction Ltd,Project Maple,Operating,15000.00,USD
+DEMO-004,2026-01-04,Example Construction Ltd,Project Maple,Operating,-3200.50,USD

@@ -27,6 +27,11 @@ test("CSV supports BOM, CRLF, commas, escaped quotes and multiline fields", () =
 test("malformed quoted CSV is rejected", () => {
   for (const value of ['a,b\n"unclosed,b', 'a,b\nabc"def,b', 'a,b\n"abc"def,b']) assert.throws(() => A.parseCSV(value));
 });
+test("nonblank empty-field records are rejected rather than silently omitted", () => {
+  assert.throws(() => A.readTransactions(header + b() + "\n,,,,,,\n", "bank"), /Description is required/);
+  assert.throws(() => A.readTransactions(header + b() + '\n""\n', "bank"), /Expected 7 columns/);
+  assert.equal(A.readTransactions(header + b() + "\n   \n", "bank").length, 1);
+});
 test("amounts use exact integer cents", () => {
   assert.equal(A.moneyToCents("0.10") + A.moneyToCents("0.20"), 30n);
   assert.equal(A.moneyToCents("(1,234.56)"), -123456n);

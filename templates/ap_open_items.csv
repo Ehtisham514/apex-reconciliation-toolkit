@@ -1,0 +1,4 @@
+id,party,invoice_date,due_date,amount,paid,currency,entity
+DEMO_AP001,Fictional Supplier A,2026-09-15,2026-10-15,700,100,USD,DEMO_ENTITY
+DEMO_AP002,Fictional Supplier B,2026-10-20,2026-11-19,1500,0,USD,DEMO_ENTITY
+DEMO_AP003,Fictional Supplier C,2026-11-01,2026-12-01,400,0,USD,DEMO_ENTITY

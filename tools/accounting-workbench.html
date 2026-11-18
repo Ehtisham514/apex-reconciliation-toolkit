@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>APEX Accounting Workbench</title><meta name="description" content="Offline receivables and payables aging, intercompany transfer review and trust balance arithmetic, with exact cents and CSV reports.">
+<style>
+:root{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#17352e;background:#f5f7f3;font-synthesis:none;--ink:#17352e;--muted:#66796e;--line:#dce5dc;--green:#176b51;--pale:#eaf3e9;--amber:#86621d}*{box-sizing:border-box}body{margin:0}a{color:var(--green)}button,input,select{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.5}button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #4f96cb;outline-offset:3px}[hidden]{display:none!important}.wrap{max-width:1210px;margin:auto;padding:0 28px}header{background:#fff;border-bottom:1px solid var(--line)}.head{height:82px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:12px}.mark{background:var(--ink);color:#c2edb7;width:40px;height:42px;border-radius:12px;display:grid;place-items:center;font-size:23px;font-weight:750}.brand strong{letter-spacing:.08em}.brand small{display:block;font-size:10px;color:var(--muted);letter-spacing:.12em;margin-top:4px}.back{font-size:12px;text-decoration:none}.hero{padding:40px 0 24px}.eyebrow{font-size:11px;color:var(--green);text-transform:uppercase;letter-spacing:.14em;font-weight:700;margin:0 0 12px}h1{font-size:clamp(29px,4vw,43px);line-height:1.12;letter-spacing:-1.2px;margin:0 0 14px}.intro{max-width:760px;font-size:14px;line-height:1.75;color:var(--muted);margin:0}.privacy{font-size:11px;color:var(--green);background:var(--pale);padding:8px 12px;border-radius:8px;display:inline-block;margin-top:18px}.tabs{display:flex;gap:8px;padding-bottom:21px;flex-wrap:wrap}.tabs button{border:1px solid var(--line);background:#fff;color:var(--muted);font-weight:650;padding:13px 19px;border-radius:10px;font-size:13px}.tabs button[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}.tabs .number{font-size:10px;opacity:.65;margin-right:8px}.panel{background:#fff;border:1px solid var(--line);border-radius:17px;margin-bottom:20px;overflow:hidden}.panel-inner{padding:24px}.heading{display:flex;justify-content:space-between;gap:20px;align-items:start;margin-bottom:17px}h2{font-size:18px;letter-spacing:-.3px;margin:0 0 7px}h3{font-size:15px;margin:0 0 8px}.hint{font-size:12px;color:var(--muted);line-height:1.7;margin:0;max-width:800px}.button{display:inline-flex;align-items:center;justify-content:center;gap:7px;background:#fff;color:var(--ink);border:1px solid #b8c9bb;border-radius:8px;padding:10px 15px;min-height:41px;font-size:12px;font-weight:650;text-decoration:none}.button:hover:not(:disabled){background:var(--pale);border-color:var(--green)}.button.primary{background:var(--green);color:#fff;border-color:var(--green)}.button.primary:hover:not(:disabled){background:#12543f}.inputs{display:grid;grid-template-columns:2fr 1fr 1fr;gap:16px;align-items:end}.field{display:flex;flex-direction:column;gap:8px;font-size:12px;font-weight:600;color:var(--ink)}input,select{padding:10px 12px;border:1px solid #c9d7ca;border-radius:8px;background:#fff;color:var(--ink);min-width:0;width:100%;font-size:13px}input[type=file]{font-size:11px;padding:7px;background:#fafcf8}input[type=file]::file-selector-button{font:inherit;background:#fff;border:1px solid var(--line);border-radius:5px;padding:7px 9px;margin-right:10px;cursor:pointer}.actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:17px}.status{font-size:11px;color:var(--muted);overflow-wrap:anywhere}.format{border-top:1px solid var(--line);margin-top:20px;padding-top:14px;font-size:12px}.format summary{font-weight:600;cursor:pointer}.format p{color:var(--muted);line-height:1.75}.format code{background:#f0f4ed;padding:3px 5px;border-radius:4px;overflow-wrap:anywhere;font-size:11px}.notice{padding:14px 17px;border:1px solid #d8e5d5;background:#edf5e9;color:#42623b;border-radius:10px;font-size:12px;line-height:1.65;margin:18px 0}.error{padding:14px 17px;background:#fff1ef;color:#9b3027;border:1px solid #edc2ba;border-radius:10px;font-size:13px;line-height:1.6;margin:16px 0}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:21px 0}.metric{background:#fff;border:1px solid var(--line);border-radius:13px;padding:17px;min-width:0}.metric label{font-size:11px;color:var(--muted);display:block;margin-bottom:9px}.metric strong{font-size:29px;font-weight:650;letter-spacing:-.6px;overflow-wrap:anywhere}.metric small{display:block;margin-top:7px;color:var(--muted);font-size:10px;line-height:1.5}.metric:first-child{background:#eaf4e7;border-color:#d2e5cc}.metric.money strong{font-size:21px;font-variant-numeric:tabular-nums}.toolbar{display:flex;gap:15px;align-items:center;justify-content:space-between;padding:15px 19px;border-bottom:1px solid var(--line);flex-wrap:wrap}.toolbar label{font-size:12px;display:flex;align-items:center;gap:10px}.toolbar select{width:auto;font-size:12px;padding:8px 10px}.toolbar p{font-size:11px;color:var(--muted);margin:0}.table-wrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:12px;text-align:left}th{background:#fafbf7;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:12px 15px;border-bottom:1px solid var(--line);white-space:nowrap}td{padding:13px 15px;border-bottom:1px solid #edf1e9;vertical-align:top;line-height:1.6;max-width:320px;overflow-wrap:anywhere}td.numeric{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:600}.pager{display:flex;align-items:center;justify-content:space-between;padding:13px 19px;gap:12px;color:var(--muted);font-size:11px}.pager div{display:flex;gap:8px}.pager .button{padding:5px 11px;min-height:31px;font-size:11px}.exports{display:flex;gap:9px;flex-wrap:wrap;margin:15px 0}.footnote{font-size:11px;line-height:1.7;color:var(--muted);margin:12px 0}.empty{padding:36px 24px;text-align:center;color:var(--muted);font-size:13px;line-height:1.7;background:#fff;border:1px dashed #c9d9c7;border-radius:13px;margin:22px 0}.empty strong{color:var(--ink);font-size:15px}.trust-context{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:23px}.trust-fields{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.trust-field-note{font-size:10px;line-height:1.5;color:var(--muted);font-weight:400}.formula{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:12px;background:#f2f6ef;border-radius:8px;padding:13px;line-height:1.75;margin-top:20px}.footer{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;border-top:1px solid var(--line);padding:22px 0 29px;margin-top:30px;font-size:11px;color:var(--muted)}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media(max-width:800px){.wrap{padding:0 17px}.head{height:72px}.back{font-size:10px}.hero{padding:28px 0 19px}.tabs button{font-size:11px;padding:11px 12px}.tabs .number{display:none}.inputs{grid-template-columns:1fr}.heading{flex-direction:column;gap:12px}.panel-inner{padding:19px}.metrics{grid-template-columns:repeat(2,1fr)}.metric strong{font-size:25px}.trust-context,.trust-fields{grid-template-columns:repeat(2,1fr)}.metric.money strong{font-size:18px}.toolbar{padding:13px}.toolbar label{font-size:11px}.exports .button{flex:1}th,td{padding:11px 12px}}@media(max-width:440px){.trust-context,.trust-fields{grid-template-columns:1fr}.tabs{gap:6px}.tabs button{flex:1}.brand small{font-size:8px}.metric{padding:13px}.privacy{font-size:10px}}
+</style></head><body>
+<header><div class="wrap head"><div class="brand"><span class="mark" aria-hidden="true">A</span><div><strong>APEX</strong><small>ACCOUNTING WORKBENCH</small></div></div><a class="back" href="../index.html">← Back to the accounting hub</a></div></header>
+<main class="wrap">
+<section class="hero"><p class="eyebrow">Practical tools for the close</p><h1>Work through the details.</h1><p class="intro">See what is due, trace transfers between companies, and check trust balance arithmetic. Start with a fictional example, then review your own records and export the results.</p><span class="privacy">Works locally in this tab · No external scripts or uploads</span></section>
+<nav class="tabs" aria-label="Accounting workspaces"><button type="button" data-workspace="aging" aria-pressed="true"><span class="number">01</span>Receivables &amp; payables</button><button type="button" data-workspace="transfers" aria-pressed="false"><span class="number">02</span>Intercompany transfers</button><button type="button" data-workspace="trust" aria-pressed="false"><span class="number">03</span>Trust balances</button></nav>
+<section id="workspace-aging" aria-labelledby="aging-heading">
+<div class="panel panel-inner"><div class="heading"><div><h2 id="aging-heading">What needs attention first?</h2><p class="hint">Age receivables or payables at your chosen date. Every currency and entity has its own totals.</p></div><button class="button" id="aging-demo" type="button">Try fictional sample ↗</button></div>
+<div class="inputs"><label class="field">Open-items CSV<input id="aging-file" type="file" accept=".csv,text/csv" aria-describedby="aging-file-status"></label><label class="field">As-of date<input id="aging-asof" type="date" value="2026-11-19"></label><label class="field">Ledger type<select id="aging-type"><option value="ar">Accounts receivable</option><option value="ap">Accounts payable</option></select></label></div>
+<div class="actions"><button id="aging-run" type="button" class="button primary" disabled>Build aging report →</button><span class="status" id="aging-file-status">No file loaded</span></div>
+<details class="format"><summary>CSV format &amp; accounting assumptions</summary><p><code>id,party,invoice_date,due_date,amount,paid,currency,entity</code></p><p>Use amounts and payments as nonnegative values with up to two decimals; paid cannot exceed amount. <strong>Paid must already reflect your selected as-of date.</strong> This file has no dated payment history. Future invoice dates are excluded from aging but retained in the detailed export. Credits, overpayments and foreign-exchange conversion need separate review. Due today belongs in Current.</p><p>Use UTF-8 CSV, up to 5,000 rows and 3 MiB. Required IDs must be unique. Entity labels are normalized for case and repeated whitespace in summary grouping.</p><a class="button" href="../templates/ar_open_items.csv" download>Receivables example ↓</a> <a class="button" href="../templates/ap_open_items.csv" download>Payables example ↓</a></details>
+<div class="error" id="aging-error" role="alert" hidden></div></div>
+<div id="aging-empty" class="empty"><strong>A clear view of open items.</strong><br>Load one CSV or try the sample to see Current, 1–30, 31–60, 61–90 and 91+ day balances.</div>
+<section id="aging-result" aria-label="Aging results" hidden><div id="aging-metrics" class="metrics"></div><div class="panel"><div class="toolbar"><label>View<select id="aging-view"><option value="summary">Entity &amp; currency totals</option><option value="detail">All source items</option></select></label><p id="aging-context"></p></div><div class="table-wrap"><table><caption class="sr-only">Aging report</caption><thead id="aging-thead"></thead><tbody id="aging-tbody"></tbody></table></div><div class="pager"><span id="aging-page" role="status" aria-live="polite"></span><div><button class="button" id="aging-prev" type="button">Previous</button><button class="button" id="aging-next" type="button">Next</button></div></div></div><div class="exports"><button class="button" id="aging-export-summary" type="button">Export aging totals ↓</button><button class="button" id="aging-export-detail" type="button">Export every source item ↓</button></div><p class="footnote">Aging is based on the supplied snapshot. It does not confirm that invoices are collectible, payments are complete, or amounts agree to the general ledger.</p></section></section>
+<section id="workspace-transfers" aria-labelledby="transfers-heading" hidden>
+<div class="panel panel-inner"><div class="heading"><div><h2 id="transfers-heading">See both sides of a transfer.</h2><p class="hint">Suggest pairs only when entities are reciprocal, references agree, amounts are opposite, and dates fit your window.</p></div><button class="button" id="transfers-demo" type="button">Try fictional sample ↗</button></div>
+<div class="inputs"><label class="field">Intercompany CSV<input id="transfers-file" type="file" accept=".csv,text/csv" aria-describedby="transfers-file-status"></label><label class="field">Allowed date difference<select id="transfers-days"><option value="0">Same day</option><option value="1">± 1 day</option><option value="2">± 2 days</option><option value="3" selected>± 3 days</option><option value="5">± 5 days</option><option value="7">± 7 days</option></select></label><button id="transfers-run" type="button" class="button primary" disabled>Review transfers →</button></div><div class="actions"><span class="status" id="transfers-file-status">No file loaded</span></div>
+<details class="format"><summary>CSV format &amp; pairing rules</summary><p><code>id,date,entity,counterparty,reference,amount,currency</code></p><p>Negative means money leaves <strong>entity</strong>; positive means it arrives. Names are normalized for case and repeated whitespace. References must match exactly after trimming, including punctuation and case. Blank references, repeated references within an entity pair/currency, zero values and ambiguous groups stay unresolved. No rows are removed.</p><p>Up to 5,000 rows and 3 MiB of UTF-8 CSV. Suggestions need evidence review; this tool does not create due-to/due-from entries or consolidation eliminations.</p><a class="button" href="../templates/intercompany_transfers.csv" download>Intercompany example ↓</a></details><div class="error" id="transfers-error" role="alert" hidden></div></div>
+<div id="transfers-empty" class="empty"><strong>Follow the trail between entities.</strong><br>The fictional sample includes a clear pair, a missing counterpart and an ambiguous group.</div>
+<section id="transfers-result" aria-label="Transfer review results" hidden><div id="transfers-metrics" class="metrics"></div><div class="notice">Every suggested pair is marked REVIEW REQUIRED. A zero overall net does not establish that individual transfers are complete or correctly classified.</div><div class="panel"><div class="toolbar"><label>View<select id="transfers-view"><option value="pairs">Suggested pairs</option><option value="exceptions">Rows needing investigation</option><option value="totals">Entity &amp; currency movement</option></select></label><p id="transfers-context"></p></div><div class="table-wrap"><table><caption class="sr-only">Intercompany transfer review</caption><thead id="transfers-thead"></thead><tbody id="transfers-tbody"></tbody></table></div><div class="pager"><span id="transfers-page" role="status" aria-live="polite"></span><div><button class="button" id="transfers-prev" type="button">Previous</button><button class="button" id="transfers-next" type="button">Next</button></div></div></div><div class="exports"><button class="button" id="transfers-export" type="button">Export every transfer &amp; review status ↓</button><button class="button" id="transfers-export-totals" type="button">Export entity movement ↓</button></div></section></section>
+<section id="workspace-trust" aria-labelledby="trust-heading" hidden>
+<div class="panel panel-inner"><div class="heading"><div><h2 id="trust-heading">Check the three totals.</h2><p class="hint">Compare an adjusted bank balance, book balance and total client liability for one trust account, one currency and one date.</p></div><button class="button" id="trust-demo" type="button">Try fictional sample ↗</button></div>
+<div class="trust-context"><label class="field">As-of date<input id="trust-date" type="date" value="2026-11-19"></label><label class="field">Entity<input id="trust-entity" type="text" maxlength="1024" placeholder="Example Property Ltd"></label><label class="field">Trust account label<input id="trust-account" type="text" maxlength="1024" placeholder="Client trust account"></label><label class="field">Currency<input id="trust-currency" type="text" value="USD" maxlength="3"></label></div>
+<div class="trust-fields"><label class="field">Statement closing balance<input id="trust-statement" type="text" inputmode="decimal" placeholder="0.00"><span class="trust-field-note">Signed closing balance from the statement.</span></label><label class="field">Deposits in transit<input id="trust-deposits" type="text" inputmode="decimal" value="0.00"><span class="trust-field-note">Nonnegative; supported receipts absent from the statement.</span></label><label class="field">Outstanding payments<input id="trust-outstanding" type="text" inputmode="decimal" value="0.00"><span class="trust-field-note">Nonnegative; supported payments not yet cleared.</span></label><label class="field">Book closing balance<input id="trust-books" type="text" inputmode="decimal" placeholder="0.00"><span class="trust-field-note">After reviewed book adjustments.</span></label><label class="field">Total client liability<input id="trust-liability" type="text" inputmode="decimal" placeholder="0.00"><span class="trust-field-note">Total from the client subledger at the same date.</span></label></div>
+<div class="formula">Adjusted bank = Statement balance + Deposits in transit − Outstanding payments</div><div class="actions"><button id="trust-run" type="button" class="button primary">Check balances →</button><a class="button" href="../templates/trust_reconciliation.csv" download>Supporting worksheet ↓</a></div><div class="error" id="trust-error" role="alert" hidden></div></div>
+<div class="notice">Arithmetic agreement is one check. Verify each outstanding item, each client balance, cutoff completeness and supporting evidence separately. This tool does not establish trust-account compliance or approve a reconciliation.</div>
+<section id="trust-result" aria-label="Trust balance arithmetic result" hidden><div class="metrics" id="trust-metrics"></div><div id="trust-message" class="notice" role="status" aria-live="polite"></div><div class="exports"><button class="button" id="trust-export" type="button">Export balance check ↓</button></div></section></section>
+<footer class="footer"><span>APEX Accounting &amp; Solutions · MIT licensed · Fictional examples</span><button class="button" id="clear" type="button">Clear all session data</button></footer>
+</main>
+
+<script id="workbench-core">
+/* APEX Accounting Workbench, MIT licensed.
+   CSV/date/exact-cents helpers adapted from this repository's reconciliation core. */
+(function(root){
+  "use strict";
+  const MAX_ROWS=5000,MAX_BYTES=3*1024*1024;
+  const normalize=value=>String(value).trim().replace(/\s+/g," ").toUpperCase();
+  const key=(...parts)=>JSON.stringify(parts);
+  function parseCSV(text) {
+    text = String(text).replace(/^\uFEFF/, "");
+    const rows = [];
+    let cells = [], value = "", quoted = false, closed = false, line = 1, start = 1;
+    function finishCell() { cells.push(value); value = ""; closed = false; }
+    function finishRow() {
+      const explicitCells = cells.length > 0 || closed;
+      finishCell();
+      if (explicitCells || cells.some(cell => cell.trim() !== "")) rows.push({ cells, line: start });
+      cells = [];
+    }
+    for (let i = 0; i < text.length; i++) {
+      const char = text[i];
+      if (quoted) {
+        if (char === '"' && text[i + 1] === '"') { value += '"'; i++; }
+        else if (char === '"') { quoted = false; closed = true; }
+        else { value += char; if (char === "\n") line++; }
+      } else if (char === ",") finishCell();
+      else if (char === "\n" || char === "\r") {
+        if (char === "\r" && text[i + 1] === "\n") i++;
+        finishRow(); line++; start = line;
+      } else if (char === '"') {
+        if (value.length || closed) throw new Error(`Line ${line}: unexpected quote; quote the whole CSV field.`);
+        quoted = true;
+      } else if (closed) {
+        if (!/[ \t]/.test(char)) throw new Error(`Line ${line}: unexpected text after a closing quote.`);
+      } else value += char;
+    }
+    if (quoted) throw new Error(`Line ${start}: unclosed quoted field.`);
+    if (value.length || cells.length || closed) finishRow();
+    return rows;
+  }
+
+  function moneyToCents(raw) {
+    let value = String(raw).trim(), negative = false;
+    if (/^\(.*\)$/.test(value)) {
+      negative = true; value = value.slice(1, -1).trim();
+      if (/^[+-]/.test(value)) throw new Error("Parenthesized amounts cannot also have a sign.");
+    }
+    if (!/^[+-]?(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d{1,2})?$/.test(value))
+      throw new Error(`Invalid amount ${JSON.stringify(raw)}; use at most two decimals and no currency symbol.`);
+    if (value.startsWith("-")) negative = true;
+    value = value.replace(/^[+-]/, "").replace(/,/g, "");
+    const [whole, fraction = ""] = value.split(".");
+    const cents = BigInt(whole) * 100n + BigInt(fraction.padEnd(2, "0"));
+    if (cents > 999999999999999n) throw new Error("Amount exceeds the supported transaction limit.");
+    return negative ? -cents : cents;
+  }
+
+  function formatMoney(cents) {
+    const sign = cents < 0n ? "-" : "", absolute = cents < 0n ? -cents : cents;
+    return `${sign}${absolute / 100n}.${String(absolute % 100n).padStart(2, "0")}`;
+  }
+
+  function dateToDay(value) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(value) || value.startsWith("0000")) throw new Error("Dates must use YYYY-MM-DD.");
+    const date = new Date(`${value}T00:00:00.000Z`);
+    if (!Number.isFinite(date.getTime()) || date.toISOString().slice(0, 10) !== value)
+      throw new Error(`Invalid calendar date ${value}.`);
+    return date.getTime() / 86400000;
+  }
+
+  function csvCell(value, numeric = false) {
+    let text = String(value == null ? "" : value);
+    if (!numeric && /^\s*[=+\-@]/.test(text)) text = "'" + text;
+    return '"' + text.replace(/"/g, '""') + '"';
+  }
+  function makeCSV(headers, rows, numericColumns = []) {
+    const numbers = new Set(numericColumns);
+    return [headers.map(value => csvCell(value)).join(","), ...rows.map(row => row.map((value, index) => csvCell(value, numbers.has(index))).join(","))].join("\r\n") + "\r\n";
+  }
+  function readRows(text, required) {
+    if (new TextEncoder().encode(String(text)).byteLength > MAX_BYTES) throw new Error("Maximum file size is 3 MiB.");
+    const data = parseCSV(text);
+    if (!data.length) throw new Error("CSV is empty.");
+    const headers = data[0].cells.map(value => value.trim().toLowerCase());
+    if (headers.length > 64 || headers.some(value => !value) || new Set(headers).size !== headers.length)
+      throw new Error("Use up to 64 nonempty, unique column names.");
+    const missing = required.filter(value => !headers.includes(value));
+    if (missing.length) throw new Error("Missing columns: " + missing.join(", "));
+    if (data.length < 2) throw new Error("CSV has no data rows.");
+    if (data.length - 1 > MAX_ROWS) throw new Error("Maximum 5,000 data rows per file.");
+    const ids = new Set();
+    return data.slice(1).map(row => {
+      if (row.cells.length !== headers.length) throw new Error(`Line ${row.line}: expected ${headers.length} columns, found ${row.cells.length}.`);
+      const record = Object.fromEntries(headers.map((name, i) => [name, row.cells[i].trim()]));
+      if (!record.id) throw new Error(`Line ${row.line}: id is required.`);
+      if (ids.has(record.id)) throw new Error(`Line ${row.line}: duplicate id ${JSON.stringify(record.id)}.`);
+      if (record.id.length > 256) throw new Error(`Line ${row.line}: id exceeds 256 characters.`);
+      ids.add(record.id);
+      for (const field of required) if ((record[field] || "").length > 1024) throw new Error(`Line ${row.line}: ${field} is too long.`);
+      return { record, line: row.line };
+    });
+  }
+  function currencyCode(value) {
+    const code = String(value).trim().toUpperCase();
+    if (!/^[A-Z]{3}$/.test(code)) throw new Error("Currency must be a three-letter label.");
+    return code;
+  }
+  function requireText(value, field) {
+    if (value === undefined || value === null || !String(value).trim()) throw new Error(field + " is required.");
+    return String(value).trim();
+  }
+  function readOpenItems(text) {
+    return readRows(text, ["id","party","invoice_date","due_date","amount","paid","currency","entity"]).map(({record:r,line}) => {
+      try {
+        const cents = moneyToCents(r.amount), paidCents = moneyToCents(r.paid);
+        if (cents < 0n || paidCents < 0n || paidCents > cents) throw new Error("Amount and paid must be nonnegative, with paid no greater than amount; review credits separately.");
+        return { id:r.id, line, party:requireText(r.party,"Party"), entity:requireText(r.entity,"Entity"), entityKey:normalize(r.entity),
+          currency:currencyCode(r.currency), invoiceDate:r.invoice_date, invoiceDay:dateToDay(r.invoice_date),
+          dueDate:r.due_date, dueDay:dateToDay(r.due_date), cents, paidCents };
+      } catch(error) { throw new Error(`Line ${line}: ${error.message}`); }
+    });
+  }
+  const BUCKETS = ["Current", "1–30", "31–60", "61–90", "91+"];
+  function ageOpenItems(items, asOf) {
+    const day = dateToDay(asOf), groups = new Map();
+    const rows = items.map(item => {
+      const openCents = item.cents - item.paidCents;
+      const future = item.invoiceDay > day;
+      const daysOverdue = Math.max(0, day - item.dueDay);
+      const bucket = daysOverdue === 0 ? "Current" : daysOverdue <= 30 ? "1–30" : daysOverdue <= 60 ? "31–60" : daysOverdue <= 90 ? "61–90" : "91+";
+      const status = future ? "FUTURE_INVOICE_EXCLUDED" : openCents === 0n ? "SETTLED" : "OPEN_REVIEW_REQUIRED";
+      if (!future) {
+        const groupKey = key(item.entityKey, item.currency);
+        if (!groups.has(groupKey)) groups.set(groupKey, { entity:item.entity, currency:item.currency, totals:Object.fromEntries(BUCKETS.map(name => [name, 0n])), openCents:0n, openCount:0 });
+        const group = groups.get(groupKey);
+        group.totals[bucket] += openCents;
+        group.openCents += openCents;
+        if(openCents > 0n) group.openCount++;
+      }
+      return { item, openCents, includedCents:future ? 0n : openCents, daysOverdue, bucket, status };
+    });
+    return { asOf, rows, groups:[...groups.values()], openCount:rows.filter(r=>r.status==="OPEN_REVIEW_REQUIRED").length,
+      overdueCount:rows.filter(r=>r.status==="OPEN_REVIEW_REQUIRED" && r.daysOverdue>0).length,
+      settledCount:rows.filter(r=>r.status==="SETTLED").length, futureCount:rows.filter(r=>r.status==="FUTURE_INVOICE_EXCLUDED").length };
+  }
+  function exportAging(report, summary=false) {
+    if (summary) return makeCSV(["as_of","entity","currency","current","days_1_30","days_31_60","days_61_90","days_91_plus","total_open","open_item_count"],
+      report.groups.map(g=>[report.asOf,g.entity,g.currency,...BUCKETS.map(b=>formatMoney(g.totals[b])),formatMoney(g.openCents),g.openCount]),[3,4,5,6,7,8,9]);
+    return makeCSV(["as_of","status","id","source_line","entity","party","currency","invoice_date","due_date","amount","paid_as_of","open_amount","included_in_aging","days_overdue","bucket"],
+      report.rows.map(r=>[report.asOf,r.status,r.item.id,r.item.line,r.item.entity,r.item.party,r.item.currency,r.item.invoiceDate,r.item.dueDate,formatMoney(r.item.cents),formatMoney(r.item.paidCents),formatMoney(r.openCents),formatMoney(r.includedCents),r.daysOverdue,r.bucket]),[3,9,10,11,12,13]);
+  }
+  function readTransfers(text) {
+    return readRows(text, ["id","date","entity","counterparty","reference","amount","currency"]).map(({record:r,line}) => {
+      try {
+        return { id:r.id,line,date:r.date,day:dateToDay(r.date),entity:requireText(r.entity,"Entity"),entityKey:normalize(r.entity),
+          counterparty:requireText(r.counterparty,"Counterparty"),counterpartyKey:normalize(r.counterparty),
+          reference:r.reference,cents:moneyToCents(r.amount),currency:currencyCode(r.currency) };
+      } catch(error) { throw new Error(`Line ${line}: ${error.message}`); }
+    });
+  }
+  function reviewTransfers(rows, days=3) {
+    if(!Number.isInteger(days)||days<0||days>7) throw new Error("Date window must be an integer from 0 to 7 days.");
+    const groups = new Map(), used = new Set(), reasons = new Map(), candidateIndex = new Map(), balances = new Map(), pairs=[];
+    const candidateKey = (row, reverse=false, day=row.day) => key(reverse?row.counterpartyKey:row.entityKey,reverse?row.entityKey:row.counterpartyKey,row.reference,row.currency,(reverse?-row.cents:row.cents).toString(),day);
+    for(const row of rows) {
+      const entities=[row.entityKey,row.counterpartyKey].sort();
+      const groupKey=key(entities,row.reference,row.currency);
+      if(!groups.has(groupKey)) groups.set(groupKey,[]);
+      groups.get(groupKey).push(row);
+      const ck=candidateKey(row);
+      if(!candidateIndex.has(ck)) candidateIndex.set(ck,[]);
+      candidateIndex.get(ck).push(row.id);
+      const balanceKey=key(row.entityKey,row.currency);
+      if(!balances.has(balanceKey)) balances.set(balanceKey,{entity:row.entity,currency:row.currency,cents:0n,count:0});
+      balances.get(balanceKey).cents+=row.cents; balances.get(balanceKey).count++;
+    }
+    for(const group of groups.values()) {
+      if(!group[0].reference) {for(const r of group)reasons.set(r.id,"Missing transfer reference; review supporting records.");continue;}
+      if(group.length>2) {for(const r of group)reasons.set(r.id,"Repeated reference for this entity pair/currency; ambiguous group held intact.");continue;}
+      if(group.length<2) {reasons.set(group[0].id,"No second row with this entity pair, exact reference and currency.");continue;}
+      const [left,right]=group;
+      let reason="";
+      if(left.entityKey===left.counterpartyKey||right.entityKey===right.counterpartyKey)reason="Same-entity entry is not an intercompany pair.";
+      else if(left.entityKey!==right.counterpartyKey||left.counterpartyKey!==right.entityKey)reason="Entities and counterparties are not reciprocal.";
+      else if(left.cents===0n||right.cents===0n)reason="Zero amount needs manual review.";
+      else if(left.cents!==-right.cents)reason="Amounts are not equal and opposite.";
+      else if(Math.abs(left.day-right.day)>days)reason=`Pair is outside the ${days}-day window.`;
+      if(reason){reasons.set(left.id,reason);reasons.set(right.id,reason);}
+      else {pairs.push({left,right,dayDifference:Math.abs(left.day-right.day)});used.add(left.id);used.add(right.id);}
+    }
+    const exceptions=rows.filter(row=>!used.has(row.id)).map(row=>{
+      let count=0;const candidateIds=[];
+      if(row.reference&&row.cents!==0n&&row.entityKey!==row.counterpartyKey)for(let day=row.day-days;day<=row.day+days;day++){
+        const ids=candidateIndex.get(candidateKey(row,true,day))||[];
+        count+=ids.length;
+        for(const id of ids.slice(0,Math.max(0,10-candidateIds.length)))candidateIds.push(id);
+      }
+      return {row,reason:reasons.get(row.id)||"Review supporting records.",candidateCount:count,candidateIds};
+    });
+    return {days,rows,pairs,exceptions,balances:[...balances.values()],rowCount:rows.length};
+  }
+  function exportTransfers(report, summary=false) {
+    if(summary)return makeCSV(["entity","currency","source_rows","net_cash_movement"],report.balances.map(b=>[b.entity,b.currency,b.count,formatMoney(b.cents)]),[2,3]);
+    const paired=new Map(), exceptions=new Map(report.exceptions.map(e=>[e.row.id,e]));
+    for(const p of report.pairs){paired.set(p.left.id,{other:p.right.id,days:p.dayDifference});paired.set(p.right.id,{other:p.left.id,days:p.dayDifference});}
+    return makeCSV(["status","id","source_line","date","entity","counterparty","reference","currency","amount","suggested_pair_id","date_difference_days","reason","candidate_ids_first_10","candidate_count"],report.rows.map(r=>{
+      const p=paired.get(r.id),e=exceptions.get(r.id);
+      return [p?"PAIR_REVIEW_REQUIRED":"EXCEPTION_REVIEW_REQUIRED",r.id,r.line,r.date,r.entity,r.counterparty,r.reference,r.currency,formatMoney(r.cents),p?p.other:"",p?p.days:"",p?"Reciprocal entities, exact reference, opposite amount and date window; evidence review required.":e.reason,e?e.candidateIds.join(" | "):"",e?e.candidateCount:1];
+    }),[2,8,10,13]);
+  }
+  function trustCheck(values) {
+    const asOf=requireText(values.as_of_date,"As-of date");dateToDay(asOf);
+    const entity=requireText(values.entity,"Entity"),account=requireText(values.trust_account,"Trust account"),currency=currencyCode(values.currency);
+    const fields=["statement_balance","deposits_in_transit","outstanding_payments","book_balance","client_liability_balance"];
+    const amounts=Object.fromEntries(fields.map(field=>[field,moneyToCents(values[field])]));
+    if(amounts.deposits_in_transit<0n||amounts.outstanding_payments<0n)throw new Error("Deposits in transit and outstanding payments must be nonnegative.");
+    const adjustedBank=amounts.statement_balance+amounts.deposits_in_transit-amounts.outstanding_payments;
+    const bankBookDifference=adjustedBank-amounts.book_balance,bookLiabilityDifference=amounts.book_balance-amounts.client_liability_balance;
+    return {asOf,entity,account,currency,amounts,adjustedBank,bankBookDifference,bookLiabilityDifference,
+      bankLiabilityDifference:adjustedBank-amounts.client_liability_balance,
+      status:bankBookDifference===0n&&bookLiabilityDifference===0n?"ARITHMETIC_AGREEMENT_REVIEW_REQUIRED":"DIFFERENCE_TO_INVESTIGATE"};
+  }
+  function exportTrust(result) {
+    return makeCSV(["as_of_date","entity","trust_account","currency","statement_balance","deposits_in_transit","outstanding_payments","adjusted_bank_balance","book_balance","client_liability_balance","adjusted_bank_minus_books","books_minus_client_liability","status"],
+      [[result.asOf,result.entity,result.account,result.currency,formatMoney(result.amounts.statement_balance),formatMoney(result.amounts.deposits_in_transit),formatMoney(result.amounts.outstanding_payments),formatMoney(result.adjustedBank),formatMoney(result.amounts.book_balance),formatMoney(result.amounts.client_liability_balance),formatMoney(result.bankBookDifference),formatMoney(result.bookLiabilityDifference),result.status]],[4,5,6,7,8,9,10,11]);
+  }
+  const api={MAX_ROWS,MAX_BYTES,BUCKETS,parseCSV,moneyToCents,formatMoney,dateToDay,readOpenItems,ageOpenItems,exportAging,readTransfers,reviewTransfers,exportTransfers,trustCheck,exportTrust};
+  if(typeof module==="object"&&module.exports)module.exports=api;else root.ApexWorkbench=api;
+})(typeof globalThis!=="undefined"?globalThis:this);
+
+</script>
+<script id="workbench-samples">window.APEX_WORKBENCH_SAMPLES={"ar": "id,party,invoice_date,due_date,amount,paid,currency,entity\nDEMO_AR001,Fictional Customer A,2026-09-01,2026-10-01,1200,200,USD,DEMO_ENTITY\nDEMO_AR002,Fictional Customer B,2026-10-20,2026-11-19,2500,0,USD,DEMO_ENTITY\nDEMO_AR003,Fictional Customer C,2026-10-25,2026-11-24,800,0,USD,DEMO_ENTITY\nDEMO_AR004,Fictional Customer D,2026-08-01,2026-08-31,500,500,USD,DEMO_ENTITY\n", "ap": "id,party,invoice_date,due_date,amount,paid,currency,entity\nDEMO_AP001,Fictional Supplier A,2026-09-15,2026-10-15,700,100,USD,DEMO_ENTITY\nDEMO_AP002,Fictional Supplier B,2026-10-20,2026-11-19,1500,0,USD,DEMO_ENTITY\nDEMO_AP003,Fictional Supplier C,2026-11-01,2026-12-01,400,0,USD,DEMO_ENTITY\n", "transfers": "id,date,entity,counterparty,reference,amount,currency\nDEMO_IC001,2026-11-16,DEMO_PARENT,DEMO_PROPERTY,DEMO_TRANSFER_01,-1000,USD\nDEMO_IC002,2026-11-17,DEMO_PROPERTY,DEMO_PARENT,DEMO_TRANSFER_01,1000,USD\nDEMO_IC003,2026-11-18,DEMO_PARENT,DEMO_PROPERTY,DEMO_TRANSFER_02,-250,USD\nDEMO_IC004,2026-11-18,DEMO_PROPERTY,DEMO_PARENT,DEMO_TRANSFER_03,-100,USD\nDEMO_IC005,2026-11-18,DEMO_PARENT,DEMO_PROPERTY,DEMO_TRANSFER_03,100,USD\nDEMO_IC006,2026-11-18,DEMO_PARENT,DEMO_PROPERTY,DEMO_TRANSFER_03,100,USD\n"};</script>
+<script id="workbench-ui">
+(function(){
+  "use strict";
+  const W=window.ApexWorkbench,$=id=>document.getElementById(id),PAGE=50;
+  const state={aging:null,transfers:null,agingReport:null,transfersReport:null,trustReport:null,agingPage:0,transfersPage:0,agingVersion:0,transfersVersion:0};
+  const showError=(kind,message)=>{$(kind+"-error").textContent=message;$(kind+"-error").hidden=!message;};
+  const pretty=cents=>W.formatMoney(cents).replace(/\B(?=(\d{3})+(?!\d))/g,",");
+  function el(name,text,className){const node=document.createElement(name);if(text!==undefined)node.textContent=text;if(className)node.className=className;return node;}
+  function download(content,filename){const url=URL.createObjectURL(new Blob([content],{type:"text/csv;charset=utf-8"}));const a=el("a");a.href=url;a.download=filename;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+  function metrics(kind,values,money=false){const target=$(kind+"-metrics");target.replaceChildren();for(const [label,value,note]of values){const box=el("div",undefined,"metric"+(money?" money":""));box.append(el("label",label),el("strong",String(value)),el("small",note));target.append(box);}}
+  function invalidate(kind){state[kind+"Report"]=null;state[kind+"Page"]=0;$(kind+"-result").hidden=true;if($(kind+"-empty"))$(kind+"-empty").hidden=false;showError(kind,"");}
+  function renderTable(kind,headers,rows,numeric=[]){
+    const pageKey=kind+"Page",pages=Math.max(1,Math.ceil(rows.length/PAGE));state[pageKey]=Math.min(state[pageKey],pages-1);
+    const tr=el("tr");for(const title of headers)tr.append(el("th",title));$(kind+"-thead").replaceChildren(tr);
+    const body=$(kind+"-tbody");body.replaceChildren();const start=state[pageKey]*PAGE;
+    for(const row of rows.slice(start,start+PAGE)){const r=el("tr");row.forEach((value,i)=>r.append(el("td",String(value??""),numeric.includes(i)?"numeric":"")));body.append(r);}
+    if(!rows.length){const r=el("tr"),cell=el("td","No rows in this view.");cell.colSpan=headers.length;r.append(cell);body.append(r);}
+    $(kind+"-page").textContent=rows.length?`${start+1}–${Math.min(start+PAGE,rows.length)} of ${rows.length} rows`:"0 rows";
+    $(kind+"-prev").disabled=state[pageKey]===0;$(kind+"-next").disabled=state[pageKey]>=pages-1;
+  }
+  function renderAging(){const r=state.agingReport;if(!r)return;
+    metrics("aging",[["Open items",r.openCount,"Included at the selected date"],["Past due",r.overdueCount,"Open items beyond the due date"],["Settled items",r.settledCount,"Retained in the detailed report"],["Future invoices",r.futureCount,"Excluded from aging totals"]]);
+    $("aging-context").textContent=`As of ${r.asOf} · ${$("aging-type").value==="ar"?"Receivables":"Payables"} · amounts remain separated by currency`;
+    if($("aging-view").value==="summary")renderTable("aging",["Entity","Currency",...W.BUCKETS,"Total open"],r.groups.map(g=>[g.entity,g.currency,...W.BUCKETS.map(b=>pretty(g.totals[b])),pretty(g.openCents)]),[2,3,4,5,6,7]);
+    else renderTable("aging",["ID / source line","Party","Entity","Currency","Due date","Open amount","Aging","Status"],r.rows.map(x=>[`${x.item.id} / ${x.item.line}`,x.item.party,x.item.entity,x.item.currency,x.item.dueDate,pretty(x.openCents),x.status==="FUTURE_INVOICE_EXCLUDED"?"Excluded":x.status==="SETTLED"?"Settled":x.bucket,x.status.replaceAll("_"," ")]),[5]);
+    $("aging-empty").hidden=true;$("aging-result").hidden=false;
+  }
+  function runAging(){invalidate("aging");try{if(!state.aging)throw new Error("Load an open-items CSV first.");state.agingReport=W.ageOpenItems(state.aging,$("aging-asof").value);renderAging();}catch(e){showError("aging",e.message);}}
+  function renderTransfers(){const r=state.transfersReport;if(!r)return;
+    metrics("transfers",[["Suggested pairs",r.pairs.length,"Evidence review is required"],["Unresolved rows",r.exceptions.length,"Every source row is preserved"],["Source rows",r.rowCount,"Paired rows plus unresolved rows"],["Entity / currency groups",r.balances.length,"Totals shown separately"]]);
+    $("transfers-context").textContent=`Date window ± ${r.days} days · all pair suggestions require review`;
+    const view=$("transfers-view").value;
+    if(view==="pairs")renderTable("transfers",["First row","Second row","Entities","Reference","Currency","Amount on first row","Date difference","Status"],r.pairs.map(p=>[`${p.left.id} · ${p.left.date}`,`${p.right.id} · ${p.right.date}`,`${p.left.entity} ↔ ${p.left.counterparty}`,p.left.reference,p.left.currency,pretty(p.left.cents),`${p.dayDifference} days`,"REVIEW REQUIRED"]),[5]);
+    else if(view==="exceptions")renderTable("transfers",["ID / line","Date","Entity → counterparty","Reference","Currency","Amount","Reason","Candidates"],r.exceptions.map(e=>[`${e.row.id} / ${e.row.line}`,e.row.date,`${e.row.entity} → ${e.row.counterparty}`,e.row.reference||"Blank",e.row.currency,pretty(e.row.cents),e.reason,`${e.candidateCount}: ${e.candidateIds.join(", ")||"none"}`]),[5]);
+    else renderTable("transfers",["Entity","Currency","Source rows","Net cash movement"],r.balances.map(b=>[b.entity,b.currency,b.count,pretty(b.cents)]),[2,3]);
+    $("transfers-empty").hidden=true;$("transfers-result").hidden=false;
+  }
+  function runTransfers(){invalidate("transfers");try{if(!state.transfers)throw new Error("Load an intercompany CSV first.");state.transfersReport=W.reviewTransfers(state.transfers,Number($("transfers-days").value));renderTransfers();}catch(e){showError("transfers",e.message);}}
+  async function loadFile(kind){const version=++state[kind+"Version"];invalidate(kind);state[kind]=null;$(kind+"-run").disabled=true;const file=$(kind+"-file").files[0];$(kind+"-file-status").textContent="No file loaded";if(!file)return;
+    try{if(file.size>W.MAX_BYTES)throw new Error("Maximum file size is 3 MiB. Use the Python data engine for larger files.");
+      const bytes=await file.arrayBuffer();if(version!==state[kind+"Version"])return;
+      const text=new TextDecoder("utf-8",{fatal:true}).decode(bytes);
+      state[kind]=kind==="aging"?W.readOpenItems(text):W.readTransfers(text);
+      $(kind+"-file-status").textContent=`${file.name} · ${state[kind].length.toLocaleString()} rows loaded`;
+      $(kind+"-run").disabled=false;
+    }catch(e){if(version!==state[kind+"Version"])return;state[kind]=null;showError(kind,e.message);$(kind+"-file-status").textContent="File not loaded";}}
+  function loadDemo(kind){state[kind+"Version"]++;invalidate(kind);$(kind+"-file").value="";
+    try{const text=kind==="aging"?window.APEX_WORKBENCH_SAMPLES[$("aging-type").value]:window.APEX_WORKBENCH_SAMPLES.transfers;
+      state[kind]=kind==="aging"?W.readOpenItems(text):W.readTransfers(text);$(kind+"-run").disabled=false;
+      $(kind+"-file-status").textContent=`Fictional sample · ${state[kind].length} rows loaded`;
+      if(kind==="aging"){$("aging-asof").value="2026-11-19";runAging();}else{$("transfers-days").value="3";runTransfers();}
+    }catch(e){showError(kind,e.message);}}
+  function runTrust(){invalidate("trust");try{
+    const r=W.trustCheck({as_of_date:$("trust-date").value,entity:$("trust-entity").value,trust_account:$("trust-account").value,currency:$("trust-currency").value,
+      statement_balance:$("trust-statement").value,deposits_in_transit:$("trust-deposits").value,outstanding_payments:$("trust-outstanding").value,book_balance:$("trust-books").value,client_liability_balance:$("trust-liability").value});
+    state.trustReport=r;metrics("trust",[["Adjusted bank",pretty(r.adjustedBank),r.currency],["Book balance",pretty(r.amounts.book_balance),r.currency],["Bank minus books",pretty(r.bankBookDifference),r.currency],["Books minus client liability",pretty(r.bookLiabilityDifference),r.currency]],true);
+    $("trust-message").textContent=r.status==="ARITHMETIC_AGREEMENT_REVIEW_REQUIRED"?`Arithmetic agrees for ${r.entity} / ${r.account} at ${r.asOf}. Supporting statements, outstanding items and individual client balances still need review.`:`A difference requires investigation for ${r.entity} / ${r.account} at ${r.asOf}. Check cutoff, outstanding items, book adjustments and the client subledger.`;
+    $("trust-result").hidden=false;
+  }catch(e){showError("trust",e.message);}}
+  for(const button of document.querySelectorAll("[data-workspace]"))button.addEventListener("click",()=>{const mode=button.dataset.workspace;for(const nav of document.querySelectorAll("[data-workspace]"))nav.setAttribute("aria-pressed",String(nav===button));for(const name of["aging","transfers","trust"])$("workspace-"+name).hidden=name!==mode;});
+  for(const kind of["aging","transfers"]){$(kind+"-file").addEventListener("change",()=>loadFile(kind));$(kind+"-demo").addEventListener("click",()=>loadDemo(kind));$(kind+"-view").addEventListener("change",()=>{state[kind+"Page"]=0;kind==="aging"?renderAging():renderTransfers();});for(const[direction,delta]of[["prev",-1],["next",1]])$(kind+"-"+direction).addEventListener("click",()=>{state[kind+"Page"]+=delta;kind==="aging"?renderAging():renderTransfers();});}
+  $("aging-run").addEventListener("click",runAging);$("transfers-run").addEventListener("click",runTransfers);$("trust-run").addEventListener("click",runTrust);
+  $("aging-asof").addEventListener("change",()=>invalidate("aging"));$("aging-type").addEventListener("change",()=>invalidate("aging"));$("transfers-days").addEventListener("change",()=>invalidate("transfers"));
+  for(const input of document.querySelectorAll("#workspace-trust input"))input.addEventListener("input",()=>invalidate("trust"));
+  $("trust-demo").addEventListener("click",()=>{const values={date:"2026-11-19",entity:"DEMO_PROPERTY",account:"DEMO_TRUST",currency:"USD",statement:"12500.00",deposits:"1000.00",outstanding:"500.00",books:"13000.00",liability:"13000.00"};for(const[key,value]of Object.entries(values))$("trust-"+key).value=value;runTrust();});
+  $("aging-export-summary").addEventListener("click",()=>{if(state.agingReport)download(W.exportAging(state.agingReport,true),"apex-aging-totals.csv");});
+  $("aging-export-detail").addEventListener("click",()=>{if(state.agingReport)download(W.exportAging(state.agingReport),"apex-aging-items.csv");});
+  $("transfers-export").addEventListener("click",()=>{if(state.transfersReport)download(W.exportTransfers(state.transfersReport),"apex-transfer-review.csv");});
+  $("transfers-export-totals").addEventListener("click",()=>{if(state.transfersReport)download(W.exportTransfers(state.transfersReport,true),"apex-transfer-movement.csv");});
+  $("trust-export").addEventListener("click",()=>{if(state.trustReport)download(W.exportTrust(state.trustReport),"apex-trust-balance-check.csv");});
+  $("clear").addEventListener("click",()=>{for(const kind of["aging","transfers"]){state[kind+"Version"]++;state[kind]=null;invalidate(kind);$(kind+"-file").value="";$(kind+"-run").disabled=true;$(kind+"-file-status").textContent="No file loaded";$(kind+"-thead").replaceChildren();$(kind+"-tbody").replaceChildren();$(kind+"-metrics").replaceChildren();}
+    $("aging-asof").value="";$("aging-context").textContent="";$("transfers-context").textContent="";$("aging-page").textContent="";$("transfers-page").textContent="";
+    invalidate("trust");for(const input of document.querySelectorAll("#workspace-trust input"))input.value="";$("trust-metrics").replaceChildren();$("trust-message").textContent="";
+  });
+})();
+
+</script>
+</body></html>

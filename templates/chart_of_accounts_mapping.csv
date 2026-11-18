@@ -1,0 +1,7 @@
+entity,source_account_code,source_account_name,reporting_account_code,reporting_account_name,account_type,normal_balance,cash_flow_category,review_status,notes
+DEMO_ENTITY,1000,Operating bank,1000,Cash and cash equivalents,ASSET,DEBIT,REVIEW,DRAFT,Illustrative account mapping; cash-flow treatment depends on transaction
+DEMO_ENTITY,1100,Trade debtors,1100,Trade receivables,ASSET,DEBIT,OPERATING,DRAFT,Confirm receivables detail agrees with control account
+DEMO_ENTITY,2000,Trade creditors,2000,Trade payables,LIABILITY,CREDIT,OPERATING,DRAFT,Keep vendor balances separate from payment approvals
+DEMO_ENTITY,2300,Related entity payable,2300,Intercompany payable,LIABILITY,CREDIT,REVIEW,DRAFT,Classify using agreement and consolidation policy
+DEMO_ENTITY,4000,Service sales,4000,Service revenue,REVENUE,CREDIT,OPERATING,DRAFT,Recognition policy is separate from receipt timing
+DEMO_ENTITY,5100,Job materials,5100,Direct materials,EXPENSE,DEBIT,OPERATING,DRAFT,Map project and cost code dimensions separately
