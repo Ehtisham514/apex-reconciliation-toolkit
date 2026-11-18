@@ -1,0 +1,4 @@
+transaction_id,date,entity,project,account,amount,currency
+TX001,2026-01-01,Demo Construction,Project A,Cash,100000,USD
+TX002,2026-01-02,Demo Construction,Project A,Materials,-25000,USD
+TX003,2026-01-03,Demo Construction,Project B,Receipts,15000,USD
