@@ -33,8 +33,23 @@ The Python aggregation engine processed a deterministic **1,000,000-row**, **69,
 
 See [DATA_ENGINE.md](DATA_ENGINE.md) for the exact command, input hash, independent total calculation, platform and limitations. The machine-readable result is [benchmark-million.json](benchmark-million.json). Timing is one observed run on this environment, not a performance guarantee. The benchmark does **not** apply to browser transaction matching or aging.
 
+## Live desktop smoke checks — 19 November 2026 (Asia/Karachi)
+
+The deployed [public hub](https://ehtisham514.github.io/apex-reconciliation-toolkit/) and its browser tools were manually exercised in a desktop browser. Only built-in fictional examples were used; no real client data was used. These observations supplement the automated release checks above.
+
+| Desktop check | Observed result |
+|---|---|
+| Public landing page | The hub loaded with the resource directory visible. |
+| Resource search | Searching `construction` reduced the displayed count from 9 resources to 2. |
+| AR/AP aging demo | 4 loaded rows produced 3 open items and 1 settled item; open balance total USD 4,300, including USD 1,000 past due. |
+| Intercompany demo | 6 rows produced 1 suggested pair and 4 unresolved rows. |
+| Trust-balance demo | Statement balance 12,500 + deposits in transit 1,000 − outstanding payments 500 = adjusted bank balance 13,000, agreeing with both books and client liabilities. |
+| Bank reconciliation demo | 10 bank rows and 10 ledger rows produced 4 suggested pairs, 6 bank exceptions, 6 ledger exceptions and 2 potential duplicate rows. |
+
+This desktop smoke check did not test file uploads, file exports or mobile layouts. It did not visually exercise the separate Python dashboard.
+
 ## What remains outside this verification
 
-The Streamlit workspaces were exercised with AppTest; this is programmatic UI testing rather than a visual screenshot review. Browser-tool tests execute the actual embedded core. The landing-page script passed syntax checks and local-link checks. A visual browser review was not completed in this environment.
+The Streamlit workspaces were exercised with AppTest; this is programmatic UI testing rather than a visual screenshot review. Browser-tool tests execute the actual embedded core. The landing-page script passed syntax checks and local-link checks. The subsequent desktop browser review is limited to the live smoke checks recorded above; file uploads, file exports and mobile layouts were not exercised in that review.
 
 There was no independent financial audit, multi-user deployment test, penetration test, disaster-recovery exercise, live accounting-system integration, tax-jurisdiction validation or production-client data test. Those functions are not represented as completed capabilities.
