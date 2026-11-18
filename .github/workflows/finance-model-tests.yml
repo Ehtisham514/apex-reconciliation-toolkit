@@ -1,0 +1,20 @@
+name: Financial intelligence tests
+on:
+  push:
+    paths:
+      - 'financial_intelligence/**'
+      - '.github/workflows/finance-model-tests.yml'
+  pull_request:
+    paths:
+      - 'financial_intelligence/**'
+      - '.github/workflows/finance-model-tests.yml'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install pytest
+      - run: python -m pytest financial_intelligence/test_models.py financial_intelligence/test_enterprise.py -q
