@@ -82,6 +82,10 @@ python scripts/check_repository.py
 
 Report reproducible bugs through [GitHub Issues](https://github.com/Ehtisham514/apex-reconciliation-toolkit/issues). Use fictional, minimized examples. For changes, see [CONTRIBUTING.md](CONTRIBUTING.md), [the changelog](CHANGELOG.md) and [the roadmap](docs/ROADMAP.md).
 
+## Work with Ehtisham
+
+For a property bookkeeping engagement, [view my rental reconciliation project on Upwork](https://www.upwork.com/freelancers/~019db478acf3ff1bda?p=2123159662781452288) or [see my bookkeeping services on Fiverr](https://www.fiverr.com/ehtisham_425).
+
 ## About this project
 
 This is an accounting resource hub and a portfolio of practical tools. It is not a hosted ERP, accounting practice management system, bank connection, payroll/tax filing service or audited valuation service. Integrations with QuickBooks, Xero, Buildium and other platforms are not implemented. Professional requirements depend on your engagement and jurisdiction.
