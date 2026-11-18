@@ -1,4 +1,5 @@
 transaction_id,date,entity,project,account,amount,currency
-TX001,2026-01-01,Demo Construction,Project A,Cash,100000,USD
-TX002,2026-01-02,Demo Construction,Project A,Materials,-25000,USD
-TX003,2026-01-03,Demo Construction,Project B,Receipts,15000,USD
+DEMO-001,2026-01-01,Example Construction Ltd,Project Cedar,Operating,100000.00,USD
+DEMO-002,2026-01-02,Example Construction Ltd,Project Cedar,Operating,-25000.00,USD
+DEMO-003,2026-01-03,Example Construction Ltd,Project Maple,Operating,15000.00,USD
+DEMO-004,2026-01-04,Example Construction Ltd,Project Maple,Operating,-3200.50,USD

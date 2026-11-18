@@ -1,0 +1,9 @@
+assumption,base,downside,upside,unit,source_reference,as_of_date,owner,review_status,notes
+Target annual EBITDA,100000,80000,120000,USD,FICTIONAL_CASE,2026-11-19,,DRAFT,Screening input; not verified earnings
+Purchase EBITDA multiple,5,5,5,x,FICTIONAL_CASE,2026-11-19,,DRAFT,Illustrative scenario input; not market evidence
+Acquisition debt,200000,200000,200000,USD,FICTIONAL_CASE,2026-11-19,,DRAFT,Subject to financing terms
+Annual debt interest rate,0.1,0.12,0.08,decimal,FICTIONAL_CASE,2026-11-19,,DRAFT,0.10 means 10 percent; fictional financing rates
+Annual synergies,20000,5000,30000,USD,FICTIONAL_CASE,2026-11-19,,DRAFT,Document delivery owner timing and costs
+First-year integration cost,10000,25000,8000,USD,FICTIONAL_CASE,2026-11-19,,DRAFT,One-time assumption
+Discount rate,0.12,0.15,0.1,decimal,FICTIONAL_CASE,2026-11-19,,DRAFT,Fictional DCF input; no cost-of-capital assessment
+Terminal growth,0.02,0.01,0.03,decimal,FICTIONAL_CASE,2026-11-19,,DRAFT,Must be lower than discount rate

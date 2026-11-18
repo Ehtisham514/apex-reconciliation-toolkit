@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="260" viewBox="0 0 1200 260" role="img" aria-labelledby="title desc">
+  <title id="title">APEX Accounting and Finance Hub</title>
+  <desc id="desc">Practical tools for accountants, business owners and finance teams.</desc>
+  <rect width="1200" height="260" rx="20" fill="#102738"/>
+  <path d="M1000 0h200v260H740z" fill="#17394b"/>
+  <path d="M1100 0h100v260H870z" fill="#1c4757"/>
+  <path d="M54 70l28-42 28 42H96L82 48 68 70z" fill="#57ddbf"/>
+  <text x="128" y="67" fill="#57ddbf" font-family="Arial,sans-serif" font-size="24" font-weight="700" letter-spacing="4">APEX</text>
+  <text x="54" y="129" fill="#ffffff" font-family="Arial,sans-serif" font-size="44" font-weight="700">Accounting &amp; Finance Hub</text>
+  <text x="56" y="169" fill="#cbdae0" font-family="Arial,sans-serif" font-size="20">Practical tools. Clear assumptions. Reviewable results.</text>
+  <rect x="54" y="199" width="100" height="3" rx="1" fill="#57ddbf"/>
+  <text x="175" y="207" fill="#cbdae0" font-family="Arial,sans-serif" font-size="15" letter-spacing="1.5">RECONCILIATION  /  CASH FLOW  /  PROPERTY  /  FINANCIAL MODELS</text>
+</svg>

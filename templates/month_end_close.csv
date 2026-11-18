@@ -1,0 +1,19 @@
+task_id,stage,task,relative_day,owner,reviewer,status,evidence_reference,completed_date,review_date,notes
+C01,Preparation,Confirm entities period currency and reporting basis,-3,,,NOT_STARTED,,,,Relative day is an editable example; day 0 is period end
+C02,Preparation,Collect bank card payment processor and debt statements,-2,,,NOT_STARTED,,,,Record missing statements explicitly
+C03,Preparation,Confirm source export row counts and control totals,1,,,NOT_STARTED,,,,Keep original exports unchanged
+C04,Cash,Reconcile bank and credit card accounts,2,,,NOT_STARTED,,,,Review timing differences and unsupported adjustments
+C05,Receivables,Tie open receivables to ledger and investigate credits,2,,,NOT_STARTED,,,,Use the same reporting date
+C06,Payables,Tie open payables to ledger and check unrecorded bills,2,,,NOT_STARTED,,,,Obtain invoices for accrued costs
+C07,Payroll,Reconcile payroll expense liabilities and cash payments,3,,,NOT_STARTED,,,,Do not equate payroll expense with cash paid
+C08,Property and trust,Reconcile trust bank books and beneficiary balances,3,,,NOT_STARTED,,,,When applicable; investigate negative beneficiary balances
+C09,Intercompany,Confirm reciprocal balances and unmatched transfers,3,,,NOT_STARTED,,,,Preserve entity-level evidence before eliminations
+C10,Inventory and projects,Reconcile inventory job costs and commitments,3,,,NOT_STARTED,,,,When applicable; review change orders separately
+C11,Fixed assets,Update additions disposals and depreciation schedule,4,,,NOT_STARTED,,,,Use approved capitalization policy
+C12,Debt,Split principal interest fees and escrow to source schedules,4,,,NOT_STARTED,,,,Reconcile outstanding principal independently
+C13,Accruals,Review accruals prepayments and revenue cutoff,4,,,NOT_STARTED,,,,Use the entity accounting policy
+C14,Review,Reconcile balance-sheet accounts with supporting schedules,5,,,NOT_STARTED,,,,Age unresolved reconciling items
+C15,Review,Explain budget and prior-period variances,5,,,NOT_STARTED,,,,Separate volume price timing and one-time items
+C16,Reporting,Prepare management report and cash outlook,6,,,NOT_STARTED,,,,Label actuals forecasts and unresolved issues
+C17,Approval,Obtain review approval and record all exceptions,7,,,NOT_STARTED,,,,Completion requires evidence and reviewer sign-off
+C18,Archive,Save approved reports exports and change log,7,,,NOT_STARTED,,,,Apply the company retention and access policy

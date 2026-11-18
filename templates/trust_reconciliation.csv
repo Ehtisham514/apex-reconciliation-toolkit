@@ -1,0 +1,2 @@
+as_of_date,entity,trust_account,currency,statement_balance,deposits_in_transit,outstanding_payments,book_balance,client_liability_balance,preparer,reviewer,evidence_reference
+2026-11-19,DEMO_PROPERTY,DEMO_TRUST,USD,12500,1000,500,13000,13000,,,FICTIONAL_EXAMPLE

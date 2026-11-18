@@ -1,1 +1,1 @@
-"""Auditable financial forecasting and analysis prototypes."""
+"""Practical accounting data checks and financial scenario models."""
