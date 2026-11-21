@@ -12,6 +12,7 @@ These CSV files contain values and headers, not hidden formulas. They can be ope
 
 | Task | File | How to use it |
 |---|---|---|
+| Explain cash to an owner and hand over the books | [Cash report, payment planner and handover](../financial_intelligence/owner-cash/README.md) | Use the fictional owner case or inspect the separate historical check against BlackRock’s filed cash flows. |
 | Ask a client about missing transaction details | [Client question pack](client-questions/README.md) | Send one short question per item and track the evidence and accounting decision in your private review log. |
 | Organize the monthly close | [month_end_close.csv](month_end_close.csv) | Assign owners and reviewers. Attach evidence references. Replace the illustrative due-day offsets with your calendar. |
 | Map accounting exports | [chart_of_accounts_mapping.csv](chart_of_accounts_mapping.csv) | Approve each entity's mapping to a common reporting structure. This is an example, not a universal chart of accounts. |
