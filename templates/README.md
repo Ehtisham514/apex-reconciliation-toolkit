@@ -81,3 +81,11 @@ The fictional example gives adjusted bank cash of `12,500 + 1,000 - 500 = 13,000
 ## Before sharing a completed file
 
 Remove real bank identifiers, customer details and credentials from anything committed to a public repository. Keep financial records in the company's approved private system. Public examples should remain fictional.
+
+
+## Blank browser-tool imports
+
+- [Timesheet review CSV](timesheet_entries.csv) — header-only input for combining timekeeping exports. Read [the timesheet review guide](../docs/TIMESHEET_REVIEW.md) before importing.
+- [Month-end close board CSV](month_end_close_board.csv) — header-only checklist import. Read [the close board guide](../docs/CLOSE_BOARD.md) for field and local-storage details.
+
+These files contain no employee, client, business, or transaction records. Never commit real payroll or accounting records to a public repository.

@@ -1,3 +1,8 @@
+## Unreleased
+
+- Add a browser-based timesheet duplicate and gross earnings review tool with explicit exception handling and a blank CSV template.
+- Add a browser-based month-end close task board with local-only storage, CSV import/export, and a blank checklist template.
+
 # Changelog
 
 ## v0.2.0 — 2026-11-19

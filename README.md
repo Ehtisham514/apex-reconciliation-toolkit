@@ -6,7 +6,7 @@
 
 A practical, open-source workspace for accountants, business owners and finance teams, maintained by **Ehtisham Ul Haq / APEX Accounting & Solutions**. It brings the original APEX reconciliation tool together with accounting workbooks, browser utilities, financial models and documented review workflows.
 
-[**Open the live hub**](https://ehtisham514.github.io/apex-reconciliation-toolkit/) · [Start here](docs/START_HERE.md) · [Tool catalog](docs/TOOL_CATALOG.md) · [Templates](templates/README.md) · [Financial models](financial_intelligence/README.md) · [Data engine](docs/DATA_ENGINE.md) · [Worked examples](docs/CASE_STUDIES.md)
+[**Open the live hub**](https://ehtisham514.github.io/apex-reconciliation-toolkit/) · [Start here](docs/START_HERE.md) · [Tool catalog](docs/TOOL_CATALOG.md) · [Templates](templates/README.md) · [Timesheet review](tools/timesheet-review.html) · [Close board](tools/close-board.html) · [Financial models](financial_intelligence/README.md) · [Data engine](docs/DATA_ENGINE.md) · [Worked examples](docs/CASE_STUDIES.md)
 
 **Release: v0.2.0 — public beta.** Tools support preparation, analysis and review. They do not post entries to accounting software or provide an audit opinion. All supplied examples are fictional.
 
@@ -47,6 +47,8 @@ The downloaded HTML files also run directly from your computer. GitHub's file vi
 | AR/AP aging | Due-date buckets, open balances and separate entity/currency totals | [Accounting Workbench](https://ehtisham514.github.io/apex-reconciliation-toolkit/tools/accounting-workbench.html) · [Input guide](docs/WORKBENCH.md) |
 | Intercompany transfer review | Reciprocal entity/ref/currency checks, exact opposite amounts, exceptions for ambiguity | [Accounting Workbench](https://ehtisham514.github.io/apex-reconciliation-toolkit/tools/accounting-workbench.html) · [Input guide](docs/WORKBENCH.md) |
 | Trust-balance comparison | Adjusted statement, book and client-liability balances with explicit differences | [Accounting Workbench](https://ehtisham514.github.io/apex-reconciliation-toolkit/tools/accounting-workbench.html) · [Input guide](docs/WORKBENCH.md) |
+| Timesheet duplicate review | De-duplicates exact shifts across sources, flags partial overlaps and summarizes hours and gross USD earnings | [Open tool](https://ehtisham514.github.io/apex-reconciliation-toolkit/tools/timesheet-review.html) · [CSV template](templates/timesheet_entries.csv) · [Guide](docs/TIMESHEET_REVIEW.md) |
+| Month-end close board | Tracks tasks by entity and period with owners, due dates, review statuses and evidence references | [Open tool](https://ehtisham514.github.io/apex-reconciliation-toolkit/tools/close-board.html) · [Blank checklist](templates/month_end_close_board.csv) · [Guide](docs/CLOSE_BOARD.md) |
 | Construction analysis | Materials/labor/waste estimates, overhead, contingency, gross-margin bids, earned value and cost to complete | [Models and assumptions](financial_intelligence/README.md) |
 | Cash forecasting | Editable weekly receipts/payments and funding-gap estimates | [Local dashboard](financial_intelligence/RUN_ME.md) |
 | Business projection and DCF | Annual driver assumptions, unlevered cash flow and valuation sensitivity | [Finance models](financial_intelligence/README.md) |

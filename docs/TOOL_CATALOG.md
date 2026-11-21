@@ -14,6 +14,15 @@ Use this catalog to choose the right component and understand its output. A comp
 | [Template library](../templates/README.md) | Provides working papers, import examples, checklists and report outlines. | Spreadsheet/text editor | Populated data is fictional. Manual templates do not execute calculations or synchronize with external systems. |
 | [Workflow guides](WORKFLOWS.md) | Connects source preparation, calculations, exception review and approval. | Documentation | Suggested operating procedures; adapt to the entity's policies and jurisdiction. |
 
+## Additional browser tools
+
+| Tool | What it does | Guide |
+|---|---|---|
+| [Timesheet duplicate review](../tools/timesheet-review.html) | Counts exact cross-source duplicates once, flags overlaps and ambiguous repeats, and summarizes hours and gross USD earnings. | [Input format and limits](TIMESHEET_REVIEW.md) |
+| [Month-end close board](../tools/close-board.html) | Tracks tasks by entity and period, with owners, due dates, status and evidence references. Data remains in browser local storage. | [Usage and data handling](CLOSE_BOARD.md) |
+
+Both tools start blank and include no employee or business records. The timesheet tool does not calculate overtime or tax; the close board does not store evidence or enforce reviewer permissions.
+
 ## How the pieces connect
 
 Keep original exports in the company's private record system. Map them to the selected tool's schema in a working copy. Check row counts, date coverage and totals. Run the calculation. Review the exceptions and retain source references. Any correction belongs in the accounting system after the company's approval process; rerun the check from a fresh export afterward.
