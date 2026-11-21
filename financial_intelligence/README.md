@@ -2,9 +2,9 @@
 
 Practical planning models for construction contractors, business owners and accounting teams. Use the local dashboard to change assumptions and download results, or call the Python functions from your own workflow.
 
-**Available now:** construction bidding, project cost-to-complete, earned-value checks, a 13-week cash plan, annual operating and cash-flow projections, DCF sensitivity, acquisition screening, and validated ledger aggregation. Each workspace includes fictional starter assumptions.
+**Available now:** construction bidding, project cost-to-complete, earned-value checks, a 13-week cash plan, annual operating and cash-flow projections, an integrated three-statement planning model, DCF sensitivity, acquisition screening, and validated ledger aggregation. Existing dashboard examples use fictional assumptions. The integrated model starts with blank actuals and assumption templates.
 
-[Run the dashboard](RUN_ME.md) · [Calculation code](models.py) · [Model tests](test_models.py) · [Dashboard tests](test_dashboard.py) · [Ledger engine](enterprise.py)
+[Run the dashboard](RUN_ME.md) · [Integrated model guide](INTEGRATED_MODEL.md) · [Integrated model code](integrated_model.py) · [Calculation code](models.py) · [Model tests](test_models.py) · [Dashboard tests](test_dashboard.py) · [Ledger engine](enterprise.py)
 
 ## Choose your question
 
@@ -15,6 +15,7 @@ Practical planning models for construction contractors, business owners and acco
 | Are we earning value efficiently? | Project forecast / `earned_value` | CV, SV, CPI, SPI, EAC, ETC and VAC |
 | When could cash become tight? | 13-week cash / `cash_forecast` | A variable weekly schedule, minimum-reserve shortfalls and closing cash |
 | How does growth affect cash generation? | Annual projection / `annual_projection` | Revenue, costs, EBITDA, EBIT, cash tax, working capital, capex and FCFF |
+| How do operating assumptions flow through all three statements? | [Integrated model](INTEGRATED_MODEL.md) / integrated_model.py | Five-year scenario outputs, linked balance sheet and cash flow, debt schedules and control checks |
 | How sensitive is value to assumptions? | DCF valuation / `dcf`, `dcf_sensitivity` | Enterprise value, net-debt bridge, terminal-value contribution and rate/growth grid |
 | How does an acquisition affect contribution? | Acquisition screening / `acquisition_case` | EBITDA-based price proxy, new debt/equity funding, interest, synergies and integration costs |
 | Is my ledger import complete? | Ledger data / `aggregate_csv` | Accepted/rejected row controls, exact totals, grouped preview and source hash |

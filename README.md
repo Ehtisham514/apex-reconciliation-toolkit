@@ -6,7 +6,7 @@
 
 A practical, open-source workspace for accountants, business owners and finance teams, maintained by **Ehtisham Ul Haq / APEX Accounting & Solutions**. It brings the original APEX reconciliation tool together with accounting workbooks, browser utilities, financial models and documented review workflows.
 
-[**Open the live hub**](https://ehtisham514.github.io/apex-reconciliation-toolkit/) · [Start here](docs/START_HERE.md) · [Tool catalog](docs/TOOL_CATALOG.md) · [Templates](templates/README.md) · [Timesheet review](tools/timesheet-review.html) · [Close board](tools/close-board.html) · [Financial models](financial_intelligence/README.md) · [Data engine](docs/DATA_ENGINE.md) · [Worked examples](docs/CASE_STUDIES.md)
+[**Open the live hub**](https://ehtisham514.github.io/apex-reconciliation-toolkit/) · [Start here](docs/START_HERE.md) · [Tool catalog](docs/TOOL_CATALOG.md) · [Templates](templates/README.md) · [Timesheet review](tools/timesheet-review.html) · [Close board](tools/close-board.html) · [Financial models](financial_intelligence/README.md) · [Integrated three-statement model](financial_intelligence/INTEGRATED_MODEL.md) · [Data engine](docs/DATA_ENGINE.md) · [Worked examples](docs/CASE_STUDIES.md)
 
 **Release: v0.2.0 — public beta.** Tools support preparation, analysis and review. They do not post entries to accounting software or provide an audit opinion. All supplied examples are fictional.
 
@@ -51,6 +51,7 @@ The downloaded HTML files also run directly from your computer. GitHub's file vi
 | Month-end close board | Tracks tasks by entity and period with owners, due dates, review statuses and evidence references | [Open tool](https://ehtisham514.github.io/apex-reconciliation-toolkit/tools/close-board.html) · [Blank checklist](templates/month_end_close_board.csv) · [Guide](docs/CLOSE_BOARD.md) |
 | Construction analysis | Materials/labor/waste estimates, overhead, contingency, gross-margin bids, earned value and cost to complete | [Models and assumptions](financial_intelligence/README.md) |
 | Cash forecasting | Editable weekly receipts/payments and funding-gap estimates | [Local dashboard](financial_intelligence/RUN_ME.md) |
+| Integrated three-statement model | Five-year base, downside and upside projections linking P&L, balance sheet, cash flow and debt | [Model guide and blank inputs](financial_intelligence/INTEGRATED_MODEL.md) |
 | Business projection and DCF | Annual driver assumptions, unlevered cash flow and valuation sensitivity | [Finance models](financial_intelligence/README.md) |
 | Acquisition screening | Purchase multiple, financing, synergies and integration-cost contribution | [Finance models](financial_intelligence/README.md) |
 | Large-file ledger analysis | Disk-backed deduplication, exact minor units, input validation and controlled exports | [Data engine and benchmark](docs/DATA_ENGINE.md) |

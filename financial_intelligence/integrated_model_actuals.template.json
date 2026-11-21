@@ -1,0 +1,25 @@
+{
+  "entity_name": "",
+  "currency": "",
+  "minor_unit_digits": null,
+  "base_year": null,
+  "forecast_years": 5,
+  "minimum_cash": null,
+  "revolver_limit": null,
+  "base_year_income_statement": {
+    "revenue": null,
+    "cogs": null,
+    "operating_expenses": null
+  },
+  "closing_base_year_balance_sheet": {
+    "cash": null,
+    "accounts_receivable": null,
+    "inventory": null,
+    "net_ppe": null,
+    "accounts_payable": null,
+    "term_debt": null,
+    "revolver": null,
+    "share_capital": null,
+    "retained_earnings": null
+  }
+}

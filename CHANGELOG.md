@@ -1,5 +1,9 @@
 ## Unreleased
 
+- Add a five-year integrated management-planning model with blank scenario templates, source/reviewer fields, linked statement checks and revolver liquidity flags.
+
+## Unreleased
+
 - Add a browser-based timesheet duplicate and gross earnings review tool with explicit exception handling and a blank CSV template.
 - Add a browser-based month-end close task board with local-only storage, CSV import/export, and a blank checklist template.
 

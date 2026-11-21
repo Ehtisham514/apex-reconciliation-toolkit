@@ -66,3 +66,11 @@ The model suite includes hand-calculated control examples and scale checks. The 
 ## Data handling
 
 Run locally or in a deployment you control. The ledger upload is written to a temporary folder during analysis and removed when the request finishes. The dashboard is not a multiuser accounting system: it does not provide user accounts, role permissions, ERP posting or a durable approval audit trail. Browser/client software and downloaded reports remain outside the application's control.
+
+
+## Run the integrated three-statement model
+
+Use the blank actuals and assumptions templates, then follow [the model guide](INTEGRATED_MODEL.md). The model has no sample business data.
+
+    python financial_intelligence/integrated_model.py --actuals financial_intelligence/integrated_model_actuals.template.json --assumptions financial_intelligence/integrated_model_assumptions.template.csv --output-dir output/integrated-model
+

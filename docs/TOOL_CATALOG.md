@@ -23,6 +23,10 @@ Use this catalog to choose the right component and understand its output. A comp
 
 Both tools start blank and include no employee or business records. The timesheet tool does not calculate overtime or tax; the close board does not store evidence or enforce reviewer permissions.
 
+## Integrated three-statement model
+
+The [integrated planning model](../financial_intelligence/INTEGRATED_MODEL.md) creates five-year base, downside and upside projections for one entity and one reporting currency. It runs locally in Python, requires explicit source and review metadata for assumptions, checks linked statement roll-forwards, and stops rather than plug an unbalanced opening balance sheet. It is a management-planning model, not an institutional or regulatory model.
+
 ## How the pieces connect
 
 Keep original exports in the company's private record system. Map them to the selected tool's schema in a working copy. Check row counts, date coverage and totals. Run the calculation. Review the exceptions and retain source references. Any correction belongs in the accounting system after the company's approval process; rerun the check from a fresh export afterward.
