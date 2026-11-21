@@ -1,19 +1,32 @@
-# Start here
+# Start here: APEX project directory
 
-APEX is a collection of accounting tools, financial calculation models and editable working papers maintained by Ehtisham Ul Haq / APEX Accounting & Solutions. Choose a workflow below, then test it with the fictional examples before entering your own data.
+Choose the type of work below. **Browser** opens an interactive tool. **Excel** opens a workbook you can copy. **Python** runs a model locally. **Templates** are editable working papers.
 
-[**Open the live Accounting & Finance Hub**](https://ehtisham514.github.io/apex-reconciliation-toolkit/) to browse tools, templates and guides.
+<a id="choose-your-role"></a>
 
-## Choose your role
+| Area | Project | What you get | Open it |
+|---|---|---|---|
+| Bookkeeping and monthly close | Bank reconciliation | Match bank and ledger records and export items needing review. | [Browser](https://ehtisham514.github.io/apex-reconciliation-toolkit/apex-reconcile.html) |
+| Bookkeeping and monthly close | Accounts receivable and payable | Age open invoices and inspect balances by entity and currency. | [Browser workbench](https://ehtisham514.github.io/apex-reconciliation-toolkit/tools/accounting-workbench.html) |
+| Bookkeeping and monthly close | Timesheets and gross earnings | Count matching shifts once and flag partial overlaps. | [Browser](https://ehtisham514.github.io/apex-reconciliation-toolkit/tools/timesheet-review.html) |
+| Bookkeeping and monthly close | Close board | Assign owners, track due dates and record evidence references. | [Browser](https://ehtisham514.github.io/apex-reconciliation-toolkit/tools/close-board.html) |
+| Property and construction | Rental property cash reconciliation | Follow a mortgage payment, a credit draw and a missing reserve receipt in a fictional close. | [Excel workbook and walkthrough](../templates/rental-property/README.md) |
+| Property and construction | Trust and intercompany review | Compare client balances and inspect the two sides of transfers. | [Browser workbench](https://ehtisham514.github.io/apex-reconciliation-toolkit/tools/accounting-workbench.html) |
+| Property and construction | Estimating and project control | Build a bid, calculate cost to complete and review project margin. | [Python model guide](../financial_intelligence/README.md#construction-and-earned-value) |
+| Forecasting and valuation | 13-week cash forecast | Identify weeks when receipts fall short of payments and the cash reserve. | [Python guide](../financial_intelligence/RUN_ME.md) · [Weekly cash template](../templates/weekly_cash_plan.csv) |
+| Forecasting and valuation | Integrated business forecast | Model five years of profit, balance sheet, cash flow and borrowing across three scenarios. | [Python model and inputs](../financial_intelligence/INTEGRATED_MODEL.md) |
+| Forecasting and valuation | Operating projection, DCF and acquisition screen | Assess cash generation, valuation sensitivities, financing and synergies. | [Python model guide](../financial_intelligence/README.md#dcf-and-acquisition-screen) · [Diligence template](../templates/ma_due_diligence.csv) |
+| Bank analysis | Four-bank financial model | Compare reported statements, model funding needs, stress capital and screen a share exchange. | [Browser](https://ehtisham514.github.io/apex-reconciliation-toolkit/financial_intelligence/bank-lab/) · [Source filings and results](../financial_intelligence/bank-lab/README.md) |
+| Data and controls | Ledger data engine | Check import counts, duplicate rows and grouped totals on large transaction exports. | [Python guide and benchmark](DATA_ENGINE.md) |
+| Data and controls | Working papers and reporting | Adapt schedules, account mappings, diligence requests and management reports. | [Templates](../templates/README.md) · [Workflow guides](WORKFLOWS.md) |
 
-| I am… | Start with | Useful next step |
-|---|---|---|
-| An accountant or bookkeeper | [Bank-versus-ledger reconciliation](https://ehtisham514.github.io/apex-reconciliation-toolkit/apex-reconcile.html) and [monthly close checklist](../templates/month_end_close.csv) | Review open items, intercompany transfers and supporting evidence in the [accounting workbench](https://ehtisham514.github.io/apex-reconciliation-toolkit/tools/accounting-workbench.html). |
-| A business owner | [Weekly cash plan](../templates/weekly_cash_plan.csv) and [management report](../templates/management_report.md) | Use the [Finance Lab](../financial_intelligence/RUN_ME.md) to examine cash and pricing assumptions. |
-| A property accountant | [Trust balance working paper](../templates/trust_reconciliation.csv) and [beneficiary detail](../templates/trust_client_balances.csv) | Check balances in the workbench and review intercompany funding separately. |
-| A construction company | [Estimate inputs](../templates/construction_estimate.csv) and [change-order register](../templates/change_orders.csv) | Compare pricing, contingency and cost-to-complete assumptions in the Finance Lab. |
-| A controller or finance team | [Account mapping](../templates/chart_of_accounts_mapping.csv), [close workflow](WORKFLOWS.md) and [policy decisions](ACCOUNTING_POLICIES.md) | Process larger exports with the [ledger data engine](DATA_ENGINE.md), then review exceptions. |
-| Evaluating a purchase or sale | [Deal assumptions](../templates/deal_assumptions.csv) and [diligence requests](../templates/ma_due_diligence.csv) | Run the Finance Lab's DCF and acquisition screening models. |
+## Pick a portfolio example
+
+- **For a property owner**, open the [rental workbook](../templates/rental-property/README.md) and follow transfer **TR-102**. The case shows why the books can disagree with the bank even when cash has reached the right account.
+- **For a finance analyst**, open [the bank model](https://ehtisham514.github.io/apex-reconciliation-toolkit/financial_intelligence/bank-lab/) and select **Historical checks**. Compare the one-year net interest income forecast with the simpler prior-year benchmark and trace either result to its filings.
+- **For a controller**, open the [integrated business forecast](../financial_intelligence/INTEGRATED_MODEL.md) to inspect which assumptions connect profit, debt and cash. The inputs start blank.
+
+[Live hub](https://ehtisham514.github.io/apex-reconciliation-toolkit/) · [Detailed tool catalog](TOOL_CATALOG.md) · [Worked examples](CASE_STUDIES.md)
 
 ## Open a tool
 
