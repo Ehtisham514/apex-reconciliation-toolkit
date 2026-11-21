@@ -149,7 +149,7 @@ if(typeof module!=="undefined" && module.exports)module.exports=BankModel;
 "use strict";
 const db=JSON.parse(document.getElementById("data").textContent),rows=db.filings, M=BankModel;
 const names={JPM:"JPMorgan Chase",BAC:"Bank of America",C:"Citigroup",WFC:"Wells Fargo"};
-const $=id=>document.getElementById(id), fmt=(n,d=0)=>Number.isFinite(n)?n.toLocaleString("en-US",{minimumFractionDigits:d,maximumFractionDigits:d}):"—";
+const $=id=>document.getElementById(id), fmt=(n,d=0)=>Number.isFinite(n)?(Math.abs(n)<0.5*10**(-d)?0:n).toLocaleString("en-US",{minimumFractionDigits:d,maximumFractionDigits:d}):"—";
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const link=(url,s)=>'<a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+esc(s)+'</a>';
 const opt=(k,s)=>'<option value="'+esc(k)+'">'+esc(s)+'</option>';
