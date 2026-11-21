@@ -6,11 +6,13 @@
 
 A practical, open-source workspace for accountants, business owners and finance teams, maintained by **Ehtisham Ul Haq / APEX Accounting & Solutions**. It brings the original APEX reconciliation tool together with accounting workbooks, browser utilities, financial models and documented review workflows.
 
-[**Analyze the four U.S. banks**](https://ehtisham514.github.io/apex-reconciliation-toolkit/financial_intelligence/bank-lab/) · [**Open the live hub**](https://ehtisham514.github.io/apex-reconciliation-toolkit/) · [Start here](docs/START_HERE.md) · [Tool catalog](docs/TOOL_CATALOG.md) · [Templates](templates/README.md) · [Timesheet review](tools/timesheet-review.html) · [Close board](tools/close-board.html) · [Financial models](financial_intelligence/README.md) · [Integrated three-statement model](financial_intelligence/INTEGRATED_MODEL.md) · [Data engine](docs/DATA_ENGINE.md) · [Worked examples](docs/CASE_STUDIES.md)
+[**Project directory**](docs/START_HERE.md) · [Open the live hub](https://ehtisham514.github.io/apex-reconciliation-toolkit/) · [Browse working papers](templates/README.md) · [Tool specifications](docs/TOOL_CATALOG.md)
 
 **Release: v0.2.0 — public beta.** Tools support preparation, analysis and review. They do not post entries to accounting software or provide an audit opinion. The bank model uses public SEC filings. Training examples elsewhere in the hub use fictional figures.
 
 **Rental property owners** · [Try the Excel cash reconciliation workbook](templates/rental-property/README.md). Follow a mortgage payment before rent arrives and trace a missing $300 reserve deposit in the fictional example.
+
+**Featured model** · [Explore the four U.S. banks](https://ehtisham514.github.io/apex-reconciliation-toolkit/financial_intelligence/bank-lab/). Change deposit growth in the bank forecast to see the effect on borrowing, earnings and capital. [Model guide and verification results](financial_intelligence/bank-lab/README.md).
 
 ## Choose your starting point
 
@@ -20,6 +22,7 @@ A practical, open-source workspace for accountants, business owners and finance 
 | A bookkeeper or accountant | [Month-end workflow](docs/START_HERE.md) | Reconciliation exceptions, close checklists and documented follow-up |
 | A property or multi-entity finance team | [Accounting Workbench](https://ehtisham514.github.io/apex-reconciliation-toolkit/tools/accounting-workbench.html) · [Input guide](docs/WORKBENCH.md) | Receivables/payables aging, intercompany transfer review and trust-balance comparisons |
 | A construction business | [Construction models](financial_intelligence/README.md) | Quantity-based estimates, target-margin bids and cost-to-complete scenarios |
+| A bank analyst | [Four-bank financial analysis](https://ehtisham514.github.io/apex-reconciliation-toolkit/financial_intelligence/bank-lab/) | Compare public filings, forecast funding needs and stress capital and valuation assumptions |
 | A financial analyst | [Finance Intelligence Lab](financial_intelligence/RUN_ME.md) | Driver-based projections, DCF sensitivities and acquisition screening |
 | A team with large CSV files | [Disk-backed data engine](docs/DATA_ENGINE.md) | Validated ledger imports, duplicate review, control totals and grouped exports |
 
@@ -43,6 +46,7 @@ The downloaded HTML files also run directly from your computer. GitHub's file vi
 
 | Tool | Available now | How to use it |
 |---|---|---|
+| Bank financial analysis | Compare financial statements for four U.S. banks, build funding scenarios and review historical checks | [Open model](https://ehtisham514.github.io/apex-reconciliation-toolkit/financial_intelligence/bank-lab/) · [Methods and results](financial_intelligence/bank-lab/README.md) |
 | Bank ↔ ledger reconciliation | Exact-cents comparisons, account/currency separation, suggested pairs, duplicates and exceptions | [Open reconciliation tool](https://ehtisham514.github.io/apex-reconciliation-toolkit/apex-reconcile.html) · [Rules and CSV schema](docs/RECONCILIATION.md) |
 | AR/AP aging | Due-date buckets, open balances and separate entity/currency totals | [Accounting Workbench](https://ehtisham514.github.io/apex-reconciliation-toolkit/tools/accounting-workbench.html) · [Input guide](docs/WORKBENCH.md) |
 | Intercompany transfer review | Reciprocal entity/ref/currency checks, exact opposite amounts, exceptions for ambiguity | [Accounting Workbench](https://ehtisham514.github.io/apex-reconciliation-toolkit/tools/accounting-workbench.html) · [Input guide](docs/WORKBENCH.md) |
