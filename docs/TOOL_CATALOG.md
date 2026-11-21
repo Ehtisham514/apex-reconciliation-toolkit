@@ -4,6 +4,7 @@ Use this catalog to choose the right component and understand its output. A comp
 
 | Component | What it does | Runs where | Material boundary |
 |---|---|---|---|
+| [Bank financial analysis](../financial_intelligence/bank-lab/README.md) | Four-bank statements, funding forecasts, capital stress, equity valuation and merger screens. | Offline browser or Node.js | Public U.S. holding-company data and illustrative assumptions. |
 | [Reconciliation tool](../apex-reconcile.html) | Compares bank and ledger transactions, suggests unambiguous pairs and exports exceptions. | Local browser | Exact rule-based suggestions; no journal posting. Account/currency isolation and documented row limits apply. |
 | [Accounting workbench](../tools/accounting-workbench.html) | Checks trust balance arithmetic, ages invoices and reviews reciprocal intercompany transfer pairs. | Local browser | Does not perform full trust compliance, assess collectability, or post eliminations. |
 | [Construction models](../financial_intelligence/README.md) | Builds direct cost, overhead, contingency and target-margin pricing, with project-performance calculations. | Local Python / Streamlit | Needs complete scope, units, quotations and reviewed assumptions. No local construction-cost database or certified estimate class. |

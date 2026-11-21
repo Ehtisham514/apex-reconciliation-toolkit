@@ -1,0 +1,15 @@
+{
+  "cutoff": "2026-11-21",
+  "filings": 172,
+  "controls": {
+    "Pass": 1032,
+    "Review": 0,
+    "Unavailable": 0
+  },
+  "forecast_years": 72,
+  "cases": 24,
+  "merger_screens": 24,
+  "forecast_observations": 32,
+  "trend_wape_pct": 9.301773381586086,
+  "flat_wape_pct": 8.469111539388654
+}

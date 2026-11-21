@@ -1,0 +1,110 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>Bank Financials | APEX</title><style>
+:root{--navy:#16374b;--ink:#17343b;--teal:#006c60;--line:#cbdad5;--bg:#f3f6f3;--muted:#496168}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.48 system-ui,sans-serif}header{background:var(--navy);color:white}header div,main{max-width:1180px;margin:auto;padding:22px clamp(15px,4vw,42px)}header p{color:#c2e5d9;font-size:.83rem;margin:0}h1{font-size:clamp(1.9rem,4vw,3rem);letter-spacing:-.045em;margin:3px 0}h2{margin:0 0 8px;letter-spacing:-.025em}h3{margin:18px 0 4px;font-size:1.08rem}p{margin:.4em 0 .75em}.panel{padding:clamp(14px,3vw,25px);margin:15px 0;border:1px solid var(--line);background:#fff;border-radius:12px}.controls{display:flex;flex-wrap:wrap;align-items:end;gap:10px 18px}label{font-size:.82rem;font-weight:650;display:grid;gap:4px}input,select,button{font:inherit;padding:8px;border-radius:5px;border:1px solid #879c96;background:white;color:var(--ink)}input{width:9.4em}button{cursor:pointer}button:hover,button[aria-pressed=true]{background:var(--teal);border-color:var(--teal);color:white}a{color:var(--teal)}.nav{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.tablewrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;font-size:.91rem}td,th{text-align:right;padding:7px 9px;border-bottom:1px solid #dce5df}td:first-child,th:first-child{text-align:left}thead{color:#365650;background:#f0f5f2}small,.note{color:var(--muted)}.cards{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(155px,1fr))}.card{padding:14px;background:#edf5f0;border-left:3px solid var(--teal);border-radius:4px}.card strong{display:block;font-size:1.45rem;font-variant-numeric:tabular-nums}.error{color:#8a2d0b;font-weight:650}.good{color:var(--teal)}.links{display:flex;gap:15px;flex-wrap:wrap}details{margin:12px 0}summary{cursor:pointer;font-weight:650}:focus-visible{outline:3px solid #bc7817;outline-offset:2px}[hidden]{display:none!important}@media(max-width:500px){td,th{padding:6px}.panel{border-radius:6px}}@media print{.nav,button{display:none}.panel{break-inside:avoid}}
+</style></head><body><header><div><p>APEX Accounting &amp; Solutions</p><h1>Bank financial analysis</h1><span>Explore filed statements, compare peers and test investment banking assumptions.</span></div></header><main>
+<div class="controls"><label>Bank<select id="bank"></select></label><label>Reporting period<select id="period"></select></label><button id="export">Export selected statement and checks</button></div>
+<nav class="nav" aria-label="Analysis views"></nav><section id="view" class="panel"></section><p class="note">USD millions unless labeled. Public holding-company statements. Changes to assumptions stay in this browser session.</p>
+<script id="data" type="application/json">__BANK_SNAPSHOT__</script><script>
+__BANK_ENGINE__
+</script><script>
+"use strict";
+const db=JSON.parse(document.getElementById("data").textContent),rows=db.filings, M=BankModel;
+const names={JPM:"JPMorgan Chase",BAC:"Bank of America",C:"Citigroup",WFC:"Wells Fargo"};
+const $=id=>document.getElementById(id), fmt=(n,d=0)=>Number.isFinite(n)?n.toLocaleString("en-US",{minimumFractionDigits:d,maximumFractionDigits:d}):"—";
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const link=(url,s)=>'<a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+esc(s)+'</a>';
+const opt=(k,s)=>'<option value="'+esc(k)+'">'+esc(s)+'</option>';
+const tabs=["Statements","Peer comparison","Bank forecast","Valuation & stress","Merger screen","Historical checks"];let active=tabs[0];
+const settings={...M.defaults,deposit:0,credit:0,tax:0};
+let target="BAC",swap=null,synergy=0;
+const periodText=d=>({3:"3M",6:"6M",9:"9M",12:"FY"}[+d.slice(5,7)]+" "+d.slice(0,4));
+const record=()=>rows.find(r=>r.bank===$("bank").value&&r.end===$("period").value);
+const anchor=(b,e)=>db.anchors.find(a=>a.bank===b&&a.end===e);
+function tbl(headers,body){return '<div class="tablewrap"><table><thead><tr>'+headers.map(x=>'<th scope="col">'+esc(x)+'</th>').join("")+'</tr></thead><tbody>'+body.map(row=>'<tr>'+row.map((x,i)=>i?'<td>'+x+'</td>':'<th scope="row">'+x+'</th>').join("")+'</tr>').join("")+'</tbody></table></div>'}
+const card=(k,v)=>'<div class="card"><small>'+esc(k)+'</small><strong>'+v+'</strong></div>';
+const cards=(...v)=>'<div class="cards">'+v.join("")+'</div>';
+function choosePeriods(end){const ds=rows.filter(x=>x.bank===$("bank").value).map(x=>x.end).sort().reverse();$("period").innerHTML=ds.map(d=>opt(d,periodText(d))).join("");$("period").value=ds.includes(end)?end:ds[0];}
+function raw(r){return Object.entries(M.fields).map(([k,name])=>[esc(name),fmt(r.values[k],k==="eps"?2:k==="diluted_shares"?1:0),esc(db.tag_dictionary[r.tags[k]]??"Unavailable")]);}
+function statements(r){
+ const v=r.values,checks=M.checks(r);
+ return '<h2>'+esc(names[r.bank])+' · '+periodText(r.end)+'</h2><p class="note">Income and cash flows run from January 1 through '+r.end+'. Balances are at period end. Filed '+r.filed+'. '+link(r.source,r.form+" filing")+'</p>'+cards(card("Total assets · $bn",fmt(v.assets/1000,1)),card("Net interest income · $bn",fmt(v.nii/1000,1)),card("Parent net income · $bn",fmt(v.parent_net/1000,1)))+'<h3>Statement checks</h3><p>Pass tolerance is $1 million. Unavailable means a required line or its comparable definition is missing.</p>'+tbl(["Reconciliation","Status","Difference ($m)","Missing input"],checks.map(c=>[c.name,c.status,fmt(c.difference),esc(c.missing||"—")]))+'<h3>Filing detail</h3>'+tbl(["Reported line","Value","SEC concept or report locator"],raw(r));
+}
+function peers(r){
+ const rs=rows.filter(x=>x.end===r.end),table=rs.map(x=>{const v=x.values,rev=v.nii+v.fees_other;return [names[x.bank],fmt(rev),fmt(v.parent_net),fmt(rev>0?100*v.opex/rev:null,2),fmt(Number.isFinite(v.net_loans)&&v.deposits>0?100*v.net_loans/v.deposits:null,2),link(x.source,x.form)]});
+ let s='<h2>Peer comparison · '+periodText(r.end)+'</h2><p>Efficiency divides noninterest expense by net interest income plus noninterest income. Funding compares net loans with deposits.</p>'+tbl(["Bank","Net revenue ($m)","Parent income ($m)","Efficiency (%)","Net loans / deposits (%)","Source"],table);
+ if(!anchor(r.bank,r.end))return s+selectAnchor();
+ return s+'<h3>Equity and capital</h3><p>Period-end reference price equals BlackRock’s disclosed common-stock holding value divided by shares. FY comparisons use filed diluted EPS. Interim P/E uses a trailing EPS approximation. GAAP net interest margin divides annualized net interest income by reported average earning assets. These are retrospective comparisons using later-published filings.</p>'+tbl(["Bank","Reference $","P/E","P/book","P/tangible book","GAAP NIM (%)","Std. CET1 (%)","Book source","Price source"],rs.map(x=>{const a=anchor(x.bank,r.end),v=M.multiples(a,M.annualEPS(rows,x.bank,r.end));const days=(Date.parse(x.end)-Date.UTC(+x.end.slice(0,4),0,1))/86400000+1;const nim=100*x.values.nii/a.avg_earning_assets*365/days;return [names[x.bank],fmt(v.price,2),fmt(v.pe,2),fmt(v.pb,2),fmt(v.ptbv,2),fmt(nim,2),fmt(a.cet1_percent,2),link(a.book_source,"Disclosure"),link(a.market_source,"13F")]}));
+}
+function selectAnchor(){return '<p>Detailed valuation and capital inputs are available for these two dates.</p><button data-date="2025-12-31">FY 2025</button> <button data-date="2026-09-30">9M 2026</button>';}
+function inp(k,label,val){return '<label>'+esc(label)+'<input type="number" step="any" id="'+k+'" value="'+(Number.isFinite(val)?val:"")+'"></label>'}
+const num=id=>$(id).value.trim()===""?NaN:Number($(id).value);
+const planning={...M.planDefaults};
+function plan(r){
+ if(!anchor(r.bank,r.end))return '<h2>Three-year bank forecast</h2>'+selectAnchor();
+ return '<h2>Three-year bank forecast · '+names[r.bank]+'</h2><p>Each forecast column covers the next twelve months. Change the loan and deposit growth rates to see the cumulative wholesale funding required and the effect on earnings and capital.</p><div class="controls">'+Object.entries({loanGrowth:"Net loan growth (%)",depositGrowth:"Deposit growth (%)",feeGrowth:"Noninterest income growth (%)",expenseGrowth:"Expense growth (%)",marginMove:"NIM shift (bp)",creditMove:"Extra provision (bp)",fundingRate:"New funding rate (%)",riskWeight:"New loan risk weight (%)",payout:"Common payout (%)"}).map(([k,v])=>inp("plan_"+k,v,planning[k])).join("")+'<button id="planreset">Reset forecast</button></div><div id="planresult" aria-live="polite"></div>';
+}
+function planResult(r){const out=$("planresult");if(!out)return;
+ try{for(const k of Object.keys(planning))planning[k]=num("plan_"+k);
+ const a=anchor(r.bank,r.end),years=M.forecast(r,a,planning),metrics={loans:"Net loans",deposits:"Deposits",nii:"Net interest income",fees:"Noninterest income",expense:"Noninterest expense",provision:"Provision / claims",pretax:"Pretax income",common:"Common earnings",payout:"Common dividends",wholesale:"Required new wholesale funding",liquidity:"Incremental liquid assets",assets:"Total assets",liabilities:"Total liabilities",equity:"Total equity",difference:"Balance sheet difference",cet1:"Estimated standardized CET1 (%)"};
+ out.innerHTML='<h3>Forecast · USD millions</h3>'+tbl(["Line","Year 1","Year 2","Year 3"],Object.entries(metrics).map(([k,s])=>[s,...years.map(y=>fmt(y[k],k==="cet1"?2:0))]))+'<p class="note">Funding is a modeled requirement. Earnings use the opening period’s annualized margin and credit cost; new wholesale funding incurs interest in the following year. CET1 assumes retained common earnings qualify in full. '+link(a.source,"Starting balances and average earning assets")+'</p>';
+ out.insertAdjacentHTML("beforeend",'<button id="exportplan">Export forecast and assumptions</button>');$("exportplan").onclick=()=>exportModel(r,planning,years,"forecast");
+ }catch(e){out.innerHTML='<p class="error">'+esc(e.message)+'</p>'}}
+
+function valuation(r){
+ if(!anchor(r.bank,r.end))return '<h2>Valuation &amp; stress</h2>'+selectAnchor();
+ return '<h2>Valuation &amp; stress · '+names[r.bank]+'</h2><p>Illustrative assumptions. The five-year model moves return on equity from trailing EPS / current book value toward your long-run estimate. It discounts dividends and independently discounts residual income.</p><div class="controls">'+Object.entries({roe:"Long-run ROE (%)",cost:"Cost of equity (%)",growth:"Terminal growth (%)",payout:"Years 1–5 payout (%)",deposit:"Extra deposit cost (bp)",credit:"Extra credit provision (bp)",tax:"Tax relief on shock (%)",loss:"Other after-tax loss ($m)",rwaChange:"Change in RWA (%)"}).map(([k,v])=>inp(k,v,settings[k])).join("")+'<button id="reset">Reset assumptions</button></div><div id="results" aria-live="polite"></div>';
+}
+function valResult(r){
+ const box=$("results"),a=anchor(r.bank,r.end);if(!box)return;
+ try{
+  for(const k of Object.keys(settings))settings[k]=num(k);
+  const p=settings,stress=M.earningsStress(r,p.deposit,p.credit,p.tax),eps=M.annualEPS(rows,r.bank,r.end);
+  const s=M.scenario(a,eps,{...p,loss:p.loss+stress.hit});
+  const sensitivity=[-1,0,1].map(delta=>[fmt(p.roe+delta,1)+"%",...[-1,0,1].map(d=>{try{return fmt(M.scenario(a,eps,{...p,roe:p.roe+delta,cost:p.cost+d,loss:p.loss+stress.hit}).residualValue,2)}catch{return "—"}})]);
+  box.innerHTML='<h3>Common equity value</h3>'+cards(card("Residual income · $/share",fmt(s.residualValue,2)),card("Dividend model · $/share",fmt(s.dividendValue,2)),card("Cross-check difference · $",fmt(s.modelDifference,4)))+tbl(["Year","Opening BVPS","ROE (%)","EPS","Dividend/share","Closing BVPS","Residual/share"],s.years.map(y=>[y.year,fmt(y.opening,2),fmt(100*y.roe,2),fmt(y.earnings,2),fmt(y.dividend,2),fmt(y.closing,2),fmt(y.residual,2)]))+'<h3>Sensitivity · value per share</h3>'+tbl(["Terminal ROE / cost of equity",...[-1,0,1].map(d=>fmt(p.cost+d,1)+"%")],sensitivity)+'<h3>Period earnings and capital under stress</h3><p>Deposit and loan shocks use period-end balances and the selected period length. The after-tax earnings hit reduces CET1. Other capital loss is incremental. Valuation above uses the separate long-run ROE assumptions.</p>'+cards(card("Stressed pretax · $m",fmt(stress.pretax)),card("After-tax earnings hit · $m",fmt(stress.hit)),card("Stressed std. CET1",fmt(s.capital,2)+"%"),card("CET1 change",fmt(s.capitalMove,0)+" bp"))+'<p>'+link(a.source,"Reported capital and RWA")+' · '+link(a.book_source,"Reported book value")+'</p>';
+ box.insertAdjacentHTML("beforeend",'<button id="exportvalue">Export valuation and assumptions</button>');$("exportvalue").onclick=()=>exportModel(r,p,[...s.years,{...s,...stress}],"valuation");
+ }catch(e){box.innerHTML='<p class="error" role="alert">'+esc(e.message)+'</p>'}
+}
+function deals(r){
+ if(!anchor(r.bank,r.end))return '<h2>Merger screen</h2>'+selectAnchor();
+ if(target===r.bank)target=Object.keys(names).find(b=>b!==r.bank);
+ const a=anchor(r.bank,r.end),b=anchor(target,r.end);
+ const ratio=swap??Number((M.referencePrice(b)/M.referencePrice(a)).toFixed(5));
+ return '<h2>All-stock merger screen</h2><p>Illustrative exchange of shares. '+esc(names[r.bank])+' is the acquirer. The calculation assumes closing at the start of the earnings period and uses diluted weighted-average shares as a proxy.</p><div class="controls"><label>Target bank<select id="target">'+Object.keys(names).filter(b=>b!==r.bank).map(b=>opt(b,names[b])).join("")+'</select></label>'+inp("swap","Buyer shares / target share",ratio)+inp("synergy","After-tax synergy / target share ($)",synergy)+'</div><div id="dealout" aria-live="polite"></div><h3>Historical transaction reference</h3><p>First Horizon / Capital Bank, announced in 2017, implied 2.01× tangible book and 27.8× trailing EPS. The adviser’s ten-deal sample had a median of 1.84× tangible book and 20.7× trailing EPS. Target assets ranged from $5bn to $25bn. The historical sample describes regional banks and is excluded from the four-bank valuation. '+link("https://www.sec.gov/Archives/edgar/data/36966/000093041317002422/c88663_s4.htm","S-4, selected merger transactions, pp. 74–75")+'</p>';
+}
+function dealResult(r){const out=$("dealout");if(!out)return;try{
+ const a=anchor(r.bank,r.end),b=anchor(target,r.end), other=rows.find(x=>x.end===r.end&&x.bank===target);
+ const eps=M.annualEPS(rows,r.bank,r.end),s=M.merger(a,b,eps,M.annualEPS(rows,target,r.end),num("swap"),num("synergy"),other.values.diluted_shares/r.values.diluted_shares);
+ out.innerHTML=cards(card("Offer / target share",fmt(s.offer,2)),card("Implied premium",fmt(s.premium,2)+"%"),card("Pro forma EPS",fmt(s.proForma,2)),card("EPS accretion / dilution",fmt(s.accretion,2)+"%"))+'<p class="note">Excludes purchase accounting marks, fees, share repurchases, capital actions and regulatory feasibility.</p>';
+ }catch(e){out.innerHTML='<p class="error">'+esc(e.message)+'</p>'}}
+function history(r){
+ const rs=rows.filter(x=>x.bank===r.bank),bt=M.backtest(rs),all=rs.flatMap(M.checks),bad=all.filter(c=>c.status==="Review"),miss=all.filter(c=>c.status==="Unavailable");
+ const wape=k=>100*bt.reduce((s,x)=>s+Math.abs(x[k]),0)/bt.reduce((s,x)=>s+Math.abs(x.actual),0);
+ return '<h2>Historical checks · '+names[r.bank]+'</h2>'+cards(card("Filings",rs.length),card("Checks passed",all.length-bad.length-miss.length),card("Require review",bad.length),card("Unavailable",miss.length))+'<h3>One-year net interest income forecast replay</h3><p>Each estimate uses the last two annual filings available before the target year ended. The model repeats the most recent growth rate, capped at ±15%. The comparator holds the prior year flat. Weighted absolute error divides total absolute error by total actual net interest income.</p>'+cards(card("Trend model error",fmt(wape("error"),2)+"%"),card("Flat comparator error",fmt(wape("flat_error"),2)+"%"))+tbl(["Year","Trend forecast ($m)","Flat forecast ($m)","Reported ($m)","Input filed","Actual filing"],bt.map(x=>[x.year,fmt(x.forecast),fmt(x.flat),fmt(x.actual),x.input_filed,link(x.actual_source,"Open")]));
+}
+function render(){
+ const r=record();document.querySelectorAll("nav button").forEach(b=>b.setAttribute("aria-pressed",b.textContent===active));
+ $("view").innerHTML=[statements,peers,plan,valuation,deals,history][tabs.indexOf(active)](r);
+ if($("planreset")){$("planreset").onclick=()=>{Object.assign(planning,M.planDefaults);render()};for(const k of Object.keys(planning))$("plan_"+k).oninput=()=>planResult(r);planResult(r)}
+ if($("reset")){$("reset").onclick=()=>{Object.assign(settings,M.defaults,{deposit:0,credit:0,tax:0});render()};for(const k of Object.keys(settings))$(k).oninput=()=>valResult(r);valResult(r)}
+ if($("target")){$("target").value=target;$("target").onchange=()=>{target=$("target").value;swap=null;render()};$("swap").oninput=()=>{swap=num("swap");dealResult(r)};$("synergy").oninput=()=>{synergy=num("synergy");dealResult(r)};dealResult(r)}
+ document.querySelectorAll("[data-date]").forEach(b=>b.onclick=()=>{$("period").value=b.dataset.date;swap=null;render()});
+}
+function exportRows(body,filename){
+ const csv=body.map(row=>row.map(v=>'"'+String(v??"").replaceAll('"','""')+'"').join(",")).join("\r\n");
+ const u=URL.createObjectURL(new Blob([csv],{type:"text/csv"})),a=document.createElement("a");a.href=u;a.download=filename;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000);
+}
+function exportModel(r,settings,results,kind){const a=anchor(r.bank,r.end);
+ const body=[["Bank","Period end","Model","Section","Year","Field","Value"],[r.bank,r.end,kind,"Source","","Capital / averages",a.source],[r.bank,r.end,kind,"Source","","Book value",a.book_source]];
+ for(const [k,v] of Object.entries(settings))body.push([r.bank,r.end,kind,"Assumption","",k,v]);
+ for(const row of results)for(const [k,v] of Object.entries(row))if(k!=="year" && typeof v==="number")body.push([r.bank,r.end,kind,"Output",row.year??"",k,v]);
+ exportRows(body,r.bank+"-"+r.end+"-"+kind+".csv");}
+function download(){
+ const r=record(),body=[["Bank","Period end","Filing date","Section","Line","Value","Unit / status","Source","Concept / missing input"]];
+ for(const [k,label] of Object.entries(M.fields))body.push([r.bank,r.end,r.filed,"Statement",label,r.values[k]??"",k==="eps"?"USD/share":k==="diluted_shares"?"million shares":"USD million",r.source,db.tag_dictionary[r.tags[k]]??"Unavailable"]);
+ for(const c of M.checks(r))body.push([r.bank,r.end,r.filed,"Control",c.name,c.difference??"",c.status,r.source,c.missing]);
+ exportRows(body,r.bank+"-"+r.end+".csv");
+}
+$("bank").innerHTML=Object.entries(names).map(([k,v])=>opt(k,v)).join("");choosePeriods("2025-12-31");
+$("bank").onchange=()=>{choosePeriods($("period").value);swap=null;render()};$("period").onchange=()=>{swap=null;render()};$("export").onclick=download;
+for(const t of tabs){const b=document.createElement("button");b.textContent=t;b.onclick=()=>{active=t;render()};document.querySelector("nav").append(b)}render();
+</script></main></body></html>

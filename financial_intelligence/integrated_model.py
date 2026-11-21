@@ -389,7 +389,25 @@ def write_csv(path: Path, rows: list[dict]) -> None:
             })
 
 
+def run_bank_model(args: list[str]) -> int:
+    """Run the bundled public bank analysis through the finance model entry point."""
+    import shutil
+    import subprocess
+
+    parser = argparse.ArgumentParser(prog="integrated_model.py bank", description="Replay the bundled bank filings and scenarios.")
+    parser.add_argument("--output-dir", type=Path, required=True, help="New directory for checks, forecasts, and scenario CSVs.")
+    options = parser.parse_args(args)
+    node = shutil.which("node")
+    if node is None:
+        print("Open bank-lab/index.html for the browser model, or install Node.js 18+ for the CSV runner.", file=sys.stderr)
+        return 2
+    runner = Path(__file__).resolve().parent / "bank-lab" / "run.js"
+    return subprocess.run([node, str(runner), str(options.output_dir)], check=False).returncode
+
+
 def main() -> int:
+    if sys.argv[1:2] == ["bank"]:
+        return run_bank_model(sys.argv[2:])
     parser = argparse.ArgumentParser(description="Run the integrated five-year management-planning model.")
     parser.add_argument("--actuals", required=True, type=Path, help="Closing actuals JSON.")
     parser.add_argument("--assumptions", required=True, type=Path, help="Scenario assumptions CSV.")

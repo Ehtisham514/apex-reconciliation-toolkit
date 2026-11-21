@@ -1,0 +1,712 @@
+{
+  "000201238326000920.xml": {
+    "bytes": 23107804,
+    "sha256": "4f2086bb912d5884237fa78118e033a4d9119e7773d9649b2fab34830131d4df",
+    "url": "https://www.sec.gov/Archives/edgar/data/2012383/000201238326000920/form13fInfoTable.xml"
+  },
+  "000201238326003985.xml": {
+    "bytes": 23440363,
+    "sha256": "40f4c99d600049b7597e2962e1a557572fc4b7890cf241cbbd923b5f5e358371",
+    "url": "https://www.sec.gov/Archives/edgar/data/2012383/000201238326003985/form13fInfoTable.xml"
+  },
+  "BAC-2025-06-30.htm": {
+    "bytes": 10988221,
+    "sha256": "e05976dd7767266302af7241b492055de8217dddd5aecc3fc90f73513ce0e96b",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085825000268/bac-20250630.htm"
+  },
+  "BAC-2025-09-30.htm": {
+    "bytes": 11003230,
+    "sha256": "e06340a677ca9c8b17946121c40db646033830eaf345ee67972e0c4cba228785",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085825000405/bac-20250930.htm"
+  },
+  "BAC-2025.htm": {
+    "bytes": 12819165,
+    "sha256": "c2eb83c3cfc19118a268c88e6f4c8c7b53a2291350fc925f62af4ccaac915237",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085826000157/bac-20251231.htm"
+  },
+  "BAC-2026-03-31.htm": {
+    "bytes": 9055228,
+    "sha256": "ae967ea240bfd2dac06239b5bc70c5c222973724e8ee1c0dfa47850c0c71a9c7",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085826000249/bac-20260331.htm"
+  },
+  "BAC-2026-06-30.htm": {
+    "bytes": 10917419,
+    "sha256": "98799960fc28a3d2c47f0bd0cdcccd25ecd38ddadd413f58d4774045d4e40ca4",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085826000394/bac-20260630.htm"
+  },
+  "BAC-2026.htm": {
+    "bytes": 10917359,
+    "sha256": "49084ec34df0796e1d073caa6005b64178a2027abc718e85174ee6244ca6a4f0",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085826000548/bac-20260930.htm"
+  },
+  "BAC.json": {
+    "bytes": 7011389,
+    "sha256": "c2893d5c5c3d41bd6453d4ad5d76a4f65f6cf66b2dc2b0702721fdbb805b8e7b",
+    "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000070858.json"
+  },
+  "C-2025-06-30.htm": {
+    "bytes": 14948417,
+    "sha256": "ea71016bcd9ff9dd694567fe0d218c090bacb5781d9fa68a5c53d35362ceb731",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100125000131/c-20250630.htm"
+  },
+  "C-2025-09-30.htm": {
+    "bytes": 15044691,
+    "sha256": "65e87bdff309ec714faa27b33c3a7f36fe352c3a2b9eb786b0b1630264d3d30a",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100125000154/c-20250930.htm"
+  },
+  "C-2025.htm": {
+    "bytes": 16150869,
+    "sha256": "3102f67633badee6ddb41fccc9d1da870c4ca9ea1e50f70541069c96d42dcc16",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100126000011/c-20251231.htm"
+  },
+  "C.json": {
+    "bytes": 9065294,
+    "sha256": "090b2ba5d977e0d1544df177c58349b91a83cbf6125bb89d3b6645a3def926b1",
+    "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000831001.json"
+  },
+  "JPM-2025.htm": {
+    "bytes": 12927430,
+    "sha256": "58135852f9cab8d1cd4a4a74f265ce45e5e48aba2b04acc5a82ae4e1473bff47",
+    "url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026008131/jpm-20251231.htm"
+  },
+  "JPM-2026.htm": {
+    "bytes": 11540724,
+    "sha256": "e079d6487259fdd23584108e06772633e6238b7886736675c39c7e42550c7047",
+    "url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026069523/jpm-20260930.htm"
+  },
+  "JPM.json": {
+    "bytes": 8153412,
+    "sha256": "5c7cc791b291175417d1e4e9e8bcc13f7b21f42928a84cfa9acc4ad0ea580403",
+    "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000019617.json"
+  },
+  "WFC-2025-06-30.htm": {
+    "bytes": 10949871,
+    "sha256": "54a0d2713c783a6f4c3a1f76210dd5f006b09c551264cf62c943085eded88e93",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297125000201/wfc-20250630.htm"
+  },
+  "WFC-2025-09-30.htm": {
+    "bytes": 10931764,
+    "sha256": "e6f42a771ef48097f32c521a88a654f267602624f01a47ee2c3e02c4945391c4",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297125000253/wfc-20250930.htm"
+  },
+  "WFC-2025.htm": {
+    "bytes": 11595726,
+    "sha256": "27d3e4061cbf4f4034189bd0e5a76fa1d893b9f67331b79ed8928d3a55f38812",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297126000133/wfc-20251231.htm"
+  },
+  "WFC-2026-03-31.htm": {
+    "bytes": 8552183,
+    "sha256": "1fb9dec82a4c1fe469eeb99151ae8a68e78a837dcc6e21269c8212c94a288243",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297126000217/wfc-20260331.htm"
+  },
+  "WFC-2026-06-30.htm": {
+    "bytes": 10649043,
+    "sha256": "674d76470f72378f08a6f5e8945f256ac918c04962399fa039cda9383c5ebbe0",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297126000302/wfc-20260630.htm"
+  },
+  "WFC-2026.htm": {
+    "bytes": 10685298,
+    "sha256": "c9b1a74d4877afc6b844c7571394232c7a262b4caeac68c08de61cac632bf5b8",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297126000327/wfc-20260930.htm"
+  },
+  "WFC.json": {
+    "bytes": 7918056,
+    "sha256": "23aceb562e9102dcc99261a88e0f5458573e9289c89f13afde03313aaefcd38e",
+    "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000072971.json"
+  },
+  "c-20260331.htm": {
+    "bytes": 11277949,
+    "sha256": "40fcf39db30f147e5a9b7bbd751f94e39ba8e67200588a55f88108292e9cfd46",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100126000019/c-20260331.htm"
+  },
+  "c-20260630.htm": {
+    "bytes": 14544054,
+    "sha256": "687e625b095d8c71f468019fe2655086411b1a65b9f911d2363d8fd5d52ca5c6",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100126000045/c-20260630.htm"
+  },
+  "c-20260930.htm": {
+    "bytes": 14551207,
+    "sha256": "4723e6d23c0c84ffb2638f3fae40896ede4cc8c90662c5e45922c87b00d2eced",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100126000056/c-20260930.htm"
+  },
+  "reports/BAC-2016-03-31.xlsx": {
+    "bytes": 277549,
+    "sha256": "9f50a637a7697293eb4523510e8e1d87b08d9cbc9e61d2d2e9628036db424be0",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085816000166/Financial_Report.xlsx"
+  },
+  "reports/BAC-2016-06-30.xlsx": {
+    "bytes": 298764,
+    "sha256": "99933e6fc4466e53d93e88caf580459de24d16786aca1405ce6d51772ef6c482",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085816000200/Financial_Report.xlsx"
+  },
+  "reports/BAC-2016-09-30.xlsx": {
+    "bytes": 287732,
+    "sha256": "7ce9ee02ae722124d8471d0e4b574ddf2bf734e454407cab4a827c16a2e35616",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085816000222/Financial_Report.xlsx"
+  },
+  "reports/BAC-2016-12-31.xlsx": {
+    "bytes": 411175,
+    "sha256": "af206825295c57d68939b990925a3fb7fee125c849f84116921f9e7ed885f368",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085817000013/Financial_Report.xlsx"
+  },
+  "reports/BAC-2017-03-31.xlsx": {
+    "bytes": 263811,
+    "sha256": "f7af30c6f8b1be366d0f45272dbba3fcd4831713df273088ccc6ad39238b16f3",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085817000025/Financial_Report.xlsx"
+  },
+  "reports/BAC-2017-06-30.xlsx": {
+    "bytes": 273269,
+    "sha256": "76448901e5129ff23d1bb8b4afca97fd5ebc8f8a8d941f20b3b034f66eb8d48e",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085817000037/Financial_Report.xlsx"
+  },
+  "reports/BAC-2017-09-30.xlsx": {
+    "bytes": 269772,
+    "sha256": "bd08e9dbbb0cb7044038b203398de1d3d12a3e45a898dc8e080cb56d23e74c0c",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085817000046/Financial_Report.xlsx"
+  },
+  "reports/BAC-2017-12-31.xlsx": {
+    "bytes": 401114,
+    "sha256": "b9366e635397149ce14086945bde6d687bc36f8c6e977e3cc951a53bb23aab5f",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085818000009/Financial_Report.xlsx"
+  },
+  "reports/BAC-2018-03-31.xlsx": {
+    "bytes": 255080,
+    "sha256": "ade1d6708971c7679003323489fbd2bf687c21eecaf455f03a2d287dce7eb6a6",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085818000020/Financial_Report.xlsx"
+  },
+  "reports/BAC-2018-06-30.xlsx": {
+    "bytes": 272035,
+    "sha256": "a59e66dafc472740c76c7a2f0d4ff07a1b847fd473663a98c99782bdf64f5b16",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085818000030/Financial_Report.xlsx"
+  },
+  "reports/BAC-2018-09-30.xlsx": {
+    "bytes": 268853,
+    "sha256": "2343f5d3df0db2becd348ff4eedd2e3269104747eda0200a101cf51eaf0974fa",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085818000042/Financial_Report.xlsx"
+  },
+  "reports/BAC-2018-12-31.xlsx": {
+    "bytes": 385455,
+    "sha256": "c8f27c4c4bd97a736d89e79f9588076a4ae03fdc40bd30382924ca6ff83916e1",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085819000012/Financial_Report.xlsx"
+  },
+  "reports/BAC-2020-03-31.xlsx": {
+    "bytes": 246328,
+    "sha256": "73864a8fc48ac1c65a2e46366e820136615c819fb891773e1ccd07a072358b3d",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085820000023/Financial_Report.xlsx"
+  },
+  "reports/BAC-2020-06-30.xlsx": {
+    "bytes": 296216,
+    "sha256": "a7502d84d36644d4953e370f13f67d2e989c1c1185c9e4d600ecb6b41cccf610",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085820000040/Financial_Report.xlsx"
+  },
+  "reports/BAC-2020-09-30.xlsx": {
+    "bytes": 295695,
+    "sha256": "9ced98378da901ec9b7bac0cae8da4ea8f7e80d2ae644f36956cd1bbcd7c1072",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085820000071/Financial_Report.xlsx"
+  },
+  "reports/BAC-2020-12-31.xlsx": {
+    "bytes": 421716,
+    "sha256": "0585980556ea99dde75ec740633f323288813dfc3885708e6659bcc69ca5d157",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085821000023/Financial_Report.xlsx"
+  },
+  "reports/BAC-2021-03-31.xlsx": {
+    "bytes": 267998,
+    "sha256": "7b0d9e54e74260cfaccd5579b4b109bf1e4f9f28a727ecfc33fd6cf97fa4a780",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085821000063/Financial_Report.xlsx"
+  },
+  "reports/BAC-2021-06-30.xlsx": {
+    "bytes": 286875,
+    "sha256": "0001f1cf3e7d712a06e9f9d53febbd2eeef8aa895f4451ed5cfa3a8008524b0b",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085821000084/Financial_Report.xlsx"
+  },
+  "reports/BAC-2021-09-30.xlsx": {
+    "bytes": 286393,
+    "sha256": "dc21fa81b5b9302c0e6cce20d4a4e9b31863b570d5dfbe5fd2d73ef27df3f99c",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085821000107/Financial_Report.xlsx"
+  },
+  "reports/BAC-2021-12-31.xlsx": {
+    "bytes": 419070,
+    "sha256": "02599c0308c9140cf94fb4a3afc7c3699cb4cc979e6195a92f583c71eead1b11",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085822000062/Financial_Report.xlsx"
+  },
+  "reports/BAC-2022-03-31.xlsx": {
+    "bytes": 262049,
+    "sha256": "346917751bd5b402b032e40bdcfb41289396a82a010695b1fed09f2d85e81097",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085822000088/Financial_Report.xlsx"
+  },
+  "reports/BAC-2022-06-30.xlsx": {
+    "bytes": 317298,
+    "sha256": "c51f6cc39628d76dbc4d7b2618d9688e7a1c23dd03a3cfb489cc6054e6d38b04",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085822000112/Financial_Report.xlsx"
+  },
+  "reports/BAC-2022-09-30.xlsx": {
+    "bytes": 320414,
+    "sha256": "92143212fc59fba9aa9abf22c40484c65e11a486d2b25e7443c2a132544261dc",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085822000131/Financial_Report.xlsx"
+  },
+  "reports/BAC-2022-12-31.xlsx": {
+    "bytes": 469130,
+    "sha256": "78b2e729901e954b287aeeeb9175b2e618228a420c7c7551873ffd5d2f551e89",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085823000092/Financial_Report.xlsx"
+  },
+  "reports/BAC-2023-03-31.xlsx": {
+    "bytes": 308414,
+    "sha256": "5e4ce4ebfdb65145093349f24b3ce9469020a110a36b2bf099175dda7f448ad6",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085823000142/Financial_Report.xlsx"
+  },
+  "reports/BAC-2023-06-30.xlsx": {
+    "bytes": 342924,
+    "sha256": "646082990e65277a0756db6852613e66ca5903f512f02d611edfb4b246318e6a",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085823000176/Financial_Report.xlsx"
+  },
+  "reports/BAC-2023-09-30.xlsx": {
+    "bytes": 345319,
+    "sha256": "e9c8ec1bddda18a9e2c723e5eb6a4a63e51aa49374990fddb92c111d19fc36eb",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085823000272/Financial_Report.xlsx"
+  },
+  "reports/BAC-2023-12-31.xlsx": {
+    "bytes": 474511,
+    "sha256": "3495b11dad6ed4e193e9193fcfb8d12bff82637c1af22c10be23f9fcfcdb9332",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085824000122/Financial_Report.xlsx"
+  },
+  "reports/BAC-2024-03-31.xlsx": {
+    "bytes": 302323,
+    "sha256": "c165ca52f573c6a6e6b7c7dbf2281db57f6007138b24fdd230a4a325dc175217",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085824000156/Financial_Report.xlsx"
+  },
+  "reports/BAC-2024-06-30.xlsx": {
+    "bytes": 335024,
+    "sha256": "0a7d6f8dad0ed7a1e3812f02c29ec21008b3730e7c22915dcc0ec4f57c8428db",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085824000208/Financial_Report.xlsx"
+  },
+  "reports/BAC-2024-09-30.xlsx": {
+    "bytes": 336137,
+    "sha256": "342411d292c8352886a57e8ba77f4ca0843d8b9f8430755548131ee2040276a7",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085824000280/Financial_Report.xlsx"
+  },
+  "reports/BAC-2024-12-31.xlsx": {
+    "bytes": 478736,
+    "sha256": "cae0e032fff4a74136e5b4f772e719798cae27293c90da1877d2e6d98c129eb9",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085825000139/Financial_Report.xlsx"
+  },
+  "reports/BAC-2025-03-31.xlsx": {
+    "bytes": 304918,
+    "sha256": "768cbaa0b73117f41d32f1f7ad54465e83dda6d238f4e097f13db7eecdf73ea5",
+    "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085825000200/Financial_Report.xlsx"
+  },
+  "reports/C-2016-03-31.xlsx": {
+    "bytes": 345826,
+    "sha256": "0327d1c924f585a8ea5455dbc2bf44787a6583d7b62dc4bb7ad998f0a305c965",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100116000241/Financial_Report.xlsx"
+  },
+  "reports/C-2016-06-30.xlsx": {
+    "bytes": 371332,
+    "sha256": "601b0fd616ccece010638e8a1d90e2dd4d988454351454a070706e4cef620401",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100116000292/Financial_Report.xlsx"
+  },
+  "reports/C-2016-09-30.xlsx": {
+    "bytes": 340558,
+    "sha256": "3741ca964051620449297146102896e4be5aa361ba212edfedec64505836e06e",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100116000334/Financial_Report.xlsx"
+  },
+  "reports/C-2016-12-31.xlsx": {
+    "bytes": 476499,
+    "sha256": "076a51af5e0992fe6e1337132966ec1b83169ab8a7c19168ad62184906670c5d",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100117000038/Financial_Report.xlsx"
+  },
+  "reports/C-2017-03-31.xlsx": {
+    "bytes": 319089,
+    "sha256": "b6179689cb9cd9c8ee6e4e0ff9002a1a82e6f154d3de07d5a094171a0a44d8be",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100117000048/Financial_Report.xlsx"
+  },
+  "reports/C-2017-06-30.xlsx": {
+    "bytes": 350412,
+    "sha256": "fa9f0c9eed1367d4066607a51afa0849505ca0c1b90f377d90dabd2ef43ba02b",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100117000098/Financial_Report.xlsx"
+  },
+  "reports/C-2017-09-30.xlsx": {
+    "bytes": 355047,
+    "sha256": "9b8fc10c4dcaef2b8c0082baa01be2ad4445ed01f771842724b1d03c93391a14",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100117000139/Financial_Report.xlsx"
+  },
+  "reports/C-2017-12-31.xlsx": {
+    "bytes": 474954,
+    "sha256": "37ebf28b1a59eab29a44ec2445e689475f790a4415c7c86eee5e37e3383432ce",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100118000040/Financial_Report.xlsx"
+  },
+  "reports/C-2018-03-31.xlsx": {
+    "bytes": 331082,
+    "sha256": "780f11e2c36cca02515396b112f33f7eb8d593f242d61323b8188125356c2697",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100118000046/Financial_Report.xlsx"
+  },
+  "reports/C-2018-06-30.xlsx": {
+    "bytes": 359053,
+    "sha256": "c5f62aa6f8c5a46cc269030c4dbaebe70744fb51510d33958a83f8499d7d71e5",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100118000091/Financial_Report.xlsx"
+  },
+  "reports/C-2018-09-30.xlsx": {
+    "bytes": 361504,
+    "sha256": "b1ffa241c2e73b35257ff20a87b1be72ed6bd843659f9fc82476d803567b12a6",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100118000131/Financial_Report.xlsx"
+  },
+  "reports/C-2018-12-31.xlsx": {
+    "bytes": 477435,
+    "sha256": "de4ce28c17d1de2eb636040b93a748f779277e3101a57a71dc6f06ab8c36759c",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100119000027/Financial_Report.xlsx"
+  },
+  "reports/C-2019-12-31.xlsx": {
+    "bytes": 476452,
+    "sha256": "203125a0ef62779381719bae825edca961defeff61d012351e14b054ea18d9d1",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100120000031/Financial_Report.xlsx"
+  },
+  "reports/C-2020-03-31.xlsx": {
+    "bytes": 342538,
+    "sha256": "ace189c79f3bab0e21da24d168462d67e5d46b27daf20a49bda5a08023b983e6",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100120000044/Financial_Report.xlsx"
+  },
+  "reports/C-2020-06-30.xlsx": {
+    "bytes": 403109,
+    "sha256": "d44c0fa9fe4ceee083aab6201560b819c796f8a628a36fed2fd62af2d4523f02",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100120000078/Financial_Report.xlsx"
+  },
+  "reports/C-2020-09-30.xlsx": {
+    "bytes": 407444,
+    "sha256": "4b07e248420c48b135f73cc5b3c580d363295769cf4127c564d39f970d59da32",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100120000110/Financial_Report.xlsx"
+  },
+  "reports/C-2020-12-31.xlsx": {
+    "bytes": 551461,
+    "sha256": "85f29628801abe38036a3d45bb35f60768c73c72073683a5b70d43f63774e6ec",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100121000042/Financial_Report.xlsx"
+  },
+  "reports/C-2021-03-31.xlsx": {
+    "bytes": 378015,
+    "sha256": "48c9853dc18a0f78e1e35f1f67d66863aeddd641a57be253af79d8d1d13aa7f7",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100121000066/Financial_Report.xlsx"
+  },
+  "reports/C-2021-06-30.xlsx": {
+    "bytes": 407339,
+    "sha256": "a5060272e08bb230fcafc126bc06959bbc5a5cdf97d8033df36590adac24b575",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100121000126/Financial_Report.xlsx"
+  },
+  "reports/C-2021-09-30.xlsx": {
+    "bytes": 415717,
+    "sha256": "9e3ceb13fb3e466d487ba48efdf864c86b0f8a709372d3829a499e534840b8b6",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100121000167/Financial_Report.xlsx"
+  },
+  "reports/C-2021-12-31.xlsx": {
+    "bytes": 550939,
+    "sha256": "beb1097960c3d987f5d69f64aabcee3515792616829950ecb7c80f94e2ffad7f",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100122000036/Financial_Report.xlsx"
+  },
+  "reports/C-2022-03-31.xlsx": {
+    "bytes": 376415,
+    "sha256": "b0d17401bd82b7a29a63288fb20babd864bf2b0f1f185817a97c82893c0e6992",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100122000056/Financial_Report.xlsx"
+  },
+  "reports/C-2022-06-30.xlsx": {
+    "bytes": 485645,
+    "sha256": "355501882d19607752eaa47824b04c3f6df69fd86df90c54692cb5a03102a445",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100122000111/Financial_Report.xlsx"
+  },
+  "reports/C-2022-09-30.xlsx": {
+    "bytes": 495853,
+    "sha256": "443b45c5a0b3937c9b56e3969c2ba64b8534a0e0eaa4994cadba7e5288bd4bf9",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100122000146/Financial_Report.xlsx"
+  },
+  "reports/C-2022-12-31.xlsx": {
+    "bytes": 635984,
+    "sha256": "694536e5eec05c1d134563750d26cef2bd33c149d86ccb58d8711436a1f6bfe3",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100123000037/Financial_Report.xlsx"
+  },
+  "reports/C-2023-03-31.xlsx": {
+    "bytes": 462429,
+    "sha256": "03e3716ab8759ae7a222c392424847edb726d09f82691807978c2fcb38fa5d29",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100123000055/Financial_Report.xlsx"
+  },
+  "reports/C-2023-06-30.xlsx": {
+    "bytes": 482325,
+    "sha256": "09e581ac522e4347e1245d20487f29d8287543b1d170476126cf443c9d55c66d",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100123000097/Financial_Report.xlsx"
+  },
+  "reports/C-2023-09-30.xlsx": {
+    "bytes": 483441,
+    "sha256": "0bb8f3e714472c0c34dc7661514a2e944a92c46a0c887ac2325ff6c5fdbed95c",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100123000132/Financial_Report.xlsx"
+  },
+  "reports/C-2023-12-31.xlsx": {
+    "bytes": 634303,
+    "sha256": "af6ede61996835e09c13b81588d4c4c1dae696e7d128d6d8c9829abeef4f568d",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100124000033/Financial_Report.xlsx"
+  },
+  "reports/C-2024-03-31.xlsx": {
+    "bytes": 439922,
+    "sha256": "f4d7647ee49748798c7e0b365ac4d5b76636d6a751e884c0cbcc5f2c192b004d",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100124000051/Financial_Report.xlsx"
+  },
+  "reports/C-2024-06-30.xlsx": {
+    "bytes": 477081,
+    "sha256": "4bfd8904dc60e8dfbcace1c659fde6de0034e6cb3049943d840339fd37be662d",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100124000100/Financial_Report.xlsx"
+  },
+  "reports/C-2024-09-30.xlsx": {
+    "bytes": 484048,
+    "sha256": "d02a5bce2c7cdff5a9550f24c54eb3a9abf9be9546cd475523074dcb2a239f2e",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100124000134/Financial_Report.xlsx"
+  },
+  "reports/C-2024-12-31.xlsx": {
+    "bytes": 636491,
+    "sha256": "6cf966cccab175e4d69f0df9e67229f0f38458508bb6ba4f8ca3e40cfb42da37",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100125000067/Financial_Report.xlsx"
+  },
+  "reports/C-2025-03-31.xlsx": {
+    "bytes": 409548,
+    "sha256": "55c85121dd141fdb1db8d570e2e55a09b77cc477c6e4af33ee1419a69533d1b2",
+    "url": "https://www.sec.gov/Archives/edgar/data/831001/000083100125000086/Financial_Report.xlsx"
+  },
+  "reports/JPM-2016-03-31.xlsx": {
+    "bytes": 303967,
+    "sha256": "c5c3f6e06c3e78ee34757b66a87af5abba5962d055f327a04645015abd5e0515",
+    "url": "https://www.sec.gov/Archives/edgar/data/19617/000001961716000960/Financial_Report.xlsx"
+  },
+  "reports/JPM-2016-06-30.xlsx": {
+    "bytes": 328127,
+    "sha256": "8e854d4ad4f04356d37b3847bc7cbfac909e99307edb4f87fd2ecf2e7df14703",
+    "url": "https://www.sec.gov/Archives/edgar/data/19617/000001961716001056/Financial_Report.xlsx"
+  },
+  "reports/JPM-2016-09-30.xlsx": {
+    "bytes": 319235,
+    "sha256": "b9e21dd43021376fb63087186967d0b00f9c8b97fe1d4b8cef2161a8dcdd4d1e",
+    "url": "https://www.sec.gov/Archives/edgar/data/19617/000001961716001150/Financial_Report.xlsx"
+  },
+  "reports/JPM-2016-12-31.xlsx": {
+    "bytes": 465510,
+    "sha256": "f495d35e3f4154010d9de8f17fadf176ce4ec689c99f251f9b7e7cf363b3f113",
+    "url": "https://www.sec.gov/Archives/edgar/data/19617/000001961717000314/Financial_Report.xlsx"
+  },
+  "reports/JPM-2017-03-31.xlsx": {
+    "bytes": 300527,
+    "sha256": "e7543b844ab24777776c1c0fdd86bdb34f0255894eb641bf311016d73c92c0f4",
+    "url": "https://www.sec.gov/Archives/edgar/data/19617/000001961717000364/Financial_Report.xlsx"
+  },
+  "reports/JPM-2017-06-30.xlsx": {
+    "bytes": 317596,
+    "sha256": "90871acc30d4ffc9fecd078eab20320c5a65567a8aa3f6e28ea0a7d6c2cc7169",
+    "url": "https://www.sec.gov/Archives/edgar/data/19617/000001961717000486/Financial_Report.xlsx"
+  },
+  "reports/JPM-2017-09-30.xlsx": {
+    "bytes": 319051,
+    "sha256": "8ea874501e242827fbeb025a0d123eb5bd8e248c538b63b935936e57d2e0c59e",
+    "url": "https://www.sec.gov/Archives/edgar/data/19617/000001961717000552/Financial_Report.xlsx"
+  },
+  "reports/JPM-2017-12-31.xlsx": {
+    "bytes": 455243,
+    "sha256": "142224a528f1d53b8334845f14bd1416ecf5282592e8cb6148bb819a9f1143b5",
+    "url": "https://www.sec.gov/Archives/edgar/data/19617/000001961718000057/Financial_Report.xlsx"
+  },
+  "reports/JPM-2018-03-31.xlsx": {
+    "bytes": 310287,
+    "sha256": "9eedec0d7c1930e8c2183c785626cfaf6654149d25f266c998eb8d6a1cc7c25a",
+    "url": "https://www.sec.gov/Archives/edgar/data/19617/000001961718000092/Financial_Report.xlsx"
+  },
+  "reports/JPM-2018-06-30.xlsx": {
+    "bytes": 321329,
+    "sha256": "6610101448c50aff60a4695c641f7ca49a0124fabe9fc44096e46c737925cfdc",
+    "url": "https://www.sec.gov/Archives/edgar/data/19617/000001961718000151/Financial_Report.xlsx"
+  },
+  "reports/JPM-2018-09-30.xlsx": {
+    "bytes": 323462,
+    "sha256": "4d1f18e16971cba6422aa80cf224683e69a8092d82dfe20f36d655fa926c9930",
+    "url": "https://www.sec.gov/Archives/edgar/data/19617/000001961718000206/Financial_Report.xlsx"
+  },
+  "reports/JPM-2018-12-31.xlsx": {
+    "bytes": 469463,
+    "sha256": "514355502414fe9c58b331dbcf1a73741e27a547eeffa7f16befc497ebb5dd39",
+    "url": "https://www.sec.gov/Archives/edgar/data/19617/000001961719000054/Financial_Report.xlsx"
+  },
+  "reports/WFC-2016-03-31.xlsx": {
+    "bytes": 307188,
+    "sha256": "5f47c422bad56e3080a2a64c5f408056a94543841a41729ee61ef6884de1ab6c",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297116001085/Financial_Report.xlsx"
+  },
+  "reports/WFC-2016-06-30.xlsx": {
+    "bytes": 326428,
+    "sha256": "1f59f976b14cfadb8a97ddaa34175307346c50e6e64e19439d9410713dffcc0f",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297116001218/Financial_Report.xlsx"
+  },
+  "reports/WFC-2016-09-30.xlsx": {
+    "bytes": 335682,
+    "sha256": "8ec87ef2f02808e210e491b79b2bb583a00e044cb3a1bc30b999afbf02d9b243",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297116001340/Financial_Report.xlsx"
+  },
+  "reports/WFC-2016-12-31.xlsx": {
+    "bytes": 454889,
+    "sha256": "97411a20e1d23fd80ce31def0ca59d047480b5411d8eab7e64a3c5dcdb6a229e",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297117000278/Financial_Report.xlsx"
+  },
+  "reports/WFC-2017-03-31.xlsx": {
+    "bytes": 316779,
+    "sha256": "efaa309882e50b6e73e1fd1c0ad83d07619bf6341b365a9da5c73275ff5b8717",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297117000339/Financial_Report.xlsx"
+  },
+  "reports/WFC-2017-06-30.xlsx": {
+    "bytes": 340961,
+    "sha256": "b7ffef8b529a57405fbb126f68970c1d894762a4fb83dddd95e2f21ee118ee58",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297117000397/Financial_Report.xlsx"
+  },
+  "reports/WFC-2017-09-30.xlsx": {
+    "bytes": 342962,
+    "sha256": "83aa921bcebbf71bd509ff3d00ecb945e1b2a53755a6bec8a5c2577a4b439b91",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297117000466/Financial_Report.xlsx"
+  },
+  "reports/WFC-2017-12-31.xlsx": {
+    "bytes": 473223,
+    "sha256": "cf10fd35fede626c7bbe7e3ff8fdc9acf20c886f0e917e49343bf0f2171a0fbc",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297118000272/Financial_Report.xlsx"
+  },
+  "reports/WFC-2018-03-31.xlsx": {
+    "bytes": 355605,
+    "sha256": "4f9f31c0d720e5c19d060a35dfd3a31ba20ee3f6884ae33008d8467523f1ef41",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297118000324/Financial_Report.xlsx"
+  },
+  "reports/WFC-2018-06-30.xlsx": {
+    "bytes": 382071,
+    "sha256": "ff793f151b29d848366698e2309b3a7af4dd767b0c8856ae72502c4c340a5cde",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297118000408/Financial_Report.xlsx"
+  },
+  "reports/WFC-2018-09-30.xlsx": {
+    "bytes": 387428,
+    "sha256": "899f2a55b46b50cd686d4317ccb2d3a9c28873d0d7e6f742d297f84b5e0aebd5",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297118000471/Financial_Report.xlsx"
+  },
+  "reports/WFC-2018-12-31.xlsx": {
+    "bytes": 494275,
+    "sha256": "64ca5105bfbd05680edb39a0f6f8d5c62e3e817d638d30d2998a72751035fcfa",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297119000227/Financial_Report.xlsx"
+  },
+  "reports/WFC-2019-03-31.xlsx": {
+    "bytes": 344413,
+    "sha256": "e48801baeeca1820a7a116cb89a81c50fd667627264a4e5da6fea640201cd56f",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297119000254/Financial_Report.xlsx"
+  },
+  "reports/WFC-2019-06-30.xlsx": {
+    "bytes": 370257,
+    "sha256": "f1027fc547005accb9e5154259a3c66851854267dc6f7dc61cb17fab470c821e",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297119000331/Financial_Report.xlsx"
+  },
+  "reports/WFC-2019-09-30.xlsx": {
+    "bytes": 372309,
+    "sha256": "6d69ecdc6a7ce07cd8a0be1346e805fdad146cf7ba30e76d7203212f2f62fbdb",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297119000406/Financial_Report.xlsx"
+  },
+  "reports/WFC-2019-12-31.xlsx": {
+    "bytes": 475616,
+    "sha256": "042493fd10be72e5db4cd3ca239d72ac8b3a4050e1262eacd9086aa5ffa5d74b",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297120000217/Financial_Report.xlsx"
+  },
+  "reports/WFC-2020-03-31.xlsx": {
+    "bytes": 373008,
+    "sha256": "49331d914cf831d2df7b302beb4091697f758c7df7d37b34fe1507a02b34dd74",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297120000236/Financial_Report.xlsx"
+  },
+  "reports/WFC-2020-06-30.xlsx": {
+    "bytes": 454724,
+    "sha256": "4c2db5c9441bc06ce5a3934d77ed805ba2dcb03f87b5695c262fcb3c1a706efa",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297120000288/Financial_Report.xlsx"
+  },
+  "reports/WFC-2020-09-30.xlsx": {
+    "bytes": 450078,
+    "sha256": "69522bb25f06227f9cfb7ffa7b3d13470a0b5ba1e9f80a177e065c6f54a462b2",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297120000338/Financial_Report.xlsx"
+  },
+  "reports/WFC-2020-12-31.xlsx": {
+    "bytes": 518229,
+    "sha256": "e91ba99383c3b24c3d8dba81b454260d7ba973acb0dbf713d9e55b163bf03247",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297121000197/Financial_Report.xlsx"
+  },
+  "reports/WFC-2021-03-31.xlsx": {
+    "bytes": 357081,
+    "sha256": "048ed37d4d63c7b84378c6ac4834cc39666550eadd17214cf634a1c915eb9dd6",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297121000221/Financial_Report.xlsx"
+  },
+  "reports/WFC-2021-06-30.xlsx": {
+    "bytes": 390157,
+    "sha256": "b7bfe82d72321ee28fafe1fa694c0cc83db784872f47c7c2f87ec99ff670dbb1",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297121000267/Financial_Report.xlsx"
+  },
+  "reports/WFC-2021-09-30.xlsx": {
+    "bytes": 388799,
+    "sha256": "d0b3fcfc23a07017852e730a3c1ef325e66be32a766b1d6e49950f009e100f76",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297121000317/Financial_Report.xlsx"
+  },
+  "reports/WFC-2021-12-31.xlsx": {
+    "bytes": 490798,
+    "sha256": "9e3113af1a5ff20bf3c4e094a6c1d98d7eeb5e0aaf4ed7a0dc32a2808f4b9b6c",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297122000096/Financial_Report.xlsx"
+  },
+  "reports/WFC-2022-03-31.xlsx": {
+    "bytes": 335726,
+    "sha256": "40d26fa52e82d195e2e8571768d1a43c8f31d277f7fca41bedc6cd2ae9c4fa29",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297122000113/Financial_Report.xlsx"
+  },
+  "reports/WFC-2022-06-30.xlsx": {
+    "bytes": 402715,
+    "sha256": "0087b637bea0f09c71ecbea54b65cde87f8ee2ad7fcf5eb8b9cf3fb738ecc22b",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297122000174/Financial_Report.xlsx"
+  },
+  "reports/WFC-2022-09-30.xlsx": {
+    "bytes": 402269,
+    "sha256": "ac21111dce75e3115e4d442480eec3fd87eb5ba87f51d540a6ffc679299a18b3",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297122000205/Financial_Report.xlsx"
+  },
+  "reports/WFC-2022-12-31.xlsx": {
+    "bytes": 500917,
+    "sha256": "02f122c1ad6cb3c62826f4f30890a514bfebbb3b78bab7a0da7916710635c599",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297123000071/Financial_Report.xlsx"
+  },
+  "reports/WFC-2023-03-31.xlsx": {
+    "bytes": 383440,
+    "sha256": "2e9a912094a2338041da7bfa008cadd0c792566777d1ec6bd75c6b0cad2f3f2e",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297123000102/Financial_Report.xlsx"
+  },
+  "reports/WFC-2023-06-30.xlsx": {
+    "bytes": 421193,
+    "sha256": "1b06b26b3e9d8f0571cd1763ab543bede35bd5b7fe1a371f4f43026b0f799a7b",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297123000138/Financial_Report.xlsx"
+  },
+  "reports/WFC-2023-09-30.xlsx": {
+    "bytes": 429735,
+    "sha256": "d1ef3fbe711e4d1b90f1c0b2c7190e97fc49236559db76080c0d2f8a3cb33ee0",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297123000170/Financial_Report.xlsx"
+  },
+  "reports/WFC-2023-12-31.xlsx": {
+    "bytes": 519316,
+    "sha256": "2a1dc6c27395adc54bf4c6cf2666a3b9ab468fc2596f693d6fdea2944a22f26d",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297124000064/Financial_Report.xlsx"
+  },
+  "reports/WFC-2024-03-31.xlsx": {
+    "bytes": 348871,
+    "sha256": "7a3125c446a2570cd7251486a68dcd6507db36d14f60e357f13c57f6130c0c2a",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297124000129/Financial_Report.xlsx"
+  },
+  "reports/WFC-2024-06-30.xlsx": {
+    "bytes": 379418,
+    "sha256": "3a0a4bb4e2733694447a1f5206446cec498bfb1c9b155e9a8843682dc4cf3307",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297124000185/Financial_Report.xlsx"
+  },
+  "reports/WFC-2024-09-30.xlsx": {
+    "bytes": 381255,
+    "sha256": "6e9ca950e59a83e080ecdfb7dc9e8b38b0bcfd6e6c03d37d547866ff9e1a6671",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297124000243/Financial_Report.xlsx"
+  },
+  "reports/WFC-2024-12-31.xlsx": {
+    "bytes": 475582,
+    "sha256": "7f0aba6418c9027ffdf5c86bd1ada8fb831368a1179cff3e5733e3e3a4b93fa2",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297125000066/Financial_Report.xlsx"
+  },
+  "reports/WFC-2025-03-31.xlsx": {
+    "bytes": 334208,
+    "sha256": "ab2247ecd86adbe4b14ff6c1a1a18adf39fd3245b31edcf73a788b4494761c91",
+    "url": "https://www.sec.gov/Archives/edgar/data/72971/000007297125000129/Financial_Report.xlsx"
+  }
+}

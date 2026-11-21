@@ -1,5 +1,7 @@
 # Integrated three-statement management model
 
+**Analyzing a bank?** [Open the bank model](https://ehtisham514.github.io/apex-reconciliation-toolkit/financial_intelligence/bank-lab/) or [review the filings, assumptions and verification results](bank-lab/README.md). To reproduce the bank run from the repository root, use `python financial_intelligence/integrated_model.py bank --output-dir bank-results`.
+
 A five-year, single-entity planning model that links an income statement, balance sheet, indirect cash flow statement and debt schedule across base, downside and upside cases. The templates are blank; there are no sample companies, assumptions or transaction records.
 
 ## What it is designed to do

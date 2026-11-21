@@ -1,5 +1,7 @@
 # APEX Finance Lab
 
+[**Open the four-bank financial model**](https://ehtisham514.github.io/apex-reconciliation-toolkit/financial_intelligence/bank-lab/) · [Public filings, assumptions and results](bank-lab/README.md)
+
 Practical planning models for construction contractors, business owners and accounting teams. Use the local dashboard to change assumptions and download results, or call the Python functions from your own workflow.
 
 **Available now:** construction bidding, project cost-to-complete, earned-value checks, a 13-week cash plan, annual operating and cash-flow projections, an integrated three-statement planning model, DCF sensitivity, acquisition screening, and validated ledger aggregation. Existing dashboard examples use fictional assumptions. The integrated model starts with blank actuals and assumption templates.

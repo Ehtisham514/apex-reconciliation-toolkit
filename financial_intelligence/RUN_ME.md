@@ -1,5 +1,7 @@
 # Run APEX Finance Lab
 
+**U.S. bank analysis.** Open [the bank model](https://ehtisham514.github.io/apex-reconciliation-toolkit/financial_intelligence/bank-lab/) in a browser or run `python financial_intelligence/integrated_model.py bank --output-dir bank-results` from the repository root (Node.js 18+). [Sources and results](bank-lab/README.md).
+
 ## 1. Download and install
 
 Download the repository ZIP and extract it, or clone the repository. Open a terminal in its top-level folder. Use Python **3.11+**.
